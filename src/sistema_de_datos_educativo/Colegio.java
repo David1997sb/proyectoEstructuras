@@ -72,8 +72,13 @@ public class Colegio {
         
     }
 
+<<<<<<< Updated upstream
     public void agregaEstudiantes(String NombreEstudiante, String ApellidoEstudiante, String Encargado, String CorreoEstudiante, String TelefonoEstudiante, int EdadEstudiante, String NivelEducativo) {
         Estudiante estudiante =estudiantes.enCola(new NodoEst(new Estudiante(NombreEstudiante, ApellidoEstudiante, Encargado, CorreoEstudiante, idEstudiantes++, TelefonoEstudiante, EdadEstudiante, NivelEducativo)));
+=======
+    public void agregaEstudiantes (String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int Edad, String NivelEducativo) {
+        Estudiante estudiante =estudiantes.enCola(new NodoEst(new Estudiante(Nombre, Apellido, Encargado, Correo, id++, Telefono, Edad, NivelEducativo)));
+>>>>>>> Stashed changes
         String nombreUsuario = estudiante.getNombre().toLowerCase().charAt(0) + estudiante.getApellido().toLowerCase()+ estudiante.getId();
         agregaUsuario(nombreUsuario, "estudiante", "Estudiante", null, estudiante);
     }
