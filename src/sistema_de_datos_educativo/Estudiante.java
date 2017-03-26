@@ -11,29 +11,29 @@ package sistema_de_datos_educativo;
  */
 public class Estudiante {
 
-    private String NombreEstudiante;
-    private String ApellidoEstudiante;
+    private String Nombre;
+    private String Apellido;
     private String Encargado;
-    private String CorreoEstudiante;
+    private String Correo;
     private int id;
-    private String TelefonoEstudiante;
-    private int EdadEstudiante;
+    private String Telefono;
+    private int Edad;
     private String NivelEducativo;
 
-    public String getNombreEstudiante() {
-        return NombreEstudiante;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setNombreEstudiante(String NombreEstudiante) {
-        this.NombreEstudiante = NombreEstudiante;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
-    public String getApellidoEstudiante() {
-        return ApellidoEstudiante;
+    public String getApellido() {
+        return Apellido;
     }
 
-    public void setApellidoEstudiante(String ApellidoEstudiante) {
-        this.ApellidoEstudiante = ApellidoEstudiante;
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
     }
 
     public String getEncargado() {
@@ -44,39 +44,12 @@ public class Estudiante {
         this.Encargado = Encargado;
     }
 
-    public String getCorreoEstudiante() {
-        return CorreoEstudiante;
+    public String getCorreo() {
+        return Correo;
     }
 
-    public void setCorreoEstudiante(String CorreoEstudiante) {
-        this.CorreoEstudiante = CorreoEstudiante;
-    }
-
-    public String getTelefonoEstudiante() {
-        return TelefonoEstudiante;
-    }
-
-    public void setTelefonoEstudiante(String TelefonoEstudiante) {
-        this.TelefonoEstudiante = TelefonoEstudiante;
-    }
-
-    public int getEdadEstudiante() {
-        return EdadEstudiante;
-    }
-
-    public void setEdadEstudiante(int EdadEstudiante) {
-        this.EdadEstudiante = EdadEstudiante;
-    }
-
-    public String getNivelEducativo() {
-        return NivelEducativo;
-    }
-
-    public void setNivelEducativo(String NivelEducativo) {
-        this.NivelEducativo = NivelEducativo;
-    }
-
-    public Estudiante() {
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
     }
 
     public int getId() {
@@ -87,25 +60,46 @@ public class Estudiante {
         this.id = id;
     }
 
-    public Estudiante(int id) {
-        this.id = id;
+    public String getTelefono() {
+        return Telefono;
     }
 
-    public Estudiante(String NombreEstudiante, String ApellidoEstudiante, String Encargado, String CorreoEstudiante, int id, String TelefonoEstudiante, int EdadEstudiante, String NivelEducativo) {
-        this.NombreEstudiante = NombreEstudiante;
-        this.ApellidoEstudiante = ApellidoEstudiante;
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
+    public String getNivelEducativo() {
+        return NivelEducativo;
+    }
+
+    public void setNivelEducativo(String NivelEducativo) {
+        this.NivelEducativo = NivelEducativo;
+    }
+
+    public Estudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, String NivelEducativo) {
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
         this.Encargado = Encargado;
-        this.CorreoEstudiante = CorreoEstudiante;
+        this.Correo = Correo;
         this.id = id;
-        this.TelefonoEstudiante = TelefonoEstudiante;
-        this.EdadEstudiante = EdadEstudiante;
+        this.Telefono = Telefono;
         this.NivelEducativo = NivelEducativo;
     }
 
     @Override
     public String toString() {
-        return "Estudiante{" + "NombreEstudiante=" + NombreEstudiante + ", ApellidoEstudiante=" + ApellidoEstudiante + ", Encargado=" + Encargado + ", CorreoEstudiante=" + CorreoEstudiante + ", id=" + id + ", TelefonoEstudiante=" + TelefonoEstudiante + ", EdadEstudiante=" + EdadEstudiante + ", NivelEducativo=" + NivelEducativo + '}';
+        return "Estudiante{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Encargado=" + Encargado + ", Correo=" + Correo + ", id=" + id + ", Telefono=" + Telefono + ", Edad=" + Edad + ", NivelEducativo=" + NivelEducativo + '}';
     }
+
+    
     
 
 
