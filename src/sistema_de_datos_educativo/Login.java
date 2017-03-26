@@ -5,12 +5,6 @@
  */
 package sistema_de_datos_educativo;
 
-import javax.swing.JOptionPane;
-
-/**
- *
- * @author aldomora89
- */
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -19,7 +13,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         
-        Usuario u = new Usuario();
+      //  Usuario u = new Usuario();
     
     }
 
