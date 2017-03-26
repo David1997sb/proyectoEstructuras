@@ -18,7 +18,7 @@ public class ColaProf {
     private NodoProf Ultimo;
     private NodoProf Frente;
 
-    public void enCola(NodoProf n) {
+    public Profesor enCola(NodoProf n) {
         //Coloca los elementos en la cola
         if (Frente == null) {
             Frente = n;
@@ -27,7 +27,7 @@ public class ColaProf {
             Ultimo.setAtras(n);
             Ultimo = n;
         }
-
+        return n.getNodoprof();
     }
 
     public NodoProf Atiende() {
