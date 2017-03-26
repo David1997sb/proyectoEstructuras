@@ -19,9 +19,18 @@ public class Estudiante {
     private String Telefono;
     private int Edad;
     private String NivelEducativo;
+    private String nombreUsuario;
 
     public String getNombre() {
         return Nombre;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public void setNombre(String Nombre) {
@@ -93,6 +102,7 @@ public class Estudiante {
         this.Telefono = Telefono;
         this.NivelEducativo = NivelEducativo;
         this.Edad=edad;
+        this.nombreUsuario = Nombre.toLowerCase().charAt(0) + Apellido.toLowerCase() + id;
     }
 
     @Override

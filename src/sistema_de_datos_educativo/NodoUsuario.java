@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sistema_de_datos_educativo;
 
-/**
- *
- * @author Nicol
- */
-public class NodoLista {
+public class NodoUsuario {
     private Usuario dato;//se encuentran los datos de la persona
-    private NodoLista next;//Hace referencia al nodo siguiente
+    private NodoUsuario next;//Hace referencia al nodo siguiente
 
-    public NodoLista(Usuario dato) {//Constructor que recibe datos de persona
+    public NodoUsuario(Usuario dato) {//Constructor que recibe datos de persona
         this.dato = dato;
     }
 
@@ -25,11 +17,11 @@ public class NodoLista {
         this.dato = dato;
     }
 
-    public NodoLista getNext() {
+    public NodoUsuario getNext() {
         return next;
     }
 
-    public void setNext(NodoLista next) {
+    public void setNext(NodoUsuario next) {
         this.next = next;
     }
     

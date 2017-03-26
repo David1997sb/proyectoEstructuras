@@ -22,6 +22,7 @@ public class Sistema_de_Datos_Educativo {
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("JULIO   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
 //        System.out.println(colegio.imprimeProfe());
+
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
 //        System.out.println(colegio.imprimeEstudiantes());
@@ -33,11 +34,11 @@ public class Sistema_de_Datos_Educativo {
 //        System.out.println(colegio.imprimeEstMateria("Mate"));
 //        System.out.println(colegio.imprimeMateria());
 //        colegio.cambiaCorreoProfesor(2);
-ColaProf colaProf = new ColaProf();
+        ColaProf colaProf = new ColaProf();
 //    colaProf.Atiende();
         colegio.eliminaProfesor(2);
-                colegio.AgregaProfesor("JULIO3   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-colegio.imprimeUsuario();
+        colegio.AgregaProfesor("JULIO3   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.imprimeUsuario();
         System.out.println(colegio.imprimeUsuario());
 
     }

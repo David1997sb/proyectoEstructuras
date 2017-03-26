@@ -1,4 +1,3 @@
 # proyectoEstructuras
-Hola! Yo ya me pude conectar
-Cambio SYNC
-
+## Proyecto de Estructura de datos
+Ulacit 2017
