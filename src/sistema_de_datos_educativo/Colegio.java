@@ -62,7 +62,9 @@ public class Colegio {
     }
     
     public void AgregaProfesor(String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso) {
-        profes.enCola(new NodoProf(new Profesor(Nombre, Apellido, Correo, Curso,idProfes++, 0, 0, fechaDeIngreso)));
+        Profesor profesor = profes.enCola(new NodoProf(new Profesor(Nombre, Apellido, Correo, Curso,idProfes++, 0, 0, fechaDeIngreso)));
+        String nombreUsuario = profesor.getNombre().toLowerCase().charAt(0) + profesor.getApellido().toLowerCase()+ profesor.getId();
+        agregaUsuario(nombreUsuario, "profesor", "Profesor", profesor, null);
     }
     
     public String imprimeProfe() {
@@ -72,7 +74,7 @@ public class Colegio {
 
     public void agregaEstudiantes(String NombreEstudiante, String ApellidoEstudiante, String Encargado, String CorreoEstudiante, String TelefonoEstudiante, int EdadEstudiante, String NivelEducativo) {
         Estudiante estudiante =estudiantes.enCola(new NodoEst(new Estudiante(NombreEstudiante, ApellidoEstudiante, Encargado, CorreoEstudiante, idEstudiantes++, TelefonoEstudiante, EdadEstudiante, NivelEducativo)));
-        String nombreUsuario = estudiante.getNombreEstudiante().toLowerCase().charAt(0) + estudiante.getApellidoEstudiante().toLowerCase()+ estudiante.getId();
+        String nombreUsuario = estudiante.getNombre().toLowerCase().charAt(0) + estudiante.getApellido().toLowerCase()+ estudiante.getId();
         agregaUsuario(nombreUsuario, "estudiante", "Estudiante", null, estudiante);
     }
     public String imprimeUsuario(){

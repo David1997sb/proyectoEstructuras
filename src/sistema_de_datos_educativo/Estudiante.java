@@ -84,7 +84,7 @@ public class Estudiante {
         this.NivelEducativo = NivelEducativo;
     }
 
-    public Estudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, String NivelEducativo) {
+    public Estudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono,int edad, String NivelEducativo) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Encargado = Encargado;
@@ -92,6 +92,7 @@ public class Estudiante {
         this.id = id;
         this.Telefono = Telefono;
         this.NivelEducativo = NivelEducativo;
+        this.Edad=edad;
     }
 
     @Override
