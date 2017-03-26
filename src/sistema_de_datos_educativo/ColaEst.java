@@ -46,13 +46,23 @@ public class ColaEst {
         return s;
     }
     
-    public Estudiante modificaEstudiante(int id){
-        NodoEst aux= Frente;
-        while (aux!=null){
-            if(aux.getEstudiante().getId()==id){
-                return aux.getEstudiante();
+    public Estudiante modificaEstudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int Edad, String NivelEducativo) {
+        NodoEst aux = Frente;
+        while (aux != null) {
+            if (aux.getEstudiante().getId() == id) {
+                aux.getEstudiante().setNombre(Nombre);
+                aux.getEstudiante().setApellido(Apellido);
+                aux.getEstudiante().setEncargado(Encargado);
+                aux.getEstudiante().setCorreo(Correo);
+                aux.getEstudiante().setId(id);
+                aux.getEstudiante().setTelefono(Telefono);
+                aux.getEstudiante().setEdad(Edad);
+                aux.getEstudiante().setNivelEducativo(NivelEducativo);
+                
+                
             }
-                aux=aux.getAtras();
+            aux = aux.getAtras();
+
         }
         return null;
     }
