@@ -89,7 +89,6 @@ public class Materia {
         this.Aula = Aula;
         this.Horario = Horario;
         this.canMaxAlumnos = canMaxAlumnos;
-        
         estudiantes = new ColaEst();
     }
     

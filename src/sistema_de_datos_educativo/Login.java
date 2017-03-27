@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         
         // JOptionPane.showMessageDialog(null, usuario + "  ");
         
-        Administrador admin = new Administrador();
+        VentanaAdministrador admin = new VentanaAdministrador();
         admin.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed

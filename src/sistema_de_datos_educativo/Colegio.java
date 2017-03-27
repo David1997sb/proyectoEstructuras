@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistema_de_datos_educativo;
 
 import java.util.Date;
@@ -29,38 +24,6 @@ public class Colegio {
 
     }
 
-    public ColaProf getProfes() {
-        return profes;
-    }
-
-    public void setProfes(ColaProf profes) {
-        this.profes = profes;
-    }
-
-    public ColaEst getEstudiantes() {
-        return estudiantes;
-    }
-
-    public void setEstudiantes(ColaEst estudiantes) {
-        this.estudiantes = estudiantes;
-    }
-
-    public ColaMat getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(ColaMat materias) {
-        this.materias = materias;
-    }
-
-    public ListaUsuarios getListaUsuarios() {
-        return listaUsuarios;
-    }
-
-    public void setListaUsuarios(ListaUsuarios listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
-    }
-
     public void AgregaProfesor(String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso) {
         Profesor profesor = profes.enCola(new NodoProf(new Profesor(Nombre, Apellido, Correo, Curso, idProfes++, 0, 0, fechaDeIngreso)));
         agregaUsuario(profesor.getNombreUsuario(), "profesor", "Profesor", profesor, null);
@@ -74,10 +37,6 @@ public class Colegio {
     public void agregaEstudiantes(String Nombre, String Apellido, String Encargado, String Correo, String Telefono, int Edad, String NivelEducativo) {
         Estudiante estudiante = estudiantes.enCola(new NodoEst(new Estudiante(Nombre, Apellido, Encargado, Correo, idEstudiantes++, Telefono, Edad, NivelEducativo)));
         agregaUsuario(estudiante.getNombreUsuario(), "estudiante", "Estudiante", null, estudiante);
-    }
-
-    public String imprimeUsuario() {
-        return listaUsuarios.toString();
     }
 
     public String imprimeEstudiantes() {
@@ -107,16 +66,10 @@ public class Colegio {
         return materias.imprimeEstudiantesMateria(materia);
     }
 
-    public void cambiaCorreoProfesor(int id) {
-        Profesor profe = profes.BuscarProfesor(id);
-        profes.modificaCorreoProfe(id);
-    }
-
     public void eliminaProfesor(int id) {
         Profesor profesor = profes.BuscarProfesor(id);
         listaUsuarios.eliminar(profesor.getNombreUsuario());
-        profes.eliminadatosProfesor(id);
-        
+        profes.eliminadatosProfesor(id);   
     }
 
     public void agregaUsuario(String nombre, String password, String rol, Profesor profe, Estudiante estudiante) {
@@ -128,5 +81,9 @@ public class Colegio {
             usuario.setEstuduante(estudiante);
             listaUsuarios.insert((usuario));
         }
+    }
+    
+    public String imprimeUsuario() {
+        return listaUsuarios.toString();
     }
 }
