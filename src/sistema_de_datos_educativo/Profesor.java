@@ -11,16 +11,17 @@ import java.util.Date;
  *
  * @author Frander B.A
  */
-public class Profesor { 
-    
+public class Profesor {
+
     private String Nombre;
     private String Apellido;
     private String Correo;
     private String Curso;
+    private String nombreUsuario;
     private int id;
     private int Telefono;
     private int Edad;
-   
+
     private Date fechaDeIngreso;
 
     public String getNombre() {
@@ -91,12 +92,14 @@ public class Profesor {
         this.Telefono = Telefono;
         this.Edad = Edad;
         this.fechaDeIngreso = fechaDeIngreso;
+        this.nombreUsuario = Nombre.toLowerCase().charAt(0) + Apellido.toLowerCase() + id;
     }
 
     @Override
     public String toString() {
         return "Profesor{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Correo=" + Correo + ", Curso=" + Curso + ", id=" + id + ", Telefono=" + Telefono + ", Edad=" + Edad + ", fechaDeIngreso=" + fechaDeIngreso + '}';
     }
+
     public int getId() {
         return id;
     }
@@ -104,7 +107,13 @@ public class Profesor {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
-    
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
 }

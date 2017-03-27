@@ -1,48 +1,64 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistema_de_datos_educativo;
 
-/**
- *
- * @author Nicol
- */
 public class ListaUsuarios {
-    private NodoLista cabeza;
-
+    
+    private NodoUsuario cabeza;
+    
     public void insert(Usuario p) {
         if (cabeza == null) {
             //Se crea el nuevo Nodo
-            cabeza = new NodoLista(p);
-
-        } else {
-            //Se obtiene el dato menor
+            cabeza = new NodoUsuario(p);
+            
+        } else //Se obtiene el dato menor
+        {
             if (p.getId() <= cabeza.getDato().getId()) {
-                NodoLista aux = new NodoLista(p);
+                NodoUsuario aux = new NodoUsuario(p);
                 aux.setNext(cabeza);
                 cabeza = aux;
-            } else {
-                //Se inserta el dato menor
+            } else //Se inserta el dato menor
+            {
                 if (cabeza.getNext() == null) {
-                    cabeza.setNext(new NodoLista(p));
-
+                    cabeza.setNext(new NodoUsuario(p));
+                    
                 } else {
-                    NodoLista aux = cabeza;//Se pone un nodo en medio de la lista
+                    NodoUsuario aux = cabeza;//Se pone un nodo en medio de la lista
                     while (aux.getNext() != null && aux.getNext().getDato().getId() < p.getId()) {
                         aux = aux.getNext();
                     }
-                    NodoLista temp = new NodoLista(p);
+                    NodoUsuario temp = new NodoUsuario(p);
                     temp.setNext(aux.getNext());
                     aux.setNext(temp);
                 }
             }
         }
     }
-
+    
+    public void eliminar(String nombreUsuario) {
+        if (cabeza != null) { //Si la lista no esta vacia
+            NodoUsuario aux = cabeza;
+            NodoUsuario anterior = null;
+            while (aux != null) {                
+                
+                if (aux.getDato().getNombre().equals(nombreUsuario)) {
+                    if (aux == cabeza) {//Caso 1
+                        cabeza = aux.getNext();
+                    } else if (aux.getNext() == null) { //caso 2
+                        anterior.setNext(null);
+                    } else {
+                        anterior.setNext(aux.getNext());
+                    }
+                }
+                anterior = aux;
+                aux = aux.getNext();
+                
+            }
+        } else {
+            System.out.println("La lista esta vacia");
+        }
+    }
+    
     public String toString() {
-        NodoLista aux = cabeza;
+        NodoUsuario aux = cabeza;
         String s = "Lista : \n";
         while (aux != null) {
             s += aux + "\n";
