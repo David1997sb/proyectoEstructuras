@@ -66,20 +66,5 @@ public class ListaUsuarios {
         }
         return s;
     }
-    public void elimina(int id) {//En este metodo se realiza la eliminacion de una persona de la lista por medio del ID que se le brinda
-        NodoUsuario aux = cabeza;
-        NodoUsuario aux2 = null;
-        if (cabeza == null) {//se realiza la validacion para ver si la lista se encuentra vacia
-            cabeza = new NodoUsuario(aux.getDato());
-
-        }
-        while (aux != null) {//Se realiza la busqueda por medio de un ciclo de la persona que tenga un id igual al brindado
-            if (aux.getDato().getId() == id) {
-                aux2.setNext(aux.getNext());
-                break;
-            }
-            aux2 = aux;
-            aux = aux.getNext();
-        }
-    }
+    
 }
