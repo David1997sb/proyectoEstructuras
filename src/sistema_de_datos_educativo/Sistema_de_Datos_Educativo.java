@@ -37,7 +37,7 @@ public class Sistema_de_Datos_Educativo {
         ColaProf colaProf = new ColaProf();
 //    colaProf.Atiende();
         colegio.eliminaProfesor(2);
-        colegio.AgregaProfesor("JULIO3   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Cesar3   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.imprimeUsuario();
         System.out.println(colegio.imprimeUsuario());
 
