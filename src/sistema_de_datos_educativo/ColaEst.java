@@ -5,30 +5,30 @@
  */
 package sistema_de_datos_educativo;
 
-
 /**
  *
  * @author Frander B.A
  */
 public class ColaEst {
-    
+
     NodoEst Ultimo;
     NodoEst Frente;
-    
-    public Estudiante enCola(NodoEst n){
+
+    public Estudiante enCola(NodoEst n) {
         //Coloca los elementos en la cola
-        if(Frente==null){
-            Frente=n;
-            Ultimo=n;
-        }else{
+        if (Frente == null) {
+            Frente = n;
+            Ultimo = n;
+        } else {
             Ultimo.setAtras(n);
-            Ultimo=n;
+            Ultimo = n;
         }
         return n.getEstudiante();
     }
-    public NodoEst Atiende(){
-        NodoEst aux=Frente;
-        if (Frente!=null) {
+
+    public NodoEst Atiende() {
+        NodoEst aux = Frente;
+        if (Frente != null) {
             Frente = Frente.getAtras();
             aux.setAtras(null);
         }
@@ -37,15 +37,15 @@ public class ColaEst {
 
     @Override
     public String toString() {
-        String s="";
-        NodoEst aux=Frente;
-        while(aux!=null){
-            s+= aux+"\n";
-            aux=aux.getAtras();
+        String s = "";
+        NodoEst aux = Frente;
+        while (aux != null) {
+            s += aux + "\n";
+            aux = aux.getAtras();
         }
         return s;
     }
-    
+
     public Estudiante modificaEstudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int Edad, String NivelEducativo) {
         NodoEst aux = Frente;
         while (aux != null) {
@@ -58,33 +58,45 @@ public class ColaEst {
                 aux.getEstudiante().setTelefono(Telefono);
                 aux.getEstudiante().setEdad(Edad);
                 aux.getEstudiante().setNivelEducativo(NivelEducativo);
-                
-                
+
             }
             aux = aux.getAtras();
 
         }
         return null;
     }
-    
-      
-    public Estudiante BuscarEstudiante(int id){
-        NodoEst aux=Frente;
-        while(aux!=null){
-            if( aux.getEstudiante().getId()==id){
+
+    public Estudiante BuscarEstudiante(int id) {
+        NodoEst aux = Frente;
+        while (aux != null) {
+            if (aux.getEstudiante().getId() == id) {
                 return aux.getEstudiante();
             }
-            aux=aux.getAtras(); 
+            aux = aux.getAtras();
         }
         return null;
     }
-//    public void cambiaNumero(String numero){
-//         NodoEst aux= Frente;
-//        while (aux!=null){
-//            if(aux.getEstudiante().getTelefonoEstudiante()==numero){
-//                aux.getEstudiante().setTelefonoEstudiante(JOptionPane.showInputDialog("Ingrese su nuevo correo electronico"));
-//            }
-//                aux=aux.getAtras();
-//        }
-//    }
+
+    public String eliminadatosEstudiante(int id) {
+        NodoEst aux = Frente;
+        NodoEst aux2 = aux;
+        while (aux != null) {
+            if (aux.getEstudiante().getId() == id) {
+                if (aux == Frente) {
+                    Frente = aux.getAtras();
+                    return "Se elimino el Estuiante";
+                } else if (aux == Ultimo) {
+                    Ultimo = aux2;
+                    return "Se elimino el Estudiante";
+                } else {
+                    aux2.setAtras(aux.getAtras());
+                    return "Se elimino el Estudiante";
+                }
+            } else {
+                aux2 = aux;
+                aux = aux.getAtras();
+            }
+        }
+        return "No se encontro con el id " + id;
+    }
 }

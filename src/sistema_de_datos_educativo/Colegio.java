@@ -1,6 +1,7 @@
 package sistema_de_datos_educativo;
 
 import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -70,6 +71,20 @@ public class Colegio {
         Profesor profesor = profes.BuscarProfesor(id);
         listaUsuarios.eliminar(profesor.getNombreUsuario());
         profes.eliminadatosProfesor(id);   
+    }
+    
+    public void eliminaEstudiante (int id ){
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        listaUsuarios.eliminar(estudiante.getNombre());
+        estudiantes.eliminadatosEstudiante(id);
+        
+    }
+    
+    public void eliminaMateria (String nombreMateria) {
+        Materia materia = materias.BuscarMateria(nombreMateria);
+        listaUsuarios.eliminar(materia.getNombreMateria());
+        materias.eliminadatosMateria(nombreMateria);
+        
     }
 
     public void agregaUsuario(String nombre, String password, String rol, Profesor profe, Estudiante estudiante) {

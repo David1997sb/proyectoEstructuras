@@ -29,7 +29,7 @@ public class Sistema_de_Datos_Educativo {
         colegio.agregaMateria("Mate", 10, "2-3", 25);
         colegio.agregaProfeAmateria(1, "Mate");
 //        System.out.println(colegio.imprimeMateria());
-        colegio.agregaEstudiantesAmateria(1, "Mate");
+        colegio.agregaEstudiantesAmateria(1, "Mate ");
         colegio.agregaEstudiantesAmateria(2, "Mate");
 //        System.out.println(colegio.imprimeEstMateria("Mate"));
 //        System.out.println(colegio.imprimeMateria());
@@ -39,7 +39,12 @@ public class Sistema_de_Datos_Educativo {
         colegio.eliminaProfesor(2);
         colegio.AgregaProfesor("Cesar3   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.imprimeUsuario();
-        System.out.println(colegio.imprimeUsuario());
+//        System.out.println(colegio.imprimeUsuario());
+//        colegio.eliminaProfesor(1);
+//        System.out.println(colegio.imprimeUsuario());
+//        System.out.println(colegio.imprimeMateria());
+        colegio.eliminaMateria("mate");
+        System.out.println(colegio.imprimeMateria());
 
     }
 
