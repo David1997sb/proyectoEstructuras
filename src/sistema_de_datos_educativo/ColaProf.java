@@ -75,57 +75,7 @@ public class ColaProf {
         }
     }
     
-    public void modificaProfe( String Correo, int Telefono,int id, int Edad) {
-        NodoProf aux = Frente;
-        while (aux != null) {
-            if (aux.getNodoprof().getId() == id) {
-                aux.getNodoprof().setCorreo(Correo);
-                aux.getNodoprof().setTelefono(Telefono);
-                aux.getNodoprof().setEdad((Edad));
-            }
-            aux = aux.getAtras();
-        }
-    }
 
-    public void modificaCorreoProfe(int id) {
-        NodoProf aux = Frente;
-        while (aux != null) {
-            if (aux.getNodoprof().getId() == id) {
-                aux.getNodoprof().setCorreo(JOptionPane.showInputDialog("Ingrese el correo"));
-            }
-            aux = aux.getAtras();
-        }
-    }
-
-    public void modificaTelefono(int id) {
-        NodoProf aux = Frente;
-        while (aux != null) {
-            if (aux.getNodoprof().getId() == id) {
-                aux.getNodoprof().setTelefono(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero telefonico")));
-            }
-            aux = aux.getAtras();
-        }
-    }
-
-    public void modificaCurso(int id) {
-        NodoProf aux = Frente;
-        while (aux != null) {
-            if (aux.getNodoprof().getId() == id) {
-                aux.getNodoprof().setCurso(JOptionPane.showInputDialog("Ingrese el curso"));
-            }
-            aux = aux.getAtras();
-        }
-    }
-
-    public void modificaNombre(int id) {
-        NodoProf aux = Frente;
-        while (aux != null) {
-            if (aux.getNodoprof().getId() == id) {
-                aux.getNodoprof().setNombre((JOptionPane.showInputDialog("Ingrese el nombre correcto")));
-            }
-            aux = aux.getAtras();
-        }
-    }
 
     public String eliminadatosProfesor(int id) {
         NodoProf aux = Frente;
