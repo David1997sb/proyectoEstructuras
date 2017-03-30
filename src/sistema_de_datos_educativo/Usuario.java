@@ -15,7 +15,7 @@ public class Usuario {
     private String password;
     private String rol;
     private Profesor profesor;
-    private Estudiante estuduante;
+    private Estudiante estudiante;
     private int id;
 
     public Usuario(String nombre, String password, String rol, int id) {
@@ -58,12 +58,12 @@ public class Usuario {
         this.profesor = profesor;
     }
 
-    public Estudiante getEstuduante() {
-        return estuduante;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setEstuduante(Estudiante estuduante) {
-        this.estuduante = estuduante;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
     public int getId() {

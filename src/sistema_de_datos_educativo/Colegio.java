@@ -78,7 +78,7 @@ public class Colegio {
             usuario.setProfesor(profe);
             listaUsuarios.insert((usuario));
         } else if (estudiante != null) {
-            usuario.setEstuduante(estudiante);
+            usuario.setEstudiante(estudiante);
             listaUsuarios.insert((usuario));
         }
     }
