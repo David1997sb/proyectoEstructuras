@@ -1,14 +1,14 @@
 package sistema_de_datos_educativo;
 
 public class ListaUsuarios {
-    
+
     private NodoUsuario cabeza;
-    
+
     public void insert(Usuario p) {
         if (cabeza == null) {
             //Se crea el nuevo Nodo
             cabeza = new NodoUsuario(p);
-            
+
         } else //Se obtiene el dato menor
         {
             if (p.getId() <= cabeza.getDato().getId()) {
@@ -19,7 +19,7 @@ public class ListaUsuarios {
             {
                 if (cabeza.getNext() == null) {
                     cabeza.setNext(new NodoUsuario(p));
-                    
+
                 } else {
                     NodoUsuario aux = cabeza;//Se pone un nodo en medio de la lista
                     while (aux.getNext() != null && aux.getNext().getDato().getId() < p.getId()) {
@@ -32,13 +32,24 @@ public class ListaUsuarios {
             }
         }
     }
-    
+
+    public Usuario BuscarUsuario(String usuario, String password) {
+        NodoUsuario aux = cabeza;
+        while (aux != null) {
+            if (aux.getDato().getNombre().equals(usuario) && aux.getDato().getPassword().equals(password)) {
+                return aux.getDato();
+            }
+            aux = aux.getNext();
+        }
+        return null;
+    }
+
     public void eliminar(String nombreUsuario) {
         if (cabeza != null) { //Si la lista no esta vacia
             NodoUsuario aux = cabeza;
             NodoUsuario anterior = null;
-            while (aux != null) {                
-                
+            while (aux != null) {
+
                 if (aux.getDato().getNombre().equals(nombreUsuario)) {
                     if (aux == cabeza) {//Caso 1
                         cabeza = aux.getNext();
@@ -50,13 +61,13 @@ public class ListaUsuarios {
                 }
                 anterior = aux;
                 aux = aux.getNext();
-                
+
             }
         } else {
             System.out.println("La lista esta vacia");
         }
     }
-    
+
     public String toString() {
         NodoUsuario aux = cabeza;
         String s = "Lista : \n";
@@ -66,5 +77,5 @@ public class ListaUsuarios {
         }
         return s;
     }
-    
+
 }

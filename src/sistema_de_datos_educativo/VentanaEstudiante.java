@@ -14,8 +14,12 @@ public class VentanaEstudiante extends javax.swing.JFrame {
     /**
      * Creates new form VentanaEstudiante
      */
-    public VentanaEstudiante() {
+    Colegio colegio;
+    Estudiante estudiante;
+    public VentanaEstudiante(Colegio colegio, Estudiante estudiante) {
         initComponents();
+        this.colegio=  colegio;
+        this.estudiante= estudiante;
     }
 
     /**
@@ -73,8 +77,9 @@ public class VentanaEstudiante extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaEstudiante().setVisible(true);
+            
             }
+            
         });
     }
 

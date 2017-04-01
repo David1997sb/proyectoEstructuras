@@ -5,16 +5,36 @@
  */
 package sistema_de_datos_educativo;
 
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
+    Colegio colegio;
+
     public Login() {
         initComponents();
-        
-      //  Usuario u = new Usuario();
-    
+        this.colegio = new Colegio();
+        colegio.AgregaProfesor("Frander", "Fallas", "@", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("JULIO   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+//        System.out.println(colegio.imprimeProfe());
+
+        colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
+        colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
+//        System.out.println(colegio.imprimeEstudiantes());
+        colegio.agregaMateria("Mate", 10, "2-3", 25);
+        colegio.agregaProfeAmateria(1, "Mate");
+//        System.out.println(colegio.imprimeMateria());
+        colegio.agregaEstudiantesAmateria(1, "Mate ");
+        colegio.agregaEstudiantesAmateria(2, "Mate");
+        colegio.agregaAdmin("admin", "admin");
+        System.out.println(colegio.imprimeUsuario());
+        //  Usuario u = new Usuario();
+
     }
 
     /**
@@ -44,8 +64,11 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        txtPassword.setText("jPasswordField1");
+        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton1KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,17 +108,34 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        
-        String usuario = txtUsuario.getText();
-        char[] pass = txtPassword.getPassword();
-        
-        // JOptionPane.showMessageDialog(null, usuario + "  ");
-        
-        VentanaAdministrador admin = new VentanaAdministrador();
-        admin.setVisible(true);
-        
+
+        String nombreUsuario = txtUsuario.getText();
+        String pass = new String(txtPassword.getPassword());
+        Usuario usuario = colegio.validaUsuario(nombreUsuario, pass);
+
+        if (usuario != null) {
+            if (usuario.getRol().equalsIgnoreCase("Estudiante")) {
+                VentanaEstudiante ventanaEstud = new VentanaEstudiante(colegio, usuario.getEstudiante());
+                ventanaEstud.setVisible(true);
+            } else if (usuario.getRol().equalsIgnoreCase("Profesor")) {
+                VentanaProfesor ventanaProf = new VentanaProfesor(colegio, usuario.getProfesor());
+                ventanaProf.setVisible(true);
+            } else if(usuario.getRol().equalsIgnoreCase("Administrador")){
+                VentanaAdministrador admin = new VentanaAdministrador(colegio);
+                admin.setVisible(true);
+            }
+            this.setVisible(false);
+
     }//GEN-LAST:event_jButton1ActionPerformed
+        else {
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña invalido");
+        }
+        
+    }
+
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        System.out.println("lalalalalalala");
+    }//GEN-LAST:event_jButton1KeyPressed
 
     /**
      * @param args the command line arguments

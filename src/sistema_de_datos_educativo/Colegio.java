@@ -2,6 +2,7 @@ package sistema_de_datos_educativo;
 
 import java.util.Date;
 import java.util.Locale;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -101,4 +102,18 @@ public class Colegio {
     public String imprimeUsuario() {
         return listaUsuarios.toString();
     }
-}
+    public Usuario validaUsuario(String nombreUsuario, String password){
+        Usuario usuario = listaUsuarios.BuscarUsuario(nombreUsuario, password);
+        if(usuario!=null){
+            return usuario;
+        }else{
+            return null;
+        }
+        
+    }
+    public void agregaAdmin(String nombre, String password) {
+        Usuario usuario = new Usuario(nombre, password, "Administrador", idUsuarios++);
+            listaUsuarios.insert((usuario));
+        }
+    }
+
