@@ -5,8 +5,13 @@
         <group>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Colegio.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Sistema_de_Datos_Educativo.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/ColaMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Materia.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/ColaProf.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/NodoMat.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/NodoEst.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/ColaEst.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Profesor.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Estudiante.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Login.java</file>
         </group>
