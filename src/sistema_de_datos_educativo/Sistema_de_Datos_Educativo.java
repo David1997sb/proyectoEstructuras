@@ -28,7 +28,7 @@ public class Sistema_de_Datos_Educativo {
 //        System.out.println(colegio.imprimeEstudiantes());
         colegio.agregaMateria("Mate", 10, "2-3", 25);
         colegio.agregaProfeAmateria(1, "Mate");
-//        System.out.println(colegio.imprimeMateria());
+        System.out.println(colegio.imprimeMateria());
         colegio.agregaEstudiantesAmateria(1, "Mate ");
         colegio.agregaEstudiantesAmateria(2, "Mate");
 //        System.out.println(colegio.imprimeEstMateria("Mate"));
@@ -36,15 +36,15 @@ public class Sistema_de_Datos_Educativo {
 //        colegio.cambiaCorreoProfesor(2);
         ColaProf colaProf = new ColaProf();
 //    colaProf.Atiende();
-        colegio.eliminaProfesor(2);
+        //colegio.eliminaProfesor(2);
         colegio.AgregaProfesor("Cesar3   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        colegio.imprimeUsuario();
+       // colegio.imprimeUsuario();
 //        System.out.println(colegio.imprimeUsuario());
 //        colegio.eliminaProfesor(1);
 //        System.out.println(colegio.imprimeUsuario());
 //        System.out.println(colegio.imprimeMateria());
-        colegio.eliminaMateria("mate");
-        System.out.println(colegio.imprimeMateria());
+        //colegio.eliminaMateria("mate");
+        //System.out.println(colegio.imprimeMateria());
 
     }
 
