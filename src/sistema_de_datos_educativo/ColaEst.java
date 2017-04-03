@@ -46,7 +46,7 @@ public class ColaEst {
         return s;
     }
 
-    public Estudiante modificaEstudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int Edad, String NivelEducativo) {
+    public Estudiante modificaEstudianteAdmin(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int Edad, String NivelEducativo) {
         NodoEst aux = Frente;
         while (aux != null) {
             if (aux.getEstudiante().getId() == id) {
@@ -58,10 +58,8 @@ public class ColaEst {
                 aux.getEstudiante().setTelefono(Telefono);
                 aux.getEstudiante().setEdad(Edad);
                 aux.getEstudiante().setNivelEducativo(NivelEducativo);
-
             }
             aux = aux.getAtras();
-
         }
         return null;
     }

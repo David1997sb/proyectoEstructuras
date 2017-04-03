@@ -46,7 +46,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        agregaProfesor = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -55,11 +55,11 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu24 = new javax.swing.JMenu();
+        modificarMateria = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        modificaMateria = new javax.swing.JMenuItem();
+        verListaBTN = new javax.swing.JMenuItem();
         jMenu22 = new javax.swing.JMenu();
         jMenu23 = new javax.swing.JMenu();
 
@@ -97,13 +97,13 @@ public class VentanaAdministrador extends javax.swing.JFrame {
 
         jMenu3.setText("Administrar Profesores");
 
-        jMenuItem2.setText("Agrega profesor");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        agregaProfesor.setText("Agrega profesor");
+        agregaProfesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                agregaProfesorActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem2);
+        jMenu3.add(agregaProfesor);
 
         jMenuItem4.setText("Modifica profesor");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -147,10 +147,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu24.setText("Administrar Materias");
+        modificarMateria.setText("Administrar Materias");
 
         jMenuItem11.setText("Agrega Materias");
-        jMenu24.add(jMenuItem11);
+        modificarMateria.add(jMenuItem11);
 
         jMenuItem12.setText("Elimina Materias");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
@@ -158,20 +158,25 @@ public class VentanaAdministrador extends javax.swing.JFrame {
                 jMenuItem12ActionPerformed(evt);
             }
         });
-        jMenu24.add(jMenuItem12);
+        modificarMateria.add(jMenuItem12);
 
-        jMenuItem13.setText("Modifica Materia");
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+        modificaMateria.setText("Modifica Materia");
+        modificaMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
+                modificaMateriaActionPerformed(evt);
             }
         });
-        jMenu24.add(jMenuItem13);
+        modificarMateria.add(modificaMateria);
 
-        jMenuItem14.setText("Ver lista de Materias");
-        jMenu24.add(jMenuItem14);
+        verListaBTN.setText("Ver lista de Materias");
+        verListaBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verListaBTNActionPerformed(evt);
+            }
+        });
+        modificarMateria.add(verListaBTN);
 
-        jMenuBar1.add(jMenu24);
+        jMenuBar1.add(modificarMateria);
 
         jMenu22.setText("Acerca de");
 
@@ -196,10 +201,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void agregaProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregaProfesorActionPerformed
         VentanaAdminAddProf addprof= new VentanaAdminAddProf(colegio);
         addprof.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_agregaProfesorActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
@@ -217,9 +222,15 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
+    private void modificaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaMateriaActionPerformed
+        VentanaModificaMat modifyProf = new VentanaModificaMat(colegio);
+        modifyProf.setVisible(true);
+    }//GEN-LAST:event_modificaMateriaActionPerformed
+
+    private void verListaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verListaBTNActionPerformed
+        VentListMat listaMaterias = new VentListMat();
+       listaMaterias.setVisible(true);
+    }//GEN-LAST:event_verListaBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,6 +270,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem agregaProfesor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
@@ -266,7 +278,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu22;
     private javax.swing.JMenu jMenu23;
-    private javax.swing.JMenu jMenu24;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
@@ -282,9 +293,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -292,5 +300,8 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem modificaMateria;
+    private javax.swing.JMenu modificarMateria;
+    private javax.swing.JMenuItem verListaBTN;
     // End of variables declaration//GEN-END:variables
 }

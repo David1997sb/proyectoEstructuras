@@ -71,21 +71,21 @@ public class Colegio {
     public void eliminaProfesor(int id) {
         Profesor profesor = profes.BuscarProfesor(id);
         listaUsuarios.eliminar(profesor.getNombreUsuario());
-        profes.eliminadatosProfesor(id);   
+        profes.eliminadatosProfesor(id);
     }
-    
-    public void eliminaEstudiante (int id ){
+
+    public void eliminaEstudiante(int id) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         listaUsuarios.eliminar(estudiante.getNombre());
         estudiantes.eliminadatosEstudiante(id);
-        
+
     }
-    
-    public void eliminaMateria (String nombreMateria) {
+
+    public void eliminaMateria(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
         listaUsuarios.eliminar(materia.getNombreMateria());
         materias.eliminadatosMateria(nombreMateria);
-        
+
     }
 
     public void agregaUsuario(String nombre, String password, String rol, Profesor profe, Estudiante estudiante) {
@@ -98,22 +98,33 @@ public class Colegio {
             listaUsuarios.insert((usuario));
         }
     }
-    
+
     public String imprimeUsuario() {
         return listaUsuarios.toString();
     }
-    public Usuario validaUsuario(String nombreUsuario, String password){
+
+    public Usuario validaUsuario(String nombreUsuario, String password) {
         Usuario usuario = listaUsuarios.BuscarUsuario(nombreUsuario, password);
-        if(usuario!=null){
+        if (usuario != null) {
             return usuario;
-        }else{
+        } else {
             return null;
         }
-        
-    }
-    public void agregaAdmin(String nombre, String password) {
-        Usuario usuario = new Usuario(nombre, password, "Administrador", idUsuarios++);
-            listaUsuarios.insert((usuario));
-        }
+
     }
 
+    public void agregaAdmin(String nombre, String password) {
+        Usuario usuario = new Usuario(nombre, password, "Administrador", idUsuarios++);
+        listaUsuarios.insert((usuario));
+    }
+
+    public void modificaMateria(String NombreMateria, int Aula, String Horario, int canMaxAlumnos) {
+        materias.modificaMateria(NombreMateria, Aula, Horario, canMaxAlumnos);
+    }
+
+    public void modificaProfeMat(int idpProfe, String materia) {
+        Profesor profe = profes.BuscarProfesor(idpProfe);
+        materias.modificaProfeMateria(profe,materia);
+
+    }
+}

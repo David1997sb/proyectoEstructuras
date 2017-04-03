@@ -121,4 +121,27 @@ public class ColaMat {
         }
         return "No se encontro con el nombre " + nombreMateria;
     }
+
+    public void modificaMateria(String NombreMateria, int Aula, String Horario, int canMaxAlumnos) {
+        NodoMat aux = Frente;
+        while (aux != null) {
+            if (aux.getMateria().getNombreMateria().equalsIgnoreCase(NombreMateria)) {
+                aux.getMateria().setHorario(Horario);
+                aux.getMateria().setAula(Aula);
+                aux.getMateria().setCanMaxAlumnos(canMaxAlumnos);
+            }
+            aux=aux.getAtras();
+        }
+    }
+    public boolean modificaProfeMateria(Profesor profe, String materia){
+         NodoMat aux = Frente;
+        while (aux != null) {
+            if (aux.getMateria().getNombreMateria().equals(materia)) {
+                aux.getMateria().setProfe(profe);
+                return true;
+            }
+            aux = aux.getAtras();
+        }
+        return false;
+    }
 }
