@@ -125,6 +125,5 @@ public class Colegio {
     public void modificaProfeMat(int idpProfe, String materia) {
         Profesor profe = profes.BuscarProfesor(idpProfe);
         materias.modificaProfeMateria(profe,materia);
-
     }
 }

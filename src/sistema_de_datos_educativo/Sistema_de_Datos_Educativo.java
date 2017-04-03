@@ -31,7 +31,6 @@ public class Sistema_de_Datos_Educativo {
         //System.out.println(colegio.imprimeMateria());
         colegio.agregaEstudiantesAmateria(1, "Mate");
         colegio.agregaEstudiantesAmateria(2, "Mate");
-        //System.out.println(colegio.imprimeEstMateria("Mate"));
 //        colegio.cambiaCorreoProfesor(2);
 
 //    colaProf.Atiende();

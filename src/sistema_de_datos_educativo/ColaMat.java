@@ -5,6 +5,8 @@
  */
 package sistema_de_datos_educativo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Frander B.A
@@ -43,6 +45,7 @@ public class ColaMat {
             s += aux + "\n";
             aux = aux.getAtras();
         }
+        
         return s;
     }
 
@@ -133,15 +136,15 @@ public class ColaMat {
             aux=aux.getAtras();
         }
     }
-    public boolean modificaProfeMateria(Profesor profe, String materia){
+    public void modificaProfeMateria(Profesor profe, String materia){
          NodoMat aux = Frente;
         while (aux != null) {
             if (aux.getMateria().getNombreMateria().equals(materia)) {
                 aux.getMateria().setProfe(profe);
-                return true;
+                
             }
             aux = aux.getAtras();
         }
-        return false;
+       
     }
 }
