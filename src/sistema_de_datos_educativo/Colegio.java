@@ -127,4 +127,19 @@ public class Colegio {
         materias.modificaProfeMateria(profe,materia);
 
     }
-}
+    
+    public void modificaProfeAdmin(int id,String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso){
+        profes.modificaProfeAdmin(Nombre, Apellido, Correo, Curso, id, Telefono, Edad, fechaDeIngreso);
+        
+    }
+    
+    public void buscarProf (int id){
+        
+         
+            
+        }
+ 
+       
+        
+    }
+

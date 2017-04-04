@@ -74,7 +74,8 @@ public class ColaProf {
             aux = aux.getAtras();
         }
     }
-     public void modificaProfe( String Correo, int Telefono,int id, int Edad) {
+
+    public void modificaProfe(String Correo, int Telefono, int id, int Edad) {
         NodoProf aux = Frente;
         while (aux != null) {
             if (aux.getNodoprof().getId() == id) {
@@ -85,8 +86,6 @@ public class ColaProf {
             aux = aux.getAtras();
         }
     }
-    
-
 
     public String eliminadatosProfesor(int id) {
         NodoProf aux = Frente;

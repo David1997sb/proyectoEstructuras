@@ -61,6 +61,12 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
 
         jLabel5.setText("Edad");
 
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);
@@ -75,6 +81,11 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel6.setText("Agregar nuevo profesor");
@@ -169,12 +180,22 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
         int Telefono= Integer.parseInt(txtTelefono.getText());
         int Edad= Integer.parseInt(txtEdad.getText());
         colegio.AgregaProfesor(nombre, Apellido, Correo, null, Telefono, Edad, new Date ());
-        System.out.println(colegio.imprimeProfe());    
+        System.out.println(colegio.imprimeProfe()); 
+        JOptionPane.showMessageDialog(null, "Agregado Correctamente");
+        
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor invalido");
         }
         
     }//GEN-LAST:event_aceptBTNActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

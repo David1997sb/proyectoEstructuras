@@ -122,6 +122,11 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jMenu3.add(jMenuItem5);
 
         jMenuItem6.setText("Ver lista de profesores");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem6);
 
         jMenuBar1.add(jMenu3);
@@ -207,7 +212,8 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_agregaProfesorActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        VentanaAdminModProf modprof = new VentanaAdminModProf(colegio);
+        modprof.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -231,6 +237,11 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         VentListMat listaMaterias = new VentListMat();
        listaMaterias.setVisible(true);
     }//GEN-LAST:event_verListaBTNActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        VentanaAdminListaProf listaProf = new VentanaAdminListaProf(colegio);
+        listaProf.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
