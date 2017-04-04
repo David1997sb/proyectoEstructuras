@@ -15,7 +15,7 @@ public class VentListMat extends javax.swing.JFrame {
      * Creates new form VentListMat
      */
     Colegio colegio;
-    public VentListMat() {
+    public VentListMat(Colegio colegio) {
         initComponents();
         this.colegio=colegio;
     }
@@ -72,8 +72,8 @@ public class VentListMat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void getListBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getListBTNActionPerformed
-        String lista = colegio.imprimeMateria();
-        this.jTextPane1.setText(lista);
+      
+        this.jTextPane1.setText(colegio.imprimeMateria());
     }//GEN-LAST:event_getListBTNActionPerformed
 
     /**
@@ -106,7 +106,8 @@ public class VentListMat extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentListMat().setVisible(true);
+                
+                //new VentListMat().setVisible(true);
             }
         });
     }
