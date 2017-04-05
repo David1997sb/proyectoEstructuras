@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistema_de_datos_educativo;
+package Estructuras;
 
 import java.util.Date;
 import javax.swing.JOptionPane;
+import sistema_de_datos_educativo.Profesor;
 
 /**
  *

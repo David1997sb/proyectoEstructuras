@@ -5,6 +5,8 @@
  */
 package sistema_de_datos_educativo;
 
+import Estructuras.ColaEst;
+
 /**
  *
  * @author Frander B.A

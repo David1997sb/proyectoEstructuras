@@ -1,4 +1,6 @@
-package sistema_de_datos_educativo;
+package Estructuras;
+
+import sistema_de_datos_educativo.Usuario;
 
 public class ListaUsuarios {
 
