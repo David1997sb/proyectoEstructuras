@@ -171,8 +171,8 @@ public class VentanaModificaMat extends javax.swing.JFrame {
         int id = Integer.parseInt(intIDprof.getText());
         colegio.modificaMateria(NombreMateria, Aula, Horario, canMaxAlumnos);
         String printMat = colegio.imprimeMateria();
-        
-        JOptionPane.showMessageDialog(null, id);
+        colegio.modificaProfeMat(id, NombreMateria);
+        //JOptionPane.showMessageDialog(null, id);
         System.out.println( colegio.imprimeEstMateria(NombreMateria));
         JOptionPane.showMessageDialog(null, printMat);
 

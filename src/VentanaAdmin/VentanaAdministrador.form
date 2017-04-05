@@ -247,12 +247,12 @@
             <Property name="text" type="java.lang.String" value="Administrar Materias"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
+            <MenuItem class="javax.swing.JMenuItem" name="addMatBTN">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agrega Materias"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem11ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMatBTNActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="modificaMateria">
@@ -263,12 +263,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificaMateriaActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
+            <MenuItem class="javax.swing.JMenuItem" name="EliminaMatBTN">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Elimina Materias"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem12ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminaMatBTNActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="verListaBTN">
@@ -278,11 +278,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verListaBTNActionPerformed"/>
               </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="modificaprofBTN">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Modifica Profesor de materia"/>
-              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>
