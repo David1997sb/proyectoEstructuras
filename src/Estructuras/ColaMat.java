@@ -71,8 +71,8 @@ public class ColaMat {
                 if (aux.getMateria().getCantidadAlumnos() <= aux.getMateria().getCanMaxAlumnos()) {
 
                     aux.getMateria().getEstudiantes().enCola(new NodoEst(est));
-                    int cantidad = aux.getMateria().getCantidadAlumnos();
-                    aux.getMateria().setCantidadAlumnos(cantidad++);
+                    int cantidad = aux.getMateria().getCantidadAlumnos() + 1;
+                    aux.getMateria().setCantidadAlumnos(cantidad);
                     return true;
                 } else {
                     return false;

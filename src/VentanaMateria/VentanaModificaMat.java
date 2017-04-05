@@ -48,6 +48,11 @@ public class VentanaModificaMat extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         aceptBTN.setText("Aceptar");
         aceptBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -170,11 +175,10 @@ public class VentanaModificaMat extends javax.swing.JFrame {
         int canMaxAlumnos = Integer.parseInt(intAula.getText());
         int id = Integer.parseInt(intIDprof.getText());
         colegio.modificaMateria(NombreMateria, Aula, Horario, canMaxAlumnos);
-        String printMat = colegio.imprimeMateria();
-        
+        colegio.agregaProfeAmateria(id, NombreMateria);
         JOptionPane.showMessageDialog(null, id);
-        System.out.println( colegio.imprimeEstMateria(NombreMateria));
-        JOptionPane.showMessageDialog(null, printMat);
+        //System.out.println( colegio.imprimeEstMateria(NombreMateria));
+        JOptionPane.showMessageDialog(null, colegio.imprimeMateria());
 
 
     }//GEN-LAST:event_aceptBTNActionPerformed
@@ -194,6 +198,10 @@ public class VentanaModificaMat extends javax.swing.JFrame {
     private void CancelBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBTNActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_CancelBTNActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+      this.setVisible(false);
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

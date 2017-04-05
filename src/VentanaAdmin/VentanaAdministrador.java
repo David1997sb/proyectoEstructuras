@@ -80,7 +80,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         modificaMateria = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         verListaBTN = new javax.swing.JMenuItem();
-        modificaprofBTN = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
         MenuAcercaDe = new javax.swing.JMenu();
         jMenu23 = new javax.swing.JMenu();
         MenuSalir = new javax.swing.JMenu();
@@ -237,8 +237,13 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         });
         modificarMateria.add(verListaBTN);
 
-        modificaprofBTN.setText("Modifica Profesor de materia");
-        modificarMateria.add(modificaprofBTN);
+        jMenuItem19.setText("Agregar estudiantes a Materia");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        modificarMateria.add(jMenuItem19);
 
         jMenuBar1.add(modificarMateria);
 
@@ -324,6 +329,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         System.exit(WIDTH);
     }//GEN-LAST:event_MenuSalirMouseClicked
 
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
 
 
     /**
@@ -400,6 +409,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -411,7 +421,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JMenuItem modificaMateria;
-    private javax.swing.JMenuItem modificaprofBTN;
     private javax.swing.JMenu modificarMateria;
     private javax.swing.JMenuItem verListaBTN;
     // End of variables declaration//GEN-END:variables

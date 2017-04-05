@@ -10,7 +10,7 @@ import sistema_de_datos_educativo.Estudiante;
 
 /**
  *
- * @author mortasoft
+ * @author Franderxxxx
  */
 public class VentanaEstudiante extends javax.swing.JFrame {
 
