@@ -80,10 +80,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         modificaMateria = new javax.swing.JMenuItem();
         EliminaMatBTN = new javax.swing.JMenuItem();
         verListaBTN = new javax.swing.JMenuItem();
-<<<<<<< HEAD
-=======
         jMenuItem19 = new javax.swing.JMenuItem();
->>>>>>> origin/master
         MenuAcercaDe = new javax.swing.JMenu();
         MenuSalir = new javax.swing.JMenu();
 
@@ -239,8 +236,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         });
         modificarMateria.add(verListaBTN);
 
-<<<<<<< HEAD
-=======
         jMenuItem19.setText("Agregar estudiantes a Materia");
         jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -249,7 +244,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         });
         modificarMateria.add(jMenuItem19);
 
->>>>>>> origin/master
         jMenuBar1.add(modificarMateria);
 
         MenuAcercaDe.setText("Acerca de");
