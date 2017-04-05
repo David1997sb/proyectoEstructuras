@@ -37,9 +37,15 @@ public class Login extends javax.swing.JFrame {
         colegio.agregaEstudiantesAmateria(2, "Mate");
 
         colegio.agregaAdmin("admin", "admin");
+<<<<<<< HEAD
         System.out.println(colegio.imprimeUsuario());
 
         System.out.println(colegio.imprimeMateria());
+=======
+        //System.out.println(colegio.imprimeUsuario());
+        
+        //System.out.println(colegio.imprimeMateria());
+>>>>>>> origin/master
 
     }
 
