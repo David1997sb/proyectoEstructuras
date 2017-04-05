@@ -5,6 +5,9 @@
  */
 package sistema_de_datos_educativo;
 
+import VentanaProfesor.VentanaProfesor;
+import VentanaEstudiante.VentanaEstudiante;
+import VentanaAdmin.VentanaAdministrador;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
