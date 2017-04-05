@@ -296,13 +296,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Acerca de"/>
           </Properties>
-          <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jMenu23">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mas..."/>
-              </Properties>
-            </Menu>
-          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuSalir">
           <Properties>

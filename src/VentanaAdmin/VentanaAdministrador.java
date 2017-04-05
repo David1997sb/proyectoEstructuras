@@ -85,7 +85,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
 >>>>>>> origin/master
         MenuAcercaDe = new javax.swing.JMenu();
-        jMenu23 = new javax.swing.JMenu();
         MenuSalir = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -254,10 +253,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jMenuBar1.add(modificarMateria);
 
         MenuAcercaDe.setText("Acerca de");
-
-        jMenu23.setText("Mas...");
-        MenuAcercaDe.add(jMenu23);
-
         jMenuBar1.add(MenuAcercaDe);
 
         MenuSalir.setText("Salir");
@@ -397,7 +392,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu14;
     private javax.swing.JMenu jMenu15;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu23;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
