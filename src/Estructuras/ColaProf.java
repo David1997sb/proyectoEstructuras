@@ -76,13 +76,12 @@ public class ColaProf {
         }
     }
 
-    public void modificaProfe(String Correo, int Telefono, int id, int Edad) {
+    public void modificaProfe(String Correo, int Telefono, int id) {
         NodoProf aux = Frente;
         while (aux != null) {
             if (aux.getNodoprof().getId() == id) {
                 aux.getNodoprof().setCorreo(Correo);
                 aux.getNodoprof().setTelefono(Telefono);
-                aux.getNodoprof().setEdad((Edad));
             }
             aux = aux.getAtras();
         }

@@ -8,6 +8,7 @@ import Estructuras.NodoProf;
 import Estructuras.ColaProf;
 import Estructuras.NodoEst;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -79,16 +80,16 @@ public class Colegio {
         profes.eliminadatosProfesor(id);
     }
 
-    public void eliminaEstudiante(int id) {
+   public void eliminaEstudiante(int id) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         listaUsuarios.eliminar(estudiante.getNombre());
         estudiantes.eliminadatosEstudiante(id);
 
     }
 
+
     public void eliminaMateria(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
-        listaUsuarios.eliminar(materia.getNombreMateria());
         materias.eliminadatosMateria(nombreMateria);
 
     }
@@ -136,12 +137,25 @@ public class Colegio {
         profes.modificaProfeAdmin(Nombre, Apellido, Correo, Curso, id, Telefono, Edad, fechaDeIngreso);
         
     }
+    public void modifySigleTeacher(String Correo, int Telefono, int id){
+        profes.modificaProfe(Correo, Telefono, id);
+        profes.BuscarProfesor(id);
+    }
     
-    public void buscarProf (int id){
+    public void modificaEstudianteAdmin(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono,int edad, String NivelEducativo){
+        Estudiante estudiante= estudiantes.BuscarEstudiante(id);
+        estudiantes.modificaEstudianteAdmin(Nombre, Apellido, Encargado, Correo, id, Telefono, edad, NivelEducativo);
+    }
+    public void modifySingleEstudent(String Correo, String Telefono, int id){
+        Estudiante estudiante = estudiantes.modificaEstuduante(Correo, Telefono, id);
+        JOptionPane.showMessageDialog(null,estudiantes.BuscarEstudiante(id));
+    }
+    public void modificaUsuario(String usuario, String password, int id){
+        listaUsuarios.ModificaUsuario(usuario, password, id);
+        JOptionPane.showMessageDialog( null, listaUsuarios.BuscarUsuario(usuario, password));
         
-         
-            
-        }
+    }
+   
  
        
         

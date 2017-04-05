@@ -6,6 +6,7 @@
 package Estructuras;
 
 import sistema_de_datos_educativo.Estudiante;
+import sistema_de_datos_educativo.Usuario;
 
 /**
  *
@@ -60,6 +61,19 @@ public class ColaEst {
                 aux.getEstudiante().setTelefono(Telefono);
                 aux.getEstudiante().setEdad(Edad);
                 aux.getEstudiante().setNivelEducativo(NivelEducativo);
+            }
+            aux = aux.getAtras();
+        }
+        return null;
+    }
+
+    public Estudiante modificaEstuduante(String Correo, String Telefono, int id) {
+        NodoEst aux = Frente;
+        while (aux != null) {
+            if (aux.getEstudiante().getId() == id) {
+                aux.getEstudiante().setCorreo(Correo);
+                aux.getEstudiante().setId(id);
+                aux.getEstudiante().setTelefono(Telefono);
             }
             aux = aux.getAtras();
         }
