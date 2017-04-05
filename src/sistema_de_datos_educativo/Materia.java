@@ -83,7 +83,7 @@ public class Materia {
 
     @Override
     public String toString() {
-        return " NombreMateria: " + NombreMateria + " Cantidad de Alumnos: " + CantidadAlumnos + " Aula=" + Aula + ", Horario=" + Horario + ", canMaxAlumnos=" + canMaxAlumnos +  " \n profe: " + profe;
+        return " NombreMateria: " + NombreMateria + " Cantidad de Alumnos: " + CantidadAlumnos + " Aula=" + Aula + ", Horario=" + Horario + ", canMaxAlumnos=" + canMaxAlumnos +  " \n profe: " + profe +" Estudiantes: "+estudiantes;
     }
 
     public Materia(String NombreMateria, int Aula, String Horario, int canMaxAlumnos) {
@@ -91,6 +91,7 @@ public class Materia {
         this.Aula = Aula;
         this.Horario = Horario;
         this.canMaxAlumnos = canMaxAlumnos;
+        this.CantidadAlumnos = 0;
         estudiantes = new ColaEst();
     }
     

@@ -31,13 +31,14 @@ public class Login extends javax.swing.JFrame {
 //        System.out.println(colegio.imprimeEstudiantes());
         colegio.agregaMateria("Mate", 10, "2-3", 25);
         colegio.agregaProfeAmateria(1, "Mate");
-//        System.out.println(colegio.imprimeMateria());
-        colegio.agregaEstudiantesAmateria(1, "Mate ");
+     
+        colegio.agregaEstudiantesAmateria(1, "Mate");
         colegio.agregaEstudiantesAmateria(2, "Mate");
         
         colegio.agregaAdmin("admin", "admin");
         System.out.println(colegio.imprimeUsuario());
-        //  Usuario u = new Usuario();
+        
+        System.out.println(colegio.imprimeMateria());
 
     }
 

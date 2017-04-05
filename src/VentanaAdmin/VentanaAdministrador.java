@@ -80,6 +80,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         modificaMateria = new javax.swing.JMenuItem();
         EliminaMatBTN = new javax.swing.JMenuItem();
         verListaBTN = new javax.swing.JMenuItem();
+<<<<<<< HEAD
+=======
+        jMenuItem19 = new javax.swing.JMenuItem();
+>>>>>>> origin/master
         MenuAcercaDe = new javax.swing.JMenu();
         jMenu23 = new javax.swing.JMenu();
         MenuSalir = new javax.swing.JMenu();
@@ -236,6 +240,17 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         });
         modificarMateria.add(verListaBTN);
 
+<<<<<<< HEAD
+=======
+        jMenuItem19.setText("Agregar estudiantes a Materia");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        modificarMateria.add(jMenuItem19);
+
+>>>>>>> origin/master
         jMenuBar1.add(modificarMateria);
 
         MenuAcercaDe.setText("Acerca de");
@@ -302,6 +317,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         System.exit(WIDTH);
     }//GEN-LAST:event_MenuSalirMouseClicked
 
+
     private void verListaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verListaBTNActionPerformed
         VentListMat listaMaterias = new VentListMat(colegio);
         listaMaterias.setVisible(true);
@@ -321,6 +337,11 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         VentanaAdminAddMat addmat = new VentanaAdminAddMat(colegio);
         addmat.setVisible(true);
     }//GEN-LAST:event_addMatBTNActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        // TODO add yor handling code here:
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
 
 
 
@@ -398,6 +419,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
