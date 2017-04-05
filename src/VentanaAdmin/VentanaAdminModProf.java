@@ -51,7 +51,6 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtCurso = new javax.swing.JTextField();
-        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,7 +86,7 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
+        jButton2.setText("Atras");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -110,13 +109,6 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
             }
         });
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,8 +120,9 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel4)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)))
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel8)
@@ -137,24 +130,20 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCurso)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtTelefono, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEdad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtApellido)
                             .addComponent(txtNombre)
-                            .addComponent(txtCorreo)))
+                            .addComponent(txtCorreo)
+                            .addComponent(txtID)
+                            .addComponent(txtTelefono)
+                            .addComponent(txtEdad)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAceptar)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                        .addComponent(btnSalir)))
+                        .addGap(108, 108, 108)))
                 .addGap(43, 43, 43))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(155, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(113, 113, 113))
         );
@@ -194,8 +183,7 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
-                    .addComponent(jButton2)
-                    .addComponent(btnSalir))
+                    .addComponent(jButton2))
                 .addGap(29, 29, 29))
         );
 
@@ -229,18 +217,9 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
             String Curso = txtCurso.getText();
             int Telefono = Integer.parseInt(txtTelefono.getText());
             int Edad = Integer.parseInt(txtEdad.getText());
-//            colegio.modificaProfeAdmin(Id, Nombre, Apellido, Correo, Curso, Telefono, Edad, new Date());
-
-            System.out.println(colegio.imprimeProfe());
-//            if (Id == colegio.profes.Atiende().getNodoprof().getId()) {
             colegio.modificaProfeAdmin(Id, Nombre, Apellido, Correo, Curso, Telefono, Edad, new Date());
             JOptionPane.showMessageDialog(null, "Modificado Correctamente");
-            System.out.println(colegio.imprimeProfe());
             this.setVisible(false);
-
-//            } else {
-//                JOptionPane.showMessageDialog(null, "Profesor no se encuentra registrado");
-//            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor invalido");
         }
@@ -255,10 +234,6 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
     private void txtCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCursoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCursoActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,7 +272,6 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

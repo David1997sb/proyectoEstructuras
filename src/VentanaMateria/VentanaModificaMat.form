@@ -30,7 +30,7 @@
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Component id="aceptBTN" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="CancelBTN" min="-2" max="-2" attributes="0"/>
+              <Component id="AtrasBTN" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -96,7 +96,7 @@
               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="aceptBTN" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CancelBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="AtrasBTN" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
           </Group>
@@ -146,12 +146,12 @@
         <Property name="text" type="java.lang.String" value="Cantidad maxima de alumnos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="CancelBTN">
+    <Component class="javax.swing.JButton" name="AtrasBTN">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar"/>
+        <Property name="text" type="java.lang.String" value="Atras"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelBTNActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtrasBTNActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">

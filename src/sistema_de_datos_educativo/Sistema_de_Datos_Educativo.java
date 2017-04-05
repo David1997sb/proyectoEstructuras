@@ -5,6 +5,7 @@
  */
 package sistema_de_datos_educativo;
 
+import Estructuras.ColaEst;
 import java.util.Date;
 
 /**
@@ -18,6 +19,7 @@ public class Sistema_de_Datos_Educativo {
      */
     public static void main(String[] args) {
         Colegio colegio = new Colegio();
+        ColaEst colaEst = new ColaEst();
         colegio.AgregaProfesor("Frander", "Fallas", "@", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("JULIO   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
@@ -27,6 +29,7 @@ public class Sistema_de_Datos_Educativo {
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
 //        System.out.println(colegio.imprimeEstudiantes());
         colegio.agregaMateria("Mate", 10, "2-3", 25);
+        colegio.agregaMateria("Ingles", 10, "2-3", 25);
         colegio.agregaProfeAmateria(1, "Mate");
         //System.out.println(colegio.imprimeMateria());
         colegio.agregaEstudiantesAmateria(1, "Mate");
@@ -45,12 +48,18 @@ public class Sistema_de_Datos_Educativo {
 //        //System.out.println(colegio.imprimeMateria());
 //        colegio.modificaMateria("Mate", 30, "9-10", 60);
 //        System.out.println(colegio.imprimeMateria());
-            colegio.modificaMateria("Mate", 0, "5", 5);
-        System.out.println(colegio.imprimeMateria());
-        colegio.modificaProfeMat(2, "Mate");
-        System.out.println("CAMBIO");
-        System.out.println(colegio.imprimeMateria());
-
+//            colegio.modificaMateria("Mate", 0, "5", 5);
+//        System.out.println(colegio.imprimeMateria());
+//        colegio.modificaProfeMat(2, "Mate");
+//        System.out.println("CAMBIO");
+//        System.out.println(colegio.imprimeMateria());
+//        colegio.eliminaEstudiante(1);
+//        System.out.println(colegio.imprimeEstudiantes());
+//        colegio.eliminaMateria("Ingles");
+//        System.out.println(colegio.imprimeMateria());
+        colegio.eliminaEstudiante(1);
+        System.out.println(colegio.imprimeEstudiantes());
+     
     }
 
 }

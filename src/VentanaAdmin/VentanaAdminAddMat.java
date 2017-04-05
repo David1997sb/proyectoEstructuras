@@ -39,8 +39,8 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        AcepBTN = new javax.swing.JButton();
+        cancelBTN = new javax.swing.JButton();
         txtNombreMateria = new javax.swing.JTextField();
         txtAula = new javax.swing.JTextField();
         txtHorario = new javax.swing.JTextField();
@@ -50,7 +50,8 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
 
         jPanel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Agregar Materia");
 
         jLabel2.setText("Nombre Materia");
@@ -61,17 +62,17 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
 
         jLabel7.setText("Cantidad Max. de alumnos");
 
-        jButton1.setText("Aceptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AcepBTN.setText("Aceptar");
+        AcepBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AcepBTNActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cancelBTN.setText("Cancelar");
+        cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cancelBTNActionPerformed(evt);
             }
         });
 
@@ -102,10 +103,10 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(AcepBTN, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(cancelBTN))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -138,8 +139,8 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
                     .addComponent(txtCantAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(AcepBTN)
+                    .addComponent(cancelBTN))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -159,22 +160,23 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void cancelBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBTNActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelBTNActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AcepBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcepBTNActionPerformed
         try {
             String NombreMateria = txtNombreMateria.getText();
             int Aula = Integer.parseInt(txtAula.getText());
             String Horario = txtHorario.getText();
             int CantAlumnos = Integer.parseInt(txtCantAlumnos.getText());
             colegio.agregaMateria(NombreMateria, Aula, Horario, CantAlumnos);
-            System.out.println(colegio.imprimeMateria());
+            JOptionPane.showMessageDialog(null, "Se ha agregado la materia existosamente");
+            this.setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor invalido");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AcepBTNActionPerformed
 
     private void txtNombreMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreMateriaActionPerformed
         // TODO add your handling code here:
@@ -217,8 +219,8 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton AcepBTN;
+    private javax.swing.JButton cancelBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

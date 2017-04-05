@@ -42,7 +42,7 @@ public class VentanaModificaMat extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        CancelBTN = new javax.swing.JButton();
+        AtrasBTN = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         intIDprof = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -81,10 +81,10 @@ public class VentanaModificaMat extends javax.swing.JFrame {
 
         jLabel4.setText("Cantidad maxima de alumnos");
 
-        CancelBTN.setText("Cancelar");
-        CancelBTN.addActionListener(new java.awt.event.ActionListener() {
+        AtrasBTN.setText("Atras");
+        AtrasBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelBTNActionPerformed(evt);
+                AtrasBTNActionPerformed(evt);
             }
         });
 
@@ -107,7 +107,7 @@ public class VentanaModificaMat extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(aceptBTN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CancelBTN)
+                .addComponent(AtrasBTN)
                 .addGap(68, 68, 68))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -161,7 +161,7 @@ public class VentanaModificaMat extends javax.swing.JFrame {
                 .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aceptBTN)
-                    .addComponent(CancelBTN))
+                    .addComponent(AtrasBTN))
                 .addGap(47, 47, 47))
         );
 
@@ -169,24 +169,20 @@ public class VentanaModificaMat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptBTNActionPerformed
+        try{
         String NombreMateria = txtName.getText();
         int Aula = Integer.parseInt(intAula.getText());
         String Horario = txtHorario.getText();
         int canMaxAlumnos = Integer.parseInt(intAula.getText());
         int id = Integer.parseInt(intIDprof.getText());
         colegio.modificaMateria(NombreMateria, Aula, Horario, canMaxAlumnos);
-
         String printMat = colegio.imprimeMateria();
         colegio.modificaProfeMat(id, NombreMateria);
-        //JOptionPane.showMessageDialog(null, id);
-        System.out.println( colegio.imprimeEstMateria(NombreMateria));
-        JOptionPane.showMessageDialog(null, printMat);
-
         colegio.agregaProfeAmateria(id, NombreMateria);
-        JOptionPane.showMessageDialog(null, id);
-        //System.out.println( colegio.imprimeEstMateria(NombreMateria));
-        JOptionPane.showMessageDialog(null, colegio.imprimeMateria());
-
+        JOptionPane.showMessageDialog(null, "La materia se ha modificado exitosamente");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Usted a ingresado un valor incorrecto");
+        }
 
 
     }//GEN-LAST:event_aceptBTNActionPerformed
@@ -203,12 +199,12 @@ public class VentanaModificaMat extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_intIDprofActionPerformed
 
-    private void CancelBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBTNActionPerformed
+    private void AtrasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasBTNActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_CancelBTNActionPerformed
+    }//GEN-LAST:event_AtrasBTNActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-      this.setVisible(false);
+      //this.setVisible(false);
     }//GEN-LAST:event_formWindowClosed
 
     /**
@@ -247,7 +243,7 @@ public class VentanaModificaMat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelBTN;
+    private javax.swing.JButton AtrasBTN;
     private javax.swing.JButton aceptBTN;
     private javax.swing.JTextField intAlumnos;
     private javax.swing.JTextField intAula;

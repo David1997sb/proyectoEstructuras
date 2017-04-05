@@ -45,7 +45,7 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
         aceptBTN = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        AtrasBTN = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
@@ -81,10 +81,10 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AtrasBTN.setText("Cancelar");
+        AtrasBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AtrasBTNActionPerformed(evt);
             }
         });
 
@@ -128,7 +128,7 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
                         .addGap(62, 62, 62)
                         .addComponent(aceptBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(AtrasBTN)))
                 .addGap(95, 95, 95))
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
@@ -162,7 +162,7 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aceptBTN)
-                    .addComponent(jButton2))
+                    .addComponent(AtrasBTN))
                 .addGap(35, 35, 35))
         );
 
@@ -181,7 +181,7 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
         int Telefono= Integer.parseInt(txtTelefono.getText());
         int Edad= Integer.parseInt(txtEdad.getText());
         colegio.AgregaProfesor(nombre, Apellido, Correo, null, Telefono, Edad, new Date ());
-        System.out.println(colegio.imprimeProfe()); 
+        this.setVisible(false);
         JOptionPane.showMessageDialog(null, "Agregado Correctamente");
         
         } catch (Exception e) {
@@ -194,9 +194,9 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AtrasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasBTNActionPerformed
        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AtrasBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,8 +236,8 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AtrasBTN;
     private javax.swing.JButton aceptBTN;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

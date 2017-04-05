@@ -5,10 +5,12 @@
  */
 package VentanaAdmin;
 
-import VentanaEstudiante.AgregaEstudiante;
+
 import sistema_de_datos_educativo.Colegio;
 import VentanaMateria.VentListMat;
 import VentanaMateria.VentanaModificaMat;
+import VentanaUsuarios.VentanaModificaUsuario;
+import VentanaUsuarios.ListaUsuarios;
 
 /**
  *
@@ -72,9 +74,9 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        EliminaEstBTN = new javax.swing.JMenuItem();
+        ModifEstBTN = new javax.swing.JMenuItem();
+        ListEstBTN = new javax.swing.JMenuItem();
         modificarMateria = new javax.swing.JMenu();
         addMatBTN = new javax.swing.JMenuItem();
         modificaMateria = new javax.swing.JMenuItem();
@@ -83,6 +85,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
         MenuAcercaDe = new javax.swing.JMenu();
         MenuSalir = new javax.swing.JMenu();
+        modificarMateria1 = new javax.swing.JMenu();
+        modificaMateria1 = new javax.swing.JMenuItem();
+        EliminaMatBTN1 = new javax.swing.JMenuItem();
+        verListaBTN1 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -186,19 +192,29 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem8);
 
-        jMenuItem7.setText("Elimina Estudiante");
-        jMenu4.add(jMenuItem7);
-
-        jMenuItem9.setText("Modifica Estudiante");
-        jMenu4.add(jMenuItem9);
-
-        jMenuItem10.setText("Ver lista de Estudiantes");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+        EliminaEstBTN.setText("Elimina Estudiante");
+        EliminaEstBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
+                EliminaEstBTNActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem10);
+        jMenu4.add(EliminaEstBTN);
+
+        ModifEstBTN.setText("Modifica Estudiante");
+        ModifEstBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifEstBTNActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ModifEstBTN);
+
+        ListEstBTN.setText("Ver lista de Estudiantes");
+        ListEstBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListEstBTNActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ListEstBTN);
 
         jMenuBar1.add(jMenu4);
 
@@ -257,6 +273,34 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         });
         jMenuBar1.add(MenuSalir);
 
+        modificarMateria1.setText("Administrar usuarios");
+
+        modificaMateria1.setText("Modifica Uusuario");
+        modificaMateria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificaMateria1ActionPerformed(evt);
+            }
+        });
+        modificarMateria1.add(modificaMateria1);
+
+        EliminaMatBTN1.setText("Ellimina Usuario");
+        EliminaMatBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminaMatBTN1ActionPerformed(evt);
+            }
+        });
+        modificarMateria1.add(EliminaMatBTN1);
+
+        verListaBTN1.setText("Ver lista de Uusuarios");
+        verListaBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verListaBTN1ActionPerformed(evt);
+            }
+        });
+        modificarMateria1.add(verListaBTN1);
+
+        jMenuBar1.add(modificarMateria1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -273,12 +317,13 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
+    private void ListEstBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListEstBTNActionPerformed
+        VentanaListaEstudiantesAdmin listaEst = new VentanaListaEstudiantesAdmin(colegio);
+        listaEst.setVisible(true);
+    }//GEN-LAST:event_ListEstBTNActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        AgregaEstudiante addEst = new AgregaEstudiante(colegio);
+        VentanaAdminAgregaEstudiante addEst = new VentanaAdminAgregaEstudiante(colegio);
         addEst.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
@@ -331,6 +376,30 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         // TODO add yor handling code here:
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
+    private void EliminaEstBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaEstBTNActionPerformed
+        VentanaEliminaEstudianteAdmin eliminaEst = new VentanaEliminaEstudianteAdmin(colegio);
+        eliminaEst.setVisible(true);
+    }//GEN-LAST:event_EliminaEstBTNActionPerformed
+
+    private void ModifEstBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifEstBTNActionPerformed
+        VentanaModificaEstudianteAdmin modiESt = new VentanaModificaEstudianteAdmin(colegio);
+        modiESt.setVisible(true);
+    }//GEN-LAST:event_ModifEstBTNActionPerformed
+
+    private void modificaMateria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaMateria1ActionPerformed
+        VentanaModificaUsuario usuario = new VentanaModificaUsuario(colegio);
+        usuario.setVisible(true);
+    }//GEN-LAST:event_modificaMateria1ActionPerformed
+
+    private void EliminaMatBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaMatBTN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EliminaMatBTN1ActionPerformed
+
+    private void verListaBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verListaBTN1ActionPerformed
+        ListaUsuarios listaUsuarios = new ListaUsuarios(colegio);
+        listaUsuarios.setVisible(true);
+    }//GEN-LAST:event_verListaBTN1ActionPerformed
+
 
 
 
@@ -372,9 +441,13 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem EliminaEstBTN;
     private javax.swing.JMenuItem EliminaMatBTN;
+    private javax.swing.JMenuItem EliminaMatBTN1;
+    private javax.swing.JMenuItem ListEstBTN;
     private javax.swing.JMenu MenuAcercaDe;
     private javax.swing.JMenu MenuSalir;
+    private javax.swing.JMenuItem ModifEstBTN;
     private javax.swing.JMenuItem addMatBTN;
     private javax.swing.JMenuItem agregaProfesor;
     private javax.swing.JLabel jLabel1;
@@ -400,7 +473,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar5;
     private javax.swing.JMenuBar jMenuBar6;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
@@ -413,13 +485,14 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JMenuItem modificaMateria;
+    private javax.swing.JMenuItem modificaMateria1;
     private javax.swing.JMenu modificarMateria;
+    private javax.swing.JMenu modificarMateria1;
     private javax.swing.JMenuItem verListaBTN;
+    private javax.swing.JMenuItem verListaBTN1;
     // End of variables declaration//GEN-END:variables
 }

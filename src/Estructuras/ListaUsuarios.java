@@ -45,6 +45,17 @@ public class ListaUsuarios {
         }
         return null;
     }
+    
+    public void ModificaUsuario(String usuario, String password, int id){
+        NodoUsuario aux = cabeza;
+        while (aux != null) {
+            if(aux.getDato().getId()==id){
+                aux.getDato().setNombre(usuario);
+                aux.getDato().setPassword(password);
+            }
+            aux=aux.getNext();
+        }
+    }
 
     public void eliminar(String nombreUsuario) {
         if (cabeza != null) { //Si la lista no esta vacia
