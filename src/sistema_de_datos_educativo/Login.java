@@ -8,6 +8,7 @@ package sistema_de_datos_educativo;
 import VentanaProfesor.VentanaProfesor;
 import VentanaEstudiante.VentanaEstudiante;
 import VentanaAdmin.VentanaAdministrador;
+import com.sun.glass.events.KeyEvent;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -31,13 +32,13 @@ public class Login extends javax.swing.JFrame {
 //        System.out.println(colegio.imprimeEstudiantes());
         colegio.agregaMateria("Mate", 10, "2-3", 25);
         colegio.agregaProfeAmateria(1, "Mate");
-     
+
         colegio.agregaEstudiantesAmateria(1, "Mate");
         colegio.agregaEstudiantesAmateria(2, "Mate");
-        
+
         colegio.agregaAdmin("admin", "admin");
         System.out.println(colegio.imprimeUsuario());
-        
+
         System.out.println(colegio.imprimeMateria());
 
     }
@@ -53,7 +54,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnInicio = new javax.swing.JButton();
         txtUsuario = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
 
@@ -64,15 +65,27 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Contraseña:");
 
-        jButton1.setText("Iniciar Sesión");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInicio.setText("Iniciar Sesión");
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInicioActionPerformed(evt);
             }
         });
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnInicio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
+                btnInicioKeyPressed(evt);
+            }
+        });
+
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
+            }
+        });
+
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyTyped(evt);
             }
         });
 
@@ -83,7 +96,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -106,14 +119,14 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnInicio)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
 
         String nombreUsuario = txtUsuario.getText();
         String pass = new String(txtPassword.getPassword());
@@ -126,23 +139,40 @@ public class Login extends javax.swing.JFrame {
             } else if (usuario.getRol().equalsIgnoreCase("Profesor")) {
                 VentanaProfesor ventanaProf = new VentanaProfesor(colegio, usuario.getProfesor());
                 ventanaProf.setVisible(true);
-            } else if(usuario.getRol().equalsIgnoreCase("Administrador")){
+            } else if (usuario.getRol().equalsIgnoreCase("Administrador")) {
                 VentanaAdministrador admin = new VentanaAdministrador(colegio);
                 admin.setVisible(true);
             }
             this.setVisible(false);
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnInicioActionPerformed
         else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña invalido");
         }
-        
+
     }
 
-    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+    private void btnInicioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnInicioKeyPressed
         System.out.println("lalalalalalala");
-    }//GEN-LAST:event_jButton1KeyPressed
+    }//GEN-LAST:event_btnInicioKeyPressed
 
+    //Accion que activa la tecla enter para iniciar cesion
+    //-------------
+    private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
+        char cTeclaEnter = evt.getKeyChar();
+        if (cTeclaEnter == KeyEvent.VK_ENTER) {
+            btnInicio.doClick();
+            
+        }
+    }//GEN-LAST:event_txtUsuarioKeyTyped
+
+    private void txtPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyTyped
+        char cTeclaEnter = evt.getKeyChar();
+        if (cTeclaEnter == KeyEvent.VK_ENTER) {
+            btnInicio.doClick();
+        }
+    }//GEN-LAST:event_txtPasswordKeyTyped
+//-------
     /**
      * @param args the command line arguments
      */
@@ -179,7 +209,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnInicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField txtPassword;
