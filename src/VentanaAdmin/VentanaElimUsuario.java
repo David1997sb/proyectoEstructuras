@@ -5,7 +5,6 @@
  */
 package VentanaAdmin;
 
-import java.util.Date;
 import javax.swing.JOptionPane;
 import sistema_de_datos_educativo.Colegio;
 
@@ -13,14 +12,15 @@ import sistema_de_datos_educativo.Colegio;
  *
  * @author aldomora89
  */
-public class VentanaAdminElimProf extends javax.swing.JFrame {
+
+public class VentanaElimUsuario extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaAdminElimProf
+     * Creates new form VentanaElimUsuario
      */
     Colegio colegio;
-
-    public VentanaAdminElimProf(Colegio colegio) {
+    
+    public VentanaElimUsuario(Colegio colegio) {
         initComponents();
         this.colegio = colegio;
     }
@@ -37,45 +37,27 @@ public class VentanaAdminElimProf extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
-<<<<<<< HEAD
-        jButton1 = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
-=======
-        eliminarBTN = new javax.swing.JButton();
-        SalirBTN = new javax.swing.JButton();
->>>>>>> origin/master
+        btnEliminar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("ID");
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setText("Elimina Usuario");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel2.setText("Eliminar Profesor");
+        jLabel2.setText("ID");
 
-        txtID.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
-        eliminarBTN.setText("Eliminar");
-        eliminarBTN.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarBTNActionPerformed(evt);
-            }
-        });
-
-<<<<<<< HEAD
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-=======
-        SalirBTN.setText("Salir");
-        SalirBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirBTNActionPerformed(evt);
->>>>>>> origin/master
+                btnCancelarActionPerformed(evt);
             }
         });
 
@@ -84,70 +66,56 @@ public class VentanaAdminElimProf extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel2)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(142, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(eliminarBTN)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEliminar)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(49, 49, 49)
+                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< HEAD
-                        .addComponent(btnSalir)))
-=======
-                        .addComponent(SalirBTN)))
->>>>>>> origin/master
-                .addContainerGap(59, Short.MAX_VALUE))
+                        .addComponent(btnCancelar)
+                        .addGap(66, 66, 66))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< HEAD
-                    .addComponent(jButton1)
-                    .addComponent(btnSalir))
-=======
-                    .addComponent(eliminarBTN)
-                    .addComponent(SalirBTN))
->>>>>>> origin/master
-                .addGap(22, 22, 22))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnCancelar))
+                .addGap(43, 43, 43))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
-    private void eliminarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBTNActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try {
             int id = Integer.parseInt(txtID.getText());
-            colegio.eliminaProfesor(id);
+            colegio.eliminaUsuario(id);
             this.setVisible(false);
             JOptionPane.showMessageDialog(null, "Eliminado Correctamente");
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor invalido");
         }
-    }//GEN-LAST:event_eliminarBTNActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void SalirBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBTNActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_SalirBTNActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,32 +134,27 @@ public class VentanaAdminElimProf extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaAdminElimProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaElimUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaAdminElimProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaElimUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaAdminElimProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaElimUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaAdminElimProf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaElimUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-//                new VentanaAdminElimProf().setVisible(true);
+//                new VentanaElimUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
-=======
-    private javax.swing.JButton SalirBTN;
-    private javax.swing.JButton eliminarBTN;
->>>>>>> origin/master
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtID;

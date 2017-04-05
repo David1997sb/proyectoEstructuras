@@ -45,15 +45,27 @@ public class ListaUsuarios {
         }
         return null;
     }
-    
-    public void ModificaUsuario(String usuario, String password, int id){
+
+    public Usuario BuscarUsuarioID(int id) {
         NodoUsuario aux = cabeza;
         while (aux != null) {
-            if(aux.getDato().getId()==id){
+            if (aux.getDato().getId() == id) {
+                return aux.getDato();
+            }
+            aux = aux.getNext();
+        }
+        return null;
+
+    }
+
+    public void ModificaUsuario(String usuario, String password, int id) {
+        NodoUsuario aux = cabeza;
+        while (aux != null) {
+            if (aux.getDato().getId() == id) {
                 aux.getDato().setNombre(usuario);
                 aux.getDato().setPassword(password);
             }
-            aux=aux.getNext();
+            aux = aux.getNext();
         }
     }
 

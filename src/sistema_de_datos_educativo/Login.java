@@ -22,9 +22,11 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.colegio = new Colegio();
-        colegio.AgregaProfesor("Frander", "Fallas", "@", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        colegio.AgregaProfesor("JULIO   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        System.out.println(colegio.imprimeProfe());
 //        System.out.println(colegio.imprimeProfe());
 
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
@@ -37,15 +39,13 @@ public class Login extends javax.swing.JFrame {
         colegio.agregaEstudiantesAmateria(2, "Mate");
 
         colegio.agregaAdmin("admin", "admin");
-<<<<<<< HEAD
-        System.out.println(colegio.imprimeUsuario());
+
 
         System.out.println(colegio.imprimeMateria());
-=======
+
         //System.out.println(colegio.imprimeUsuario());
         
         //System.out.println(colegio.imprimeMateria());
->>>>>>> origin/master
 
     }
 

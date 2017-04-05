@@ -12,7 +12,7 @@ import sistema_de_datos_educativo.Profesor;
  * @author Frander B.A
  */
 public class NodoProf {
-    
+
     private NodoProf Atras;
     private Profesor nodoprof;
 
@@ -38,10 +38,7 @@ public class NodoProf {
 
     @Override
     public String toString() {
-        return "NodoProf{" + "nodoprof=" + nodoprof + '}';
+        return "Profesor: " + nodoprof;
     }
 
-     
-    
-    
 }

@@ -20,10 +20,11 @@ public class Sistema_de_Datos_Educativo {
     public static void main(String[] args) {
         Colegio colegio = new Colegio();
         ColaEst colaEst = new ColaEst();
-        colegio.AgregaProfesor("Frander", "Fallas", "@", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        colegio.AgregaProfesor("JULIO   ", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-//        System.out.println(colegio.imprimeProfe());
+        colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Cesar3", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        System.out.println(colegio.imprimeProfe());
 
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
@@ -38,7 +39,6 @@ public class Sistema_de_Datos_Educativo {
 
 //    colaProf.Atiende();
         //colegio.eliminaProfesor(2);
-        colegio.AgregaProfesor("Cesar3", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         // colegio.imprimeUsuario();
 //        System.out.println(colegio.imprimeUsuario());
 //        colegio.eliminaProfesor(1);
@@ -59,7 +59,7 @@ public class Sistema_de_Datos_Educativo {
 //        System.out.println(colegio.imprimeMateria());
         colegio.eliminaEstudiante(1);
         System.out.println(colegio.imprimeEstudiantes());
-     
+
     }
 
 }

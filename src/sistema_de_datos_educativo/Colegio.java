@@ -63,6 +63,8 @@ public class Colegio {
         Profesor profe = profes.BuscarProfesor(idProfesor);
         materias.agregarProfeAmateria(profe, NombreMateria);
     }
+    
+   
 
     public void agregaEstudiantesAmateria(int idEstudiante, String NombreMat) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(idEstudiante);
@@ -117,6 +119,12 @@ public class Colegio {
             return null;
         }
 
+    }
+    
+    public void eliminaUsuario (int id){
+        Usuario usuario = listaUsuarios.BuscarUsuarioID(id);
+        listaUsuarios.eliminar(usuario.getNombre());
+        
     }
 
     public void agregaAdmin(String nombre, String password) {

@@ -12,6 +12,7 @@ import sistema_de_datos_educativo.Estudiante;
  * @author Frander B.A
  */
 public class NodoEst {
+
     private NodoEst Atras;
     private Estudiante estudiante;
 
@@ -37,10 +38,7 @@ public class NodoEst {
 
     @Override
     public String toString() {
-        return "NodoEst{" + "estudiante=" + estudiante + '}';
+        return "Estudiante: " + estudiante;
     }
 
-    
-    
-    
 }

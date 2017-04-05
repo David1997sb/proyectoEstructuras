@@ -97,7 +97,7 @@ public class Profesor {
 
     @Override
     public String toString() {
-        return "Profesor{" + "Nombre=" + Nombre + ", Apellido=" + Apellido + ", Correo=" + Correo + ", Curso=" + Curso + ", id=" + id + ", Telefono=" + Telefono + ", Edad=" + Edad + ", fechaDeIngreso=" + fechaDeIngreso + '}';
+        return "Nombre: " + Nombre + "  Apellido: " + Apellido + ", Correo: " + Correo + ", Curso: " + Curso + ", ID: " + id + ", Teléfono: " + Telefono + ", Edad: " + Edad + ", Fecha de Ingreso: " + fechaDeIngreso;
     }
 
     public int getId() {
