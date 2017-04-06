@@ -38,7 +38,7 @@ public class NodoEst {
 
     @Override
     public String toString() {
-        return "Estudiante: " + estudiante;
+        return "Estudiante: " + estudiante + "\n";
     }
 
 }

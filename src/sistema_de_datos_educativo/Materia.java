@@ -83,7 +83,7 @@ public class Materia {
 
     @Override
     public String toString() {
-        return " NombreMateria: " + NombreMateria + " Cantidad de Alumnos: " + CantidadAlumnos + " Aula=" + Aula + ", Horario=" + Horario + ", canMaxAlumnos=" + canMaxAlumnos +  " \n profe: " + profe +" Estudiantes: "+estudiantes;
+        return "\nNombre de la Materia: " + NombreMateria + "\nCantidad de Alumnos: " + CantidadAlumnos + "\nAula=" + Aula + " \nHorario: " + Horario + " \nCantidad Maxima de Alumnos: " + canMaxAlumnos + "\n--------------------"+ " \nProfesor: " + profe + "\n--------------------"+ "\n" + estudiantes;
     }
 
     public Materia(String NombreMateria, int Aula, String Horario, int canMaxAlumnos) {

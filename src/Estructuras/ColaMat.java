@@ -55,7 +55,7 @@ public class ColaMat {
     public boolean agregarProfeAmateria(Profesor profe, String nombreMateria) {
         NodoMat aux = Frente;
         while (aux != null) {
-            if (aux.getMateria().getNombreMateria().equals(nombreMateria)) {
+            if (aux.getMateria().getNombreMateria().equalsIgnoreCase(nombreMateria)) {
                 aux.getMateria().setProfe(profe);
                 return true;
             }
@@ -67,7 +67,7 @@ public class ColaMat {
     public boolean agregarEsteAmateria(Estudiante est, String nombreMateria) {
         NodoMat aux = Frente;
         while (aux != null) {
-            if (aux.getMateria().getNombreMateria().equals(nombreMateria)) {
+            if (aux.getMateria().getNombreMateria().equalsIgnoreCase(nombreMateria)) {
                 if (aux.getMateria().getCantidadAlumnos() <= aux.getMateria().getCanMaxAlumnos()) {
 
                     aux.getMateria().getEstudiantes().enCola(new NodoEst(est));

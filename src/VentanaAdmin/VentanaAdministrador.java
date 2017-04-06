@@ -77,6 +77,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         EliminaMatBTN = new javax.swing.JMenuItem();
         verListaBTN = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         agregaProfesor = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -215,6 +216,14 @@ public class VentanaAdministrador extends javax.swing.JFrame {
             }
         });
         modificarMateria.add(jMenuItem19);
+
+        jMenuItem7.setText("Agregar profesor a Materia");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        modificarMateria.add(jMenuItem7);
 
         jMenuBar1.add(modificarMateria);
 
@@ -402,6 +411,11 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         listaUsuarios.setVisible(true);
     }//GEN-LAST:event_verListaBTN1ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        VentanaAddProfMat addProfMat = new VentanaAddProfMat(colegio);
+        addProfMat.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
 
 
 
@@ -487,6 +501,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

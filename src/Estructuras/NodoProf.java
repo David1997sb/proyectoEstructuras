@@ -38,7 +38,10 @@ public class NodoProf {
 
     @Override
     public String toString() {
-        return "Profesor: " + nodoprof;
+        return "Profesor: " + nodoprof +"\n";
     }
+    
 
+    
+    
 }

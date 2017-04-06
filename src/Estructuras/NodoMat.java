@@ -38,7 +38,7 @@ public class NodoMat {
 
     @Override
     public String toString() {
-        return "NodoMat{" + "materia=" + materia + '}';
+        return "Materia: " + materia + "\n";
     }
     
     
