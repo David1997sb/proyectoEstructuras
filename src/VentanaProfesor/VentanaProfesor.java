@@ -7,7 +7,7 @@ package VentanaProfesor;
 
 import sistema_de_datos_educativo.Colegio;
 import sistema_de_datos_educativo.Profesor;
-
+import sistema_de_datos_educativo.Login;
 /**
  *
  * @author frander
@@ -42,6 +42,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
         txtTel = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         DatosEst = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +74,13 @@ public class VentanaProfesor extends javax.swing.JFrame {
         DatosEst.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         DatosEst.setText("Modifica  Datos Profesor");
 
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,14 +99,15 @@ public class VentanaProfesor extends javax.swing.JFrame {
                                 .addComponent(jLabel3))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtTel, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                                .addComponent(txtCorreo)
-                                .addComponent(intID))
-                            .addGap(24, 24, 24)))
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                .addComponent(intID, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTel))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jButton1)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addComponent(jButton1)
+                        .addGap(51, 51, 51)
+                        .addComponent(btnSalir)))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,8 +126,10 @@ public class VentanaProfesor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btnSalir))
                 .addContainerGap())
         );
 
@@ -140,6 +151,12 @@ public class VentanaProfesor extends javax.swing.JFrame {
         colegio.modifySingleEstudent(Correo, Tel, id);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+      this.setVisible(false);
+      Login abrirLogin = new Login();
+      abrirLogin.setVisible(true);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +196,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DatosEst;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JTextField intID;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

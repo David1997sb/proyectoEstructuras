@@ -11,11 +11,13 @@ import VentanaMateria.VentListMat;
 import VentanaMateria.VentanaModificaMat;
 import VentanaUsuarios.VentanaModificaUsuario;
 import VentanaUsuarios.ListaUsuarios;
+import sistema_de_datos_educativo.Login;
 
 /**
  *
  * @author aldomora89
  */
+import java.awt.Window;
 public class VentanaAdministrador extends javax.swing.JFrame {
 
     /**
@@ -357,7 +359,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_agregaProfesorActionPerformed
 
     private void MenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuSalirMouseClicked
-        System.exit(WIDTH);
+        this.setVisible(false);
+        Login abrirLogin = new Login();
+        abrirLogin.setVisible(true);
+        
     }//GEN-LAST:event_MenuSalirMouseClicked
 
 

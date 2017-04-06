@@ -33,7 +33,7 @@ public class Colegio {
     }
 
     public void AgregaProfesor(String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso) {
-        Profesor profesor = profes.enCola(new NodoProf(new Profesor(Nombre, Apellido, Correo, Curso, idProfes++, 0, 0, fechaDeIngreso)));
+        Profesor profesor = profes.enCola(new NodoProf(new Profesor(Nombre, Apellido, Correo, Curso, idProfes++, Telefono, Edad, fechaDeIngreso)));
         agregaUsuario(profesor.getNombreUsuario().toLowerCase(), "profesor", "Profesor", profesor, null);
     }
 

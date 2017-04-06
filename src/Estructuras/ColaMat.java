@@ -48,7 +48,7 @@ public class ColaMat {
             s += aux + "\n";
             aux = aux.getAtras();
         }
-        
+
         return s;
     }
 
@@ -136,18 +136,19 @@ public class ColaMat {
                 aux.getMateria().setAula(Aula);
                 aux.getMateria().setCanMaxAlumnos(canMaxAlumnos);
             }
-            aux=aux.getAtras();
+            aux = aux.getAtras();
         }
     }
-    public void modificaProfeMateria(Profesor profe, String materia){
-         NodoMat aux = Frente;
+
+    public void modificaProfeMateria(Profesor profe, String materia) {
+        NodoMat aux = Frente;
         while (aux != null) {
             if (aux.getMateria().getNombreMateria().equals(materia)) {
                 aux.getMateria().setProfe(profe);
-                
+
             }
             aux = aux.getAtras();
         }
-       
+
     }
 }

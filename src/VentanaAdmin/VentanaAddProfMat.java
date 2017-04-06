@@ -123,6 +123,7 @@ public class VentanaAddProfMat extends javax.swing.JFrame {
             int Id = Integer.parseInt(txtProfID.getText());
             colegio.agregaProfeAmateria(Id, NombreMateria);
             JOptionPane.showMessageDialog(null, "Se ha agregado Profesor a la materia existosamente");
+            
             this.setVisible(false);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor invalido");

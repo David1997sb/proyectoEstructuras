@@ -29,7 +29,7 @@ public class NodoUsuario {
     
     @Override
     public String toString() {
-        return "dato:" + dato;
+        return "" + dato;
     }
    
 }

@@ -106,7 +106,7 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         this.txtListprof.setText(colegio.imprimeProfe());
-        System.out.println(colegio.imprimeProfe());
+//        System.out.println(colegio.imprimeProfe());
         
     }//GEN-LAST:event_btnMostrarActionPerformed
 

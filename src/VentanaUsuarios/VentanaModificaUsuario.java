@@ -122,7 +122,7 @@ public class VentanaModificaUsuario extends javax.swing.JFrame {
         String name= txtNombre.getText();
         String Pass=new String (txtPassword.getPassword());
         int id= Integer.parseInt(intID.getText());
-        colegio.modificaUsuario(Pass, Pass, id);
+        colegio.modificaUsuario(name, Pass, id);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
