@@ -3,12 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaListaEstudiantesAdmin.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Colegio.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Materia.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/NodoProf.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaAdminAddMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Usuario.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/NodoUsuario.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/ColaMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/NodoEst.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/ColaEst.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Profesor.java</file>
-            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Login.java</file>
-            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaAdminElimProf.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaEstudiante/VentanaEstudiante.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/NodoMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaAdminAddProf.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaAdminListaProf.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaAddProfMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaUsuarios/VentanaModificaUsuario.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaProfesor/VentanaProfesor.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/ColaProf.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaAdministrador.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Estudiante.java</file>
         </group>
     </open-files>
 </project-private>
