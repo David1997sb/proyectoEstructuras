@@ -97,6 +97,7 @@ public class ColaProf {
                     return "Se elimino el profe";
                 } else if (aux == Ultimo) {
                     Ultimo = aux2;
+                    aux2.setAtras(aux.getAtras());
                     return "Se elimino el profe";
                 } else {
                     aux2.setAtras(aux.getAtras());

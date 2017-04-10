@@ -84,7 +84,7 @@ public class Colegio {
 
    public void eliminaEstudiante(int id) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
-        listaUsuarios.eliminar(estudiante.getNombre());
+        listaUsuarios.eliminar(estudiante.getNombreUsuario());
         estudiantes.eliminadatosEstudiante(id);
 
     }

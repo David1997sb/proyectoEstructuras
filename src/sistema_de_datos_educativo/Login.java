@@ -26,17 +26,18 @@ public class Login extends javax.swing.JFrame {
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-//        System.out.println(colegio.imprimeProfe());
-//        System.out.println(colegio.imprimeProfe());
-
+        
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
-//        System.out.println(colegio.imprimeEstudiantes());
-        colegio.agregaMateria("Mate", 10, "2-3", 25);
-        colegio.agregaProfeAmateria(1, "Mate");
+        colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "7262", 15, "Sexto ano");
+        colegio.agregaEstudiantes("Dorlan", "Donineli", "Gaby", "@", "7262", 15, "Sexto ano");
 
-        colegio.agregaEstudiantesAmateria(1, "Mate");
-        colegio.agregaEstudiantesAmateria(2, "Mate");
+        colegio.agregaMateria("Matematica", 10, "2-3", 25);
+        colegio.agregaMateria("Sociales", 11, "2-3", 25);
+        colegio.agregaMateria("Estructura de datos", 12, "5-6", 25);
+        colegio.agregaProfeAmateria(1, "Matematica");
+
+
 
         colegio.agregaAdmin("admin", "admin");
 

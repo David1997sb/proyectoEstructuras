@@ -24,41 +24,24 @@ public class Sistema_de_Datos_Educativo {
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Cesar3", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        System.out.println(colegio.imprimeProfe());
+        // System.out.println(colegio.imprimeProfe());
 
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
-        colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
-//        System.out.println(colegio.imprimeEstudiantes());
+        colegio.agregaEstudiantes("Denis", "Olcen", "Cristian", "@", "7262", 15, "Sexto ano");
+        colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "7262", 15, "Sexto ano");
+        colegio.agregaEstudiantes("Dorlan", "Donineli", "Gaby", "@", "7262", 15, "Sexto ano");
         colegio.agregaMateria("Mate", 10, "2-3", 25);
         colegio.agregaMateria("Ingles", 10, "2-3", 25);
         colegio.agregaProfeAmateria(1, "Mate");
         //System.out.println(colegio.imprimeMateria());
         colegio.agregaEstudiantesAmateria(1, "Mate");
-        colegio.agregaEstudiantesAmateria(2, "Mate");
-//        colegio.cambiaCorreoProfesor(2);
-
-//    colaProf.Atiende();
-        //colegio.eliminaProfesor(2);
-        // colegio.imprimeUsuario();
-//        System.out.println(colegio.imprimeUsuario());
-//        colegio.eliminaProfesor(1);
-//        System.out.println(colegio.imprimeUsuario());
-//        System.out.println(colegio.imprimeMateria());
-        //colegio.eliminaMateria("mate");
-//        //System.out.println(colegio.imprimeMateria());
-//        colegio.modificaMateria("Mate", 30, "9-10", 60);
-//        System.out.println(colegio.imprimeMateria());
-//            colegio.modificaMateria("Mate", 0, "5", 5);
-//        System.out.println(colegio.imprimeMateria());
-//        colegio.modificaProfeMat(2, "Mate");
-//        System.out.println("CAMBIO");
-//        System.out.println(colegio.imprimeMateria());
-//        colegio.eliminaEstudiante(1);
+//        colegio.agregaEstudiantesAmateria(2, "Mate");
+//        colegio.eliminaEstudiante(4);
 //        System.out.println(colegio.imprimeEstudiantes());
-//        colegio.eliminaMateria("Ingles");
-//        System.out.println(colegio.imprimeMateria());
-        colegio.eliminaEstudiante(1);
-        System.out.println(colegio.imprimeEstudiantes());
+                colegio.agregaMateria("Sociales", 11, "2-3", 25);
+        colegio.agregaMateria("Estructura de datos", 12, "5-6", 25);
+        colegio.eliminaMateria("Estructura de datos");
+        System.out.println(colegio.imprimeMateria());
 
     }
 

@@ -115,6 +115,7 @@ public class ColaMat {
                     return "Se elimino materia";
                 } else if (aux == Ultimo) {
                     Ultimo = aux2;
+                    aux2.setAtras(aux.getAtras());
                     return "Se elimino materia";
                 } else {
                     aux2.setAtras(aux.getAtras());
