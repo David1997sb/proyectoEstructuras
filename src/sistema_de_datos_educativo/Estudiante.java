@@ -21,6 +21,8 @@ public class Estudiante {
     private String NivelEducativo;
     private String nombreUsuario;
 
+ 
+
     public String getNombre() {
         return Nombre;
     }
@@ -107,7 +109,11 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return  "\nId: " + id +"\nNombre: " + Nombre + "\nApellido: " + Apellido + "\nEncargado: " + Encargado + "\nCorreo: " + Correo +  " \nTeléfono: " + Telefono + "  \nEdad: " + Edad + ", \nNivel Educativo: " + NivelEducativo;
+        return  "\nId: " + id +"\nNombre: " + Nombre + "\nApellido: " + Apellido + "\nEncargado: " + Encargado + "\nCorreo: " + Correo +  " \nTeléfono: " + Telefono + "  \nEdad: " + Edad + " \nNivel Educativo: " + NivelEducativo;
+    }
+
+    public Estudiante() {
+        
     }
 
     

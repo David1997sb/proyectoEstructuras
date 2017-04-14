@@ -9,6 +9,7 @@ import Estructuras.ColaProf;
 import Estructuras.NodoEst;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -51,6 +52,89 @@ public class Colegio {
         return estudiantes.toString();
     }
 
+    public String imprimeEstPrueba(int id) {
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+            
+            estudiante.getNombre();
+            estudiante.getApellido();
+            estudiante.getCorreo();
+            estudiante.getEdad();
+            estudiante.getEncargado();
+            estudiante.getNivelEducativo();
+            estudiante.getTelefono();
+        }
+
+        return "No existe";
+
+    }
+
+    public String imprimeNomEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+            return estudiante.getNombre();
+        }
+        return "No Existe";
+    }
+
+    public String imprimeApelliEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+            return estudiante.getApellido();
+        }
+        return "No Existe";
+    }
+
+    public String imprimeCorreoEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+            return estudiante.getCorreo();
+        }
+        return "No Existe";
+    }
+
+    public String imprimeEncargadoEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+            return estudiante.getEncargado();
+        }
+        return "No Existe";
+    }
+
+    public int imprimeEdadEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+
+            return estudiante.getEdad();
+        }
+        return 0;
+    }
+
+    public String imprimeTelEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+
+            return estudiante.getTelefono();
+        }
+        return "No existe";
+    }
+
+    public String imprimeNivelEstu(int id) {
+
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+
+            return estudiante.getNivelEducativo();
+        }
+        return "No Existe";
+    }
+
     public void agregaMateria(String NombreMateria, int Aula, String Horario, int canMaxAlumnos) {
         materias.enCola(new NodoMat(new Materia(NombreMateria, Aula, Horario, canMaxAlumnos)));
     }
@@ -63,8 +147,6 @@ public class Colegio {
         Profesor profe = profes.BuscarProfesor(idProfesor);
         materias.agregarProfeAmateria(profe, NombreMateria);
     }
-    
-   
 
     public void agregaEstudiantesAmateria(int idEstudiante, String NombreMat) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(idEstudiante);
@@ -82,13 +164,12 @@ public class Colegio {
         profes.eliminadatosProfesor(id);
     }
 
-   public void eliminaEstudiante(int id) {
+    public void eliminaEstudiante(int id) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         listaUsuarios.eliminar(estudiante.getNombreUsuario());
         estudiantes.eliminadatosEstudiante(id);
 
     }
-
 
     public void eliminaMateria(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
@@ -120,11 +201,21 @@ public class Colegio {
         }
 
     }
-    
-    public void eliminaUsuario (int id){
+
+    public Estudiante validaEst(int id) {
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+            return estudiante;
+        } else {
+            return null;
+        }
+
+    }
+
+    public void eliminaUsuario(int id) {
         Usuario usuario = listaUsuarios.BuscarUsuarioID(id);
         listaUsuarios.eliminar(usuario.getNombre());
-        
+
     }
 
     public void agregaAdmin(String nombre, String password) {
@@ -138,34 +229,33 @@ public class Colegio {
 
     public void modificaProfeMat(int idpProfe, String materia) {
         Profesor profe = profes.BuscarProfesor(idpProfe);
-        materias.modificaProfeMateria(profe,materia);
+        materias.modificaProfeMateria(profe, materia);
     }
-    
-    public void modificaProfeAdmin(int id,String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso){
+
+    public void modificaProfeAdmin(int id, String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso) {
         profes.modificaProfeAdmin(Nombre, Apellido, Correo, Curso, id, Telefono, Edad, fechaDeIngreso);
-        
+
     }
-    public void modifySigleTeacher(String Correo, int Telefono, int id){
+
+    public void modifySigleTeacher(String Correo, int Telefono, int id) {
         profes.modificaProfe(Correo, Telefono, id);
         profes.BuscarProfesor(id);
     }
-    
-    public void modificaEstudianteAdmin(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono,int edad, String NivelEducativo){
-        Estudiante estudiante= estudiantes.BuscarEstudiante(id);
+
+    public void modificaEstudianteAdmin(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int edad, String NivelEducativo) {
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         estudiantes.modificaEstudianteAdmin(Nombre, Apellido, Encargado, Correo, id, Telefono, edad, NivelEducativo);
     }
-    public void modifySingleEstudent(String Correo, String Telefono, int id){
+
+    public void modifySingleEstudent(String Correo, String Telefono, int id) {
         Estudiante estudiante = estudiantes.modificaEstuduante(Correo, Telefono, id);
-        JOptionPane.showMessageDialog(null,estudiantes.BuscarEstudiante(id));
-    }
-    public void modificaUsuario(String usuario, String password, int id){
-        listaUsuarios.ModificaUsuario(usuario, password, id);
-        JOptionPane.showMessageDialog( null, listaUsuarios.BuscarUsuario(usuario, password));
-        
-    }
-   
- 
-       
-        
+        JOptionPane.showMessageDialog(null, estudiantes.BuscarEstudiante(id));
     }
 
+    public void modificaUsuario(String usuario, String password, int id) {
+        listaUsuarios.ModificaUsuario(usuario, password, id);
+        JOptionPane.showMessageDialog(null, listaUsuarios.BuscarUsuario(usuario, password));
+
+    }
+
+}

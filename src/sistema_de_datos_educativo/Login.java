@@ -27,10 +27,10 @@ public class Login extends javax.swing.JFrame {
         colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         
-        colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto ano");
-        colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto ano");
-        colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "7262", 15, "Sexto ano");
-        colegio.agregaEstudiantes("Dorlan", "Donineli", "Gaby", "@", "7262", 15, "Sexto ano");
+        colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "7162", 12, "Cuarto año");
+        colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "7262", 15, "Sexto año");
+        colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "7262", 15, "Sexto año");
+        colegio.agregaEstudiantes("Dorlan", "Donineli", "Gaby", "@", "7262", 15, "Sexto año");
 
         colegio.agregaMateria("Matematica", 10, "2-3", 25);
         colegio.agregaMateria("Sociales", 11, "2-3", 25);

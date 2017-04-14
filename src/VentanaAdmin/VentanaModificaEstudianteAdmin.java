@@ -5,8 +5,14 @@
  */
 package VentanaAdmin;
 
+import Estructuras.ColaEst;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import sistema_de_datos_educativo.Colegio;
+import sistema_de_datos_educativo.Estudiante;
 
 /**
  *
@@ -18,9 +24,10 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
      * Creates new form VentanaModificaEstudiante
      */
     Colegio colegio;
+
     public VentanaModificaEstudianteAdmin(Colegio colegio) {
         initComponents();
-        this.colegio= colegio;
+        this.colegio = colegio;
     }
 
     /**
@@ -34,7 +41,6 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -51,6 +57,7 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         intedad = new javax.swing.JTextField();
         txtnivel = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,13 +67,11 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre:");
 
-        jLabel3.setText("Apellido:");
-
         jLabel4.setText("Encargado:");
 
         jLabel5.setText("Correo:");
 
-        jLabel6.setText("ID el estudiante existente:");
+        jLabel6.setText("ID Estudiante existente:");
 
         jLabel7.setText("Teléfono:");
 
@@ -88,11 +93,24 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
             }
         });
 
+        intid.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                intidFocusLost(evt);
+            }
+        });
+        intid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                intidActionPerformed(evt);
+            }
+        });
+
         intedad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 intedadActionPerformed(evt);
             }
         });
+
+        jLabel10.setText("Apellido");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,87 +128,83 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
                         .addGap(103, 103, 103)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addGap(91, 91, 91)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtapelido)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(txtencargado)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(23, 23, 23)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel10))
+                                .addGap(35, 35, 35)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtcorreo)
-                                    .addComponent(intid)))
+                                    .addComponent(txtapelido)
+                                    .addComponent(txtname)
+                                    .addComponent(txtencargado)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(intid, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 146, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel9))
-                                .addGap(68, 68, 68)
+                                .addGap(76, 76, 76)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtnivel)
-                                    .addComponent(intedad)
-                                    .addComponent(txtTelefono))))))
-                .addGap(54, 54, 54))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(intedad, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(txtTelefono)
+                                    .addComponent(txtnivel))))
+                        .addGap(84, 84, 84)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(intid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtapelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtapelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtencargado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(intid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(intedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtnivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AcptBTN)
-                            .addComponent(atrasBTN))
-                        .addGap(30, 30, 30))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtnivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AcptBTN)
+                    .addComponent(atrasBTN))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -201,19 +215,22 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_intedadActionPerformed
 
     private void AcptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcptBTNActionPerformed
-        try{
-        String nombre= txtname.getText();
-        String Apellido= txtapelido.getText();
-        String Encargado= txtencargado.getText();
-        String Correo= txtcorreo.getText();
-        int ID= Integer.parseInt(intid.getText());
-        String Telefono= txtTelefono.getText();
-        int Edad= Integer.parseInt(intedad.getText());
-        String Nivel= txtnivel.getText();
-        colegio.modificaEstudianteAdmin(nombre, Apellido, Encargado, Correo, ID, Telefono, Edad, Nivel);
-        this.setVisible(false);
-        JOptionPane.showMessageDialog(null, "Se ha modificado existosamente al estudiante");
-        }catch (Exception e){
+        try {
+            //Completar Campos cuando agrego ID
+
+            String nombre = txtname.getText();
+            String Apellido = txtapelido.getText();
+            String Encargado = txtencargado.getText();
+            String Correo = txtcorreo.getText();
+            int ID = Integer.parseInt(intid.getText());
+            String Telefono = txtTelefono.getText();
+            int Edad = Integer.parseInt(intedad.getText());
+            String Nivel = txtnivel.getText();
+            colegio.validaEst(ID);
+            colegio.modificaEstudianteAdmin(nombre, Apellido, Encargado, Correo, ID, Telefono, Edad, Nivel);
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Se ha modificado existosamente al estudiante");
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor invalido");
         }
     }//GEN-LAST:event_AcptBTNActionPerformed
@@ -221,6 +238,41 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
     private void atrasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasBTNActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_atrasBTNActionPerformed
+
+    private void intidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intidActionPerformed
+
+
+    }//GEN-LAST:event_intidActionPerformed
+
+
+    private void intidFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_intidFocusLost
+        intid.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                
+                
+                Estudiante estudiantes = new Estudiante();
+                String id = ((JTextField) e.getSource()).getText();
+                System.out.println(id);
+                txtname.setText(colegio.imprimeNomEstu(Integer.parseInt(id)));
+                txtapelido.setText(colegio.imprimeApelliEstu(Integer.parseInt(id)));
+                intedad.setText(String.valueOf(colegio.imprimeEdadEstu(Integer.parseInt(id)))); 
+                txtTelefono.setText(colegio.imprimeTelEstu(Integer.parseInt(id)));
+                txtencargado.setText(colegio.imprimeEncargadoEstu(Integer.parseInt(id)));
+                txtcorreo.setText(colegio.imprimeCorreoEstu(Integer.parseInt(id)));
+                txtnivel.setText(colegio.imprimeNivelEstu(Integer.parseInt(id)));
+
+            }
+
+        }
+        );
+
+    }//GEN-LAST:event_intidFocusLost
 
     /**
      * @param args the command line arguments
@@ -236,16 +288,24 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaModificaEstudianteAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -265,8 +325,8 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField intedad;
     private javax.swing.JTextField intid;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

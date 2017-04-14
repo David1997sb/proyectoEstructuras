@@ -267,7 +267,7 @@ public class VentanaAdministrador extends javax.swing.JFrame {
 
         jMenu4.setText("Administrar Estudiantes");
 
-        jMenuItem8.setText("Agrega Estudiamte");
+        jMenuItem8.setText("Agrega Estudiante");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem8ActionPerformed(evt);
