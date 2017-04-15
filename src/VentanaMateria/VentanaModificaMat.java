@@ -21,6 +21,8 @@ public class VentanaModificaMat extends javax.swing.JFrame {
 
     public VentanaModificaMat(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
     }
 
@@ -217,17 +219,14 @@ public class VentanaModificaMat extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        try {
-            String nombre = txtName.getText();
+                    String nombre = txtName.getText();
             System.out.println(nombre);
            
-            intAula.setText(String.valueOf(colegio.imprimeMatAula(nombre)));
-            intAlumnos.setText(String.valueOf(colegio.imprimeMatAlum((nombre))));
-            intIDprof.setText(String.valueOf(colegio.imprimeMatIDprof((nombre))));
+            intAula.setText(colegio.imprimeMatAula(nombre)+"");
+            intAlumnos.setText(colegio.imprimeMatAlum(nombre)+"");
+            intIDprof.setText(colegio.imprimeMatIDprof(nombre)+"");
             txtHorario.setText(colegio.imprimeMatHorario((nombre)));
           
-        } catch (Exception e) {
-        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**

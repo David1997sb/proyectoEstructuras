@@ -35,7 +35,10 @@ public class Login extends javax.swing.JFrame {
         colegio.agregaMateria("Matematica", 10, "2-3", 25);
         colegio.agregaMateria("Sociales", 11, "2-3", 25);
         colegio.agregaMateria("Estructura de datos", 12, "5-6", 25);
+        
         colegio.agregaProfeAmateria(1, "Matematica");
+        colegio.agregaProfeAmateria(2, "Estructura de datos");
+        
         colegio.agregaEstudiantesAmateria(1, "Matematica");
 
 

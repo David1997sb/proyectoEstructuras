@@ -17,7 +17,6 @@ import sistema_de_datos_educativo.Login;
  *
  * @author aldomora89
  */
-import java.awt.Window;
 public class VentanaAdministrador extends javax.swing.JFrame {
 
     /**

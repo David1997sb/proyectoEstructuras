@@ -145,7 +145,7 @@ public class Colegio {
     public int imprimeMatAlum(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
         if (materia != null) {
-            return materia.getCanMaxAlumnos();
+            return materia.getCantidadAlumnos();
         }
         return 0;
     }
@@ -153,7 +153,12 @@ public class Colegio {
     public int imprimeMatIDprof(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
         if (materia != null) {
-            return materia.getProfe().getId();
+            if(materia.getProfe()== null){
+             return -1;
+            }else{
+               return materia.getProfe().getId();
+            }
+            
         }
         return 0;
     }
