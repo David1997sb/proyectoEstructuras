@@ -282,7 +282,7 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
     private void BscrBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BscrBTNActionPerformed
         try {
             String id = intid.getText();
-                System.out.println(id);
+                //System.out.println(id);
                 txtname.setText(colegio.imprimeNomEstu(Integer.parseInt(id)));
                 txtapelido.setText(colegio.imprimeApelliEstu(Integer.parseInt(id)));
                 intedad.setText(String.valueOf(colegio.imprimeEdadEstu(Integer.parseInt(id)))); 

@@ -63,7 +63,16 @@ public class ColaMat {
         }
         return false;
     }
-
+    public void agregaNota (Estudiante estudiante, Materia materia, int nota){
+              NodoMat aux = Frente;
+               while (aux != null) {
+                  if (aux.getMateria().getNombreMateria().equalsIgnoreCase(materia.getNombreMateria())) {
+                    aux.getMateria().getEstudiantes().modificanota(estudiante.getId(),nota);
+               }
+                  aux=aux.getAtras();
+               }
+    
+    }
     public boolean agregarEsteAmateria(Estudiante est, String nombreMateria) {
         NodoMat aux = Frente;
         while (aux != null) {

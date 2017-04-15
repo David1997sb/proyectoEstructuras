@@ -20,13 +20,13 @@ public class Estudiante {
     private int Edad;
     private String NivelEducativo;
     private String nombreUsuario;
-    private String Nota;
+    private int Nota;
 
-    public String getNota() {
+    public int getNota() {
         return Nota;
     }
 
-    public void setNota(String Nota) {
+    public void setNota(int Nota) {
         this.Nota = Nota;
     }
 
@@ -118,7 +118,7 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return  "\nId: " + id +"\nNombre: " + Nombre + "\nApellido: " + Apellido + "\nEncargado: " + Encargado + "\nCorreo: " + Correo +  " \nTeléfono: " + Telefono + "  \nEdad: " + Edad + " \nNivel Educativo: " + NivelEducativo;
+        return  "\nId: " + id +"\nNombre: " + Nombre + "\nApellido: " + Apellido + "\nEncargado: " + Encargado + "\nCorreo: " + Correo +  " \nTeléfono: " + Telefono + "  \nEdad: " + Edad + " \nNivel Educativo: " + NivelEducativo + "\n Nota: " + Nota + "";
     }
 
     public Estudiante() {

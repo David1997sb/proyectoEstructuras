@@ -22,21 +22,21 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = new Colegio();
-        colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", "Matematica", 26, 3, new Date());
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "8989-7162", 12, "Sexto año");
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "2000-7262", 11, "Cuarto año");
         colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "8984-7262", 10, "Tercer año");
         colegio.agregaEstudiantes("Dorlan", "Donineli", "Gaby", "@", "9892-7262", 9, "Segundo año");
-
         colegio.agregaMateria("Matematica", 10, "2-3", 25);
         colegio.agregaMateria("Sociales", 11, "2-3", 25);
         colegio.agregaMateria("Estructura de datos", 12, "5-6", 25);
         colegio.agregaProfeAmateria(1, "Matematica");
+        colegio.agregaEstudiantesAmateria(1, "Matematica");
 
 
 

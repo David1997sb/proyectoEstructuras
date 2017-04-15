@@ -338,5 +338,12 @@ public class Colegio {
         return 0;
 
     }
+    
+    public void AgregaNota(int id, int nota, String materia){
+        Estudiante estudiante=estudiantes.BuscarEstudiante(id);
+        Materia materia1 = materias.BuscarMateria(materia);
+        materias.agregaNota(estudiante, materia1, nota);
+        
+    }
 
 }
