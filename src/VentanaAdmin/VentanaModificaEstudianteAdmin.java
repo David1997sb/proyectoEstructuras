@@ -58,6 +58,7 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
         intedad = new javax.swing.JTextField();
         txtnivel = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        BscrBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,6 +112,13 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
 
         jLabel10.setText("Apellido");
 
+        BscrBTN.setText("Buscar");
+        BscrBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BscrBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,7 +147,9 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
                             .addComponent(txtencargado)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(intid, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 211, Short.MAX_VALUE))))
+                                .addGap(55, 55, 55)
+                                .addComponent(BscrBTN)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,10 +174,12 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(29, 29, 29)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(intid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(intid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BscrBTN)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
@@ -197,7 +209,7 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtnivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AcptBTN)
                     .addComponent(atrasBTN))
@@ -254,7 +266,18 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
                 
                 
 
-                String id = ((JTextField) e.getSource()).getText();
+                
+
+            }
+
+        }
+        );
+
+    }//GEN-LAST:event_intidFocusLost
+
+    private void BscrBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BscrBTNActionPerformed
+        try {
+            String id = intid.getText();
                 System.out.println(id);
                 txtname.setText(colegio.imprimeNomEstu(Integer.parseInt(id)));
                 txtapelido.setText(colegio.imprimeApelliEstu(Integer.parseInt(id)));
@@ -263,13 +286,10 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
                 txtencargado.setText(colegio.imprimeEncargadoEstu(Integer.parseInt(id)));
                 txtcorreo.setText(colegio.imprimeCorreoEstu(Integer.parseInt(id)));
                 txtnivel.setText(colegio.imprimeNivelEstu(Integer.parseInt(id)));
-
-            }
-
+        } catch (Exception e) {
         }
-        );
-
-    }//GEN-LAST:event_intidFocusLost
+        
+    }//GEN-LAST:event_BscrBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,6 +338,7 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AcptBTN;
+    private javax.swing.JButton BscrBTN;
     private javax.swing.JButton atrasBTN;
     private javax.swing.JTextField intedad;
     private javax.swing.JTextField intid;

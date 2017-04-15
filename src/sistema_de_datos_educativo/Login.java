@@ -21,6 +21,7 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
         this.colegio = new Colegio();
         colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", "mate", 26, 3, new Date());
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());

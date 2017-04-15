@@ -20,6 +20,15 @@ public class Estudiante {
     private int Edad;
     private String NivelEducativo;
     private String nombreUsuario;
+    private String Nota;
+
+    public String getNota() {
+        return Nota;
+    }
+
+    public void setNota(String Nota) {
+        this.Nota = Nota;
+    }
 
  
 
