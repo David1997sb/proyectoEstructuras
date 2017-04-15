@@ -145,7 +145,7 @@ public class Colegio {
     public int imprimeMatAlum(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
         if (materia != null) {
-            return materia.getCantidadAlumnos();
+            return materia.getCanMaxAlumnos();
         }
         return 0;
     }
