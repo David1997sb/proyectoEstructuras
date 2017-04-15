@@ -52,23 +52,6 @@ public class Colegio {
         return estudiantes.toString();
     }
 
-    public String imprimeEstPrueba(int id) {
-        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
-        if (estudiante != null) {
-            
-            estudiante.getNombre();
-            estudiante.getApellido();
-            estudiante.getCorreo();
-            estudiante.getEdad();
-            estudiante.getEncargado();
-            estudiante.getNivelEducativo();
-            estudiante.getTelefono();
-        }
-
-        return "No existe";
-
-    }
-
     public String imprimeNomEstu(int id) {
 
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
@@ -255,6 +238,71 @@ public class Colegio {
     public void modificaUsuario(String usuario, String password, int id) {
         listaUsuarios.ModificaUsuario(usuario, password, id);
         JOptionPane.showMessageDialog(null, listaUsuarios.BuscarUsuario(usuario, password));
+
+    }
+
+    public String imprimeProfeNom(int id) {
+        Profesor profe = profes.BuscarProfesor(id);
+
+        if (profe != null) {
+            return profe.getNombre();
+        }
+
+        return "No existe";
+    }
+
+    public String imprimeProfeApel(int id) {
+        Profesor profe = profes.BuscarProfesor(id);
+
+        if (profe != null) {
+            return profe.getApellido();
+        }
+
+        return "No existe";
+
+    }
+
+    public String imprimeProfeCorreo(int id) {
+        Profesor profe = profes.BuscarProfesor(id);
+
+        if (profe != null) {
+            return profe.getCorreo();
+        }
+
+        return "No existe";
+
+    }
+
+    public String imprimeProfeCurso(int id) {
+        Profesor profe = profes.BuscarProfesor(id);
+
+        if (profe != null) {
+            return profe.getCurso();
+        }
+
+        return "No existe";
+
+    }
+
+    public int imprimeProfeTel(int id) {
+        Profesor profe = profes.BuscarProfesor(id);
+
+        if (profe != null) {
+            return profe.getTelefono();
+        }
+
+        return 0;
+
+    }
+
+    public int imprimeProfeEdad (int id) {
+        Profesor profe = profes.BuscarProfesor(id);
+
+        if (profe != null) {
+            return profe.getEdad();
+        }
+
+        return 0;
 
     }
 
