@@ -126,6 +126,39 @@ public class Colegio {
         return materias.toString();
     }
 
+    public String imprimeMatHorario(String nombreMateria) {
+        Materia materia = materias.BuscarMateria(nombreMateria);
+        if (materia != null) {
+            return materia.getHorario();
+        }
+        return "No Existe";
+    }
+
+    public int imprimeMatAula(String nombreMateria) {
+        Materia materia = materias.BuscarMateria(nombreMateria);
+        if (materia != null) {
+            return materia.getAula();
+        }
+        return 0;
+    }
+
+    public int imprimeMatAlum(String nombreMateria) {
+        Materia materia = materias.BuscarMateria(nombreMateria);
+        if (materia != null) {
+            return materia.getCanMaxAlumnos();
+        }
+        return 0;
+    }
+
+    public int imprimeMatIDprof(String nombreMateria) {
+        Materia materia = materias.BuscarMateria(nombreMateria);
+        if (materia != null) {
+            return materia.getProfe().getId();
+        }
+        return 0;
+    }
+    
+
     public void agregaProfeAmateria(int idProfesor, String NombreMateria) {
         Profesor profe = profes.BuscarProfesor(idProfesor);
         materias.agregarProfeAmateria(profe, NombreMateria);
@@ -295,7 +328,7 @@ public class Colegio {
 
     }
 
-    public int imprimeProfeEdad (int id) {
+    public int imprimeProfeEdad(int id) {
         Profesor profe = profes.BuscarProfesor(id);
 
         if (profe != null) {
