@@ -148,6 +148,12 @@ public class VentanaAdministrador extends javax.swing.JFrame {
 
         jMenuItem18.setText("jMenuItem18");
 
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema_de_datos_educativo/Mision.jpeg"))); // NOI18N
 
         modificarMateria1.setText("Administrar usuarios");
@@ -319,11 +325,11 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 883, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -421,6 +427,12 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         VentanaAddProfMat addProfMat = new VentanaAddProfMat(colegio);
         addProfMat.setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.setVisible(false);
+        Login abrirLogin = new Login();
+        abrirLogin.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
 
 
