@@ -72,6 +72,11 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(250, 200));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel1.setText("Usuario: ");
 
@@ -184,6 +189,12 @@ public class Login extends javax.swing.JFrame {
             btnInicio.doClick();
         }
     }//GEN-LAST:event_txtPasswordKeyTyped
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+       
+        System.exit(0);
+        
+    }//GEN-LAST:event_formWindowClosing
 //-------
     /**
      * @param args the command line arguments
