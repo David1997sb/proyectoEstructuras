@@ -5,48 +5,88 @@
  */
 package Estructuras;
 
+import sistema_de_datos_educativo.Estudiante;
+
 /**
  *
  * @author Nicol
  */
 public class Arbol {
     private NodoArbol raiz;
-     public void insertar(int num){//En el metodo insertar lo que se realiza es insertar un numero al arbol, donde por medio del metodo recursivo insertaRec donde se realiza la validacion de que lado del arbol se encuentra
+    private static String salida;
+    
+     public void insertar(Estudiante estudiante){//En el metodo insertar lo que se realiza es insertar un numero al arbol, donde por medio del metodo recursivo insertaRec donde se realiza la validacion de que lado del arbol se encuentra
         if (raiz==null) {
-            raiz=new NodoArbol(num);
+            raiz=new NodoArbol(estudiante);
         }else{
-            insertaRec(num,raiz);
+            insertaRec(estudiante,raiz);
         }
     }
+
+    public Arbol() {
+        salida = "";
+    }
+     
+     
+     
     
-    public void insertaRec(int num, NodoArbol n){
+    public void insertaRec(Estudiante estudiante, NodoArbol n){
         /**
          * En este metodo lo que se realiza es el metodo recursivo que se llama desde el metodo insertar
          */
-        if (num<n.getId()) {//Acomoda a la izquierda
+        if (estudiante.getNota()<n.getEstudiante().getNota()) {//Acomoda a la izquierda
             if (n.getHijoIzq()==null) {
-                n.setHijoIzq(new NodoArbol(num));
+                n.setHijoIzq(new NodoArbol(estudiante));
             }else{
-             insertaRec(num,n.getHijoIzq());         
+             insertaRec(estudiante,n.getHijoIzq());         
             }
         }else{//Acomoda a la derecha
             if (n.getHijoDer()==null) {
-                n.setHijoDer(new NodoArbol(num));
+                n.setHijoDer(new NodoArbol(estudiante));
             }else{
-             insertaRec(num,n.getHijoDer());
+             insertaRec(estudiante,n.getHijoDer());
             }
         }
     }
     
-    public void inOrden(){
+    public String inOrden(){
     /**
      * El metodo inOrden lo que se hace es realizar como lo dice su nombre, ordena el arbol de mayor a menor  
      */
         if (raiz==null) {
-            System.out.println("El arbol se encuentra vacio");
+            salida = "El arbol se encuentra vacio";
         }else{
         inOrdenRec(raiz);
+       
         }
+        return salida;
+    }
+    
+    public String notasAprobados(){
+    /**
+     * El metodo inOrden lo que se hace es realizar como lo dice su nombre, ordena el arbol de mayor a menor  
+     */
+        if (raiz==null) {
+            salida = "El arbol se encuentra vacio";
+        }else{
+        inOrdenRec(raiz.getHijoDer());
+       
+        }
+        return salida;
+    }
+    
+    
+       public String notasReprobados(){
+    /**
+     * El metodo inOrden lo que se hace es realizar como lo dice su nombre, ordena el arbol de mayor a menor  
+     */
+        if (raiz==null) {
+            salida = "El arbol se encuentra vacio";
+        }else{
+        inOrdenRec(raiz.getHijoIzq());
+       
+        }
+        return salida;
     }
     
     private void inOrdenRec(NodoArbol n) {
@@ -55,7 +95,7 @@ public class Arbol {
          */
         if (n != null) {
             inOrdenRec(n.getHijoIzq());
-            System.out.print(n.getId()+" ");
+            salida += n.getEstudiante().getNota()+" "+ n.getEstudiante().getNombre()+ " "+ n.getEstudiante().getApellido() + "\n";
             inOrdenRec(n.getHijoDer());
         }
 
@@ -80,7 +120,7 @@ public class Arbol {
          * Este es el metodo que utiliza el metodo preOrden
          */
         if (n != null) {
-            System.out.print(n.getId()+"  ");
+            System.out.print(n.getEstudiante().getNota()+"  ");
             preOrdenRec(n.getHijoIzq());
             preOrdenRec(n.getHijoDer());
             
@@ -110,7 +150,7 @@ public class Arbol {
         if (num != null) {
             preOrdenRec(num.getHijoIzq());
             preOrdenRec(num.getHijoDer());
-            System.out.print(num.getId()+"  ");
+            System.out.print(num.getEstudiante().getNota()+"  ");
         }
 
     }
@@ -134,7 +174,7 @@ public class Arbol {
         if (num.getHijoIzq() != null) {
             imprimeMenorRec(num.getHijoIzq());
         } else {
-            System.out.println(num.getId());
+            System.out.println(num.getEstudiante().getNota());
         }
 
     }
@@ -163,7 +203,7 @@ public class Arbol {
                 imprimeHojasRec(num.getHijoDer());
             }
         } else {
-            System.out.println(num.getId());
+            System.out.println(num.getEstudiante().getNota());
         }
     }
 
@@ -271,7 +311,7 @@ public class Arbol {
          * Este es el metodo recusrsivo que se utiliza para poder recorrer la rama mas larga e imprimirla
          */
         if (num!=null) {
-         System.out.println(num.getId());
+         System.out.println(num.getEstudiante().getNota());
          imprimeRamaLargaRec(num.getHijoDer());
             if (num.getHijoDer()==null) {
          imprimeRamaLargaRec(num.getHijoIzq());

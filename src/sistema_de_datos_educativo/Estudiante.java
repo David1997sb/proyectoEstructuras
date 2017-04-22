@@ -113,6 +113,7 @@ public class Estudiante {
         this.Telefono = Telefono;
         this.NivelEducativo = NivelEducativo;
         this.Edad=edad;
+        this.Nota= 0;
         this.nombreUsuario = Nombre.toLowerCase().charAt(0) + Apellido.toLowerCase() + id;
     }
 

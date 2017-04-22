@@ -25,10 +25,10 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);//para centrar ventanas
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = new Colegio();
-        colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", "Matematica", 26, 3, new Date());
-        colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
-        colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", "mate", 26, 3, new Date());
+        colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", null, 26, 3, new Date());
+        colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", null, 26, 3, new Date());
+        colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", null, 26, 3, new Date());
+        colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", null, 26, 3, new Date());
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "8989-7162", 12, "Sexto año");
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "2000-7262", 11, "Cuarto año");
         colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "8984-7262", 10, "Tercer año");
@@ -40,8 +40,19 @@ public class Login extends javax.swing.JFrame {
         colegio.agregaProfeAmateria(1, "Matematica");
         colegio.agregaProfeAmateria(2, "Estructura de datos");
         
+        
         colegio.agregaEstudiantesAmateria(1, "Matematica");
-
+        colegio.agregaEstudiantesAmateria(2, "Matematica");
+        colegio.agregaEstudiantesAmateria(3, "Matematica");
+        colegio.agregaEstudiantesAmateria(4, "Matematica");
+        
+        colegio.AgregaNota(1, 85, "Matematica");
+        colegio.AgregaNota(2, 60, "Matematica");
+        colegio.AgregaNota(3, 72, "Matematica");
+        colegio.AgregaNota(4, 98, "Matematica");
+       
+        System.out.println(colegio.imprimirAprobados("Matematica"));
+        System.out.println(colegio.imprimirReprobados("Matematica"));
 
 
         colegio.agregaAdmin("admin", "admin");

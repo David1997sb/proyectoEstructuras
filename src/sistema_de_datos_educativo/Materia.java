@@ -5,6 +5,7 @@
  */
 package sistema_de_datos_educativo;
 
+import Estructuras.Arbol;
 import Estructuras.ColaEst;
 
 /**
@@ -20,10 +21,23 @@ public class Materia {
     private String Horario;
     private int canMaxAlumnos;
     ColaEst estudiantes;
+    private Arbol notas;
+
+    public Arbol getNotas() {
+        return notas;
+    }
+
+    public void setNotas(Arbol notas) {
+        this.notas = notas;
+    }
+    
+    
 
     public Materia() {
         estudiantes = new ColaEst();
+        notas = new Arbol();
     }
+    
 
     public String getNombreMateria() {
         return NombreMateria;

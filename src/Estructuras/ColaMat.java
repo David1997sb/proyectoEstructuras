@@ -5,7 +5,6 @@
  */
 package Estructuras;
 
-import javax.swing.JOptionPane;
 import sistema_de_datos_educativo.Estudiante;
 import sistema_de_datos_educativo.Materia;
 import sistema_de_datos_educativo.Profesor;
@@ -161,4 +160,20 @@ public class ColaMat {
         }
 
     }
+    
+        public void generarNotas(String mat) {
+        NodoMat aux = Frente;
+        while (aux != null) {
+            if (aux.getMateria().getNombreMateria().equals(mat)) {
+                Materia materia = aux.getMateria();
+                Arbol arbol = materia.getEstudiantes().generarNotas();
+                materia.setNotas(arbol);
+
+            }
+            aux = aux.getAtras();
+        }
+
+    }
+        
+
 }

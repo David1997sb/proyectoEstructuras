@@ -6,7 +6,7 @@
 package Estructuras;
 
 import sistema_de_datos_educativo.Estudiante;
-import sistema_de_datos_educativo.Usuario;
+
 
 /**
  *
@@ -48,6 +48,22 @@ public class ColaEst {
         }
         return s;
     }
+    
+        public Arbol generarNotas() {
+        
+        NodoEst aux = Frente;
+        Arbol arbol = new Arbol();
+        Estudiante estudiante = new Estudiante();
+        estudiante.setNota(70);
+        arbol.insertar(estudiante);
+        while (aux != null) {
+            arbol.insertar(aux.getEstudiante());
+            aux = aux.getAtras();
+        }
+        
+        return arbol;
+    }
+    
     public void modificanota(int id, int nota){
         NodoEst aux = Frente;
         while (aux != null) {

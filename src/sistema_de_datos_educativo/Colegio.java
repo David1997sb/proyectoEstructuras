@@ -9,7 +9,6 @@ import Estructuras.ColaProf;
 import Estructuras.NodoEst;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /**
  *
@@ -153,19 +152,19 @@ public class Colegio {
     public int imprimeMatIDprof(String nombreMateria) {
         Materia materia = materias.BuscarMateria(nombreMateria);
         if (materia != null) {
-            if(materia.getProfe()== null){
-             return -1;
-            }else{
-               return materia.getProfe().getId();
+            if (materia.getProfe() == null) {
+                return -1;
+            } else {
+                return materia.getProfe().getId();
             }
-            
+
         }
         return 0;
     }
-    
 
     public void agregaProfeAmateria(int idProfesor, String NombreMateria) {
         Profesor profe = profes.BuscarProfesor(idProfesor);
+        profes.modificaProfe(profe.getCorreo(), profe.getTelefono(), profe.getId(), NombreMateria);
         materias.agregarProfeAmateria(profe, NombreMateria);
     }
 
@@ -258,11 +257,6 @@ public class Colegio {
 
     }
 
-    public void modifySigleTeacher(String Correo, int Telefono, int id) {
-        profes.modificaProfe(Correo, Telefono, id);
-        profes.BuscarProfesor(id);
-    }
-
     public void modificaEstudianteAdmin(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono, int edad, String NivelEducativo) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         estudiantes.modificaEstudianteAdmin(Nombre, Apellido, Encargado, Correo, id, Telefono, edad, NivelEducativo);
@@ -343,12 +337,23 @@ public class Colegio {
         return 0;
 
     }
-    
-    public void AgregaNota(int id, int nota, String materia){
-        Estudiante estudiante=estudiantes.BuscarEstudiante(id);
+
+    public void AgregaNota(int id, int nota, String materia) {
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         Materia materia1 = materias.BuscarMateria(materia);
         materias.agregaNota(estudiante, materia1, nota);
-        
+
     }
 
+    public String imprimirAprobados(String Materia) {
+        materias.generarNotas(Materia);
+
+        return materias.BuscarMateria(Materia).getNotas().notasAprobados();
+    }
+
+    public String imprimirReprobados(String Materia) {
+        materias.generarNotas(Materia);
+
+        return materias.BuscarMateria(Materia).getNotas().notasReprobados();
+    }
 }

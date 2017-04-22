@@ -9,7 +9,7 @@ import VentanaMateria.VentListMat;
 import sistema_de_datos_educativo.Colegio;
 import sistema_de_datos_educativo.Profesor;
 import sistema_de_datos_educativo.Login;
-import sistema_de_datos_educativo.Materia;
+
 
 /**
  *
@@ -196,8 +196,8 @@ public class VentanaProfesor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-     VentListMat materias=  new VentListMat(colegio);
-     materias.setVisible(true);
+     VentanaVerNotas notas =  new VentanaVerNotas(colegio, profesor);
+     notas.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed

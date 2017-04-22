@@ -5,26 +5,30 @@
  */
 package Estructuras;
 
+import sistema_de_datos_educativo.Estudiante;
+
 /**
  *
  * 
  */
 public class NodoArbol {
-    private int id;
+    private Estudiante estudiante;
     private NodoArbol hijoIzq;
     private NodoArbol hijoDer;
 
-    public NodoArbol(int id) {
-        this.id = id;
+    public NodoArbol(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
-    public int getId() {
-        return id;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
+
+    
 
     public NodoArbol getHijoIzq() {
         return hijoIzq;

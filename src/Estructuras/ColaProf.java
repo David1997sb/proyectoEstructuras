@@ -6,7 +6,7 @@
 package Estructuras;
 
 import java.util.Date;
-import javax.swing.JOptionPane;
+
 import sistema_de_datos_educativo.Profesor;
 
 /**
@@ -76,12 +76,13 @@ public class ColaProf {
         }
     }
 
-    public void modificaProfe(String Correo, int Telefono, int id) {
+    public void modificaProfe(String Correo, int Telefono, int id, String Curso) {
         NodoProf aux = Frente;
         while (aux != null) {
             if (aux.getNodoprof().getId() == id) {
                 aux.getNodoprof().setCorreo(Correo);
                 aux.getNodoprof().setTelefono(Telefono);
+                aux.getNodoprof().setCurso(Curso);
             }
             aux = aux.getAtras();
         }
