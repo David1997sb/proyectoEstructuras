@@ -13,7 +13,7 @@ import Estructuras.ColaEst;
  * @author Frander B.A
  */
 public class Materia {
-
+//En esta clase se declaran los atributos que va a tener la materia, los cuales son los que vemos abajo
     private String NombreMateria;
     Profesor profe;
     private int CantidadAlumnos;
@@ -22,7 +22,7 @@ public class Materia {
     private int canMaxAlumnos;
     ColaEst estudiantes;
     private Arbol notas;
-
+//Se declaran los get y sets respectivos de los atributos
     public Arbol getNotas() {
         return notas;
     }
@@ -94,12 +94,12 @@ public class Materia {
     public void setEstudiantes(ColaEst estudiantes) {
         this.estudiantes = estudiantes;
     }
-
+//Se declara el metodo toString de los atributos asignados a esta clase
     @Override
     public String toString() {
         return "\nNombre de la Materia: " + NombreMateria + "\nCantidad de Alumnos: " + CantidadAlumnos + "\nAula=" + Aula + " \nHorario: " + Horario + " \nCantidad Maxima de Alumnos: " + canMaxAlumnos + "\n--------------------"+ " \nProfesor: " + profe + "\n--------------------"+ "\n" + estudiantes;
     }
-
+// se realiza un constructor con los atributos asignados a la clase materia.
     public Materia(String NombreMateria, int Aula, String Horario, int canMaxAlumnos) {
         this.NombreMateria = NombreMateria;
         this.Aula = Aula;

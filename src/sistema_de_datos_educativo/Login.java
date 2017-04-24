@@ -19,50 +19,43 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     Colegio colegio;
-
+//Este se puede ver como la pantalla principal o el main del programa, debido a que esto inicializa todos los datos de programa.
     public Login() {
         initComponents();
-        setLocationRelativeTo(null);//para centrar ventanas
+        setLocationRelativeTo(null);//Esto se utiliza para poder centrar ventanas
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = new Colegio();
+        //Se agregan profesores a la cola de profesores
         colegio.AgregaProfesor("Frander", "Fallas", "fafa@ulacit.ed.cr", null, 26, 3, new Date());
         colegio.AgregaProfesor("Andres", "Fallas", "andres.fallas@ulacit.ed.cr", null, 26, 3, new Date());
         colegio.AgregaProfesor("Julio", "Fallas", "julio.fallas@ulacit.ed.cr", null, 26, 3, new Date());
         colegio.AgregaProfesor("Cesar", "Fallas", "andres.fallas@ulacit.ed.cr", null, 26, 3, new Date());
+        //se agregan estudiantes a la cola de estudiantes
         colegio.agregaEstudiantes("Aldo", "Bolanos", "Vanessa", "aldo.bola@ulacit.ed.cr", "8989-7162", 12, "Sexto año");
         colegio.agregaEstudiantes("David", "Alvarado", "Juan", "@", "2000-7262", 11, "Cuarto año");
         colegio.agregaEstudiantes("Diego", "Nunez", "Andres", "@", "8984-7262", 10, "Tercer año");
         colegio.agregaEstudiantes("Dorlan", "Donineli", "Gaby", "@", "9892-7262", 9, "Segundo año");
+       //Se agregan estudiantes a la cola de materias
         colegio.agregaMateria("Matematica", 10, "2-3", 25);
         colegio.agregaMateria("Sociales", 11, "2-3", 25);
         colegio.agregaMateria("Estructura de datos", 12, "5-6", 25);
-        
+       //Se agregan profesores a materias.
         colegio.agregaProfeAmateria(1, "Matematica");
         colegio.agregaProfeAmateria(2, "Estructura de datos");
         
-        
+        //Se agregan los estudiantes a la materia con forma a los atributos del metodo.
         colegio.agregaEstudiantesAmateria(1, "Matematica");
         colegio.agregaEstudiantesAmateria(2, "Matematica");
         colegio.agregaEstudiantesAmateria(3, "Matematica");
         colegio.agregaEstudiantesAmateria(4, "Matematica");
-        
+        // se agrega la nota de la materia a cada estudiante
         colegio.AgregaNota(1, 85, "Matematica");
         colegio.AgregaNota(2, 60, "Matematica");
         colegio.AgregaNota(3, 72, "Matematica");
         colegio.AgregaNota(4, 98, "Matematica");
-       
-        System.out.println(colegio.imprimirAprobados("Matematica"));
-        System.out.println(colegio.imprimirReprobados("Matematica"));
-
-
+        // Se agrega el usuario administrador
         colegio.agregaAdmin("admin", "admin");
-
-
-//        System.out.println(colegio.imprimeMateria());
-
-        //System.out.println(colegio.imprimeUsuario());
         
-        //System.out.println(colegio.imprimeMateria());
 
     }
 
@@ -159,7 +152,7 @@ public class Login extends javax.swing.JFrame {
         String nombreUsuario = txtUsuario.getText();
         String pass = new String(txtPassword.getPassword());
         Usuario usuario = colegio.validaUsuario(nombreUsuario, pass);
-
+// Este es el boton para iniciar sesion, aqui se realiza una validacion conforme a los datos que se le ingresa, pede verificar si entro un estudiante, administrador o profesor.
         if (usuario != null) {
             if (usuario.getRol().equalsIgnoreCase("Estudiante")) {
                 VentanaEstudiante ventanaEstud = new VentanaEstudiante(colegio, usuario.getEstudiante());
@@ -181,12 +174,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     private void btnInicioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnInicioKeyPressed
-        System.out.println("lalalalalalala");
     }//GEN-LAST:event_btnInicioKeyPressed
 
     //Accion que activa la tecla enter para iniciar cesion
     //-------------
     private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
+// Se inicia sesion conforme a la tecla enter
         char cTeclaEnter = evt.getKeyChar();
         if (cTeclaEnter == KeyEvent.VK_ENTER) {
             btnInicio.doClick();
@@ -202,7 +195,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordKeyTyped
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-       
+       // se cierra el programa solo cuando se presiona la x de cerrar ventana
         System.exit(0);
         
     }//GEN-LAST:event_formWindowClosing

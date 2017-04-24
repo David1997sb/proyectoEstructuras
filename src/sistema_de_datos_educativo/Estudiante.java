@@ -10,7 +10,9 @@ package sistema_de_datos_educativo;
  * @author Frander B.A
  */
 public class Estudiante {
-
+/**
+ * En la clase estudiante lo que podemos observar son los atributos que posee cada estudiante.
+ */
     private String Nombre;
     private String Apellido;
     private String Encargado;
@@ -21,7 +23,7 @@ public class Estudiante {
     private String NivelEducativo;
     private String nombreUsuario;
     private int Nota;
-
+//Se generan los gets y sets respectivos conforme a los parametros
     public int getNota() {
         return Nota;
     }
@@ -103,7 +105,7 @@ public class Estudiante {
     public void setNivelEducativo(String NivelEducativo) {
         this.NivelEducativo = NivelEducativo;
     }
-
+//Se genera un constructor con los atributos de la clase estudiantes 
     public Estudiante(String Nombre, String Apellido, String Encargado, String Correo, int id, String Telefono,int edad, String NivelEducativo) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -116,7 +118,7 @@ public class Estudiante {
         this.Nota= 0;
         this.nombreUsuario = Nombre.toLowerCase().charAt(0) + Apellido.toLowerCase() + id;
     }
-
+// Con el toString lo que se realiza es poder mostrar los atributos como toString.
     @Override
     public String toString() {
         return  "\nId: " + id +"\nNombre: " + Nombre + "\nApellido: " + Apellido + "\nEncargado: " + Encargado + "\nCorreo: " + Correo +  " \nTeléfono: " + Telefono + "  \nEdad: " + Edad + " \nNivel Educativo: " + NivelEducativo + "\n Nota: " + Nota + "";

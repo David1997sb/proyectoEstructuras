@@ -123,13 +123,14 @@ public class ColaEst {
             if (aux.getEstudiante().getId() == id) {
                 if (aux == Frente) {
                     Frente = aux.getAtras();
-                    return "Se elimino el Estuiante";
+                    return "Se elimino el profe";
                 } else if (aux == Ultimo) {
                     Ultimo = aux2;
-                    return "Se elimino el Estudiante";
+                    aux2.setAtras(aux.getAtras());
+                    return "Se elimino el profe";
                 } else {
                     aux2.setAtras(aux.getAtras());
-                    return "Se elimino el Estudiante";
+                    return "Se elimino el profe";
                 }
             } else {
                 aux2 = aux;
