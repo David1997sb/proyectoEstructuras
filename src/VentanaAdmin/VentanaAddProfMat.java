@@ -17,7 +17,7 @@ public class VentanaAddProfMat extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAddProfMat
      */
-    Colegio colegio;
+    Colegio colegio;// se crea un nuevo objeto de tipo colegio
 
     public VentanaAddProfMat(Colegio colegio) {
         initComponents();
@@ -86,7 +86,7 @@ public class VentanaAddProfMat extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtMateria)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtProfID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtProfID, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAceptar)
@@ -121,19 +121,19 @@ public class VentanaAddProfMat extends javax.swing.JFrame {
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
 
         try {
-            String NombreMateria = txtMateria.getText();
-            int Id = Integer.parseInt(txtProfID.getText());
-            colegio.agregaProfeAmateria(Id, NombreMateria);
-            JOptionPane.showMessageDialog(null, "Se ha agregado Profesor a la materia existosamente");
+            String NombreMateria = txtMateria.getText();// recibe el nombre de la materia que se está solicitando
+            int Id = Integer.parseInt(txtProfID.getText());// convierte a string el id que el profesor ingresa
+            colegio.agregaProfeAmateria(Id, NombreMateria);// agrega ese profesor (según el ID que ingreso) a la materia 
+            JOptionPane.showMessageDialog(null, "Se ha agregado Profesor a la materia existosamente");// cuando el profesor está agregado correctamente se muestra este mensaje
             
-            this.setVisible(false);
+            this.setVisible(false);//  este set visible es para que cierre la ventana luego de ser agregado
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si el administrador ingresa un dato inválido
         }
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.setVisible(false);
+        this.setVisible(false);// activa el botón de cancelar para que la ventana cierre 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

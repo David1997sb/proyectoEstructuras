@@ -19,7 +19,7 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdminListaProf
      */
-    Colegio colegio;
+    Colegio colegio; // se crea un objeto de tipo colegio
 
     public VentanaAdminListaProf(Colegio colegio) {
         initComponents();
@@ -107,13 +107,13 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-        this.txtListprof.setText(colegio.imprimeProfe());
+        this.txtListprof.setText(colegio.imprimeProfe());// ingresa la lista de profesores que están guardados en colegio y lo imprime con el metódo imprimeProfe en la lista creada en el JFrame
 //        System.out.println(colegio.imprimeProfe());
         
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.setVisible(false);
+        this.setVisible(false);// activa el botón de salir
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**

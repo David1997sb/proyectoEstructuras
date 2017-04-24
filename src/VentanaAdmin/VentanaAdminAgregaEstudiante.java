@@ -18,7 +18,7 @@ public class VentanaAdminAgregaEstudiante extends javax.swing.JFrame {
     /**
      * Creates new form AgregaEstudiante
      */
-    Colegio colegio;
+    Colegio colegio;// creamos un nuevo objeto de tipo estudiante
     public VentanaAdminAgregaEstudiante(Colegio colegio) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
@@ -224,18 +224,18 @@ public class VentanaAdminAgregaEstudiante extends javax.swing.JFrame {
 
     private void AceptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptBTNActionPerformed
         try{
-        String nombre= txtName.getText();
-        String Apellido= txtApellido.getText();
-        String Encargado= txtEncargado.getText();
-        String Correo= txtCorreo.getText();
-        String Tel= txtTel.getText();
-        String Nivel= txtNiveleducativo.getText();
-        int edad= Integer.parseInt(intEdad.getText());
-        colegio.agregaEstudiantes(nombre, Apellido, Encargado, Correo, Tel, edad, Nivel);
-        JOptionPane.showMessageDialog(null, "Se ha agregado exitosamente");
-        this.setVisible(false);
+        String nombre= txtName.getText();// recibe el nombre del estudiante que se va a agregar
+        String Apellido= txtApellido.getText();// recibe el apellido del estudiante que se va a agregar
+        String Encargado= txtEncargado.getText(); // recibe el nombre de la persona encargada del estudiante
+        String Correo= txtCorreo.getText();// recibe el correo del estudiante
+        String Tel= txtTel.getText();// recibe el telefono del estudiante
+        String Nivel= txtNiveleducativo.getText(); //recibe el nivel educativo del estudiante
+        int edad= Integer.parseInt(intEdad.getText());// covniete la edad de la persona a un string 
+        colegio.agregaEstudiantes(nombre, Apellido, Encargado, Correo, Tel, edad, Nivel); // agrega el estudiante con los datos anteriormente llenado al metódo agregaEstudiantes de la clase colegio
+        JOptionPane.showMessageDialog(null, "Se ha agregado exitosamente");// cuando el estudiante es agregado correctamente, muestra este mensaje
+        this.setVisible(false);//este set visible es para que cierre la ventana luego de ser agregado
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si el administrador pone datos erróneos
         }
     }//GEN-LAST:event_AceptBTNActionPerformed
 

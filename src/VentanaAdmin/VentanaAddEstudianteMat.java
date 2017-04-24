@@ -17,7 +17,7 @@ public class VentanaAddEstudianteMat extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAddEstudianteMat
      */
-    Colegio colegio;
+    Colegio colegio; //creamos un nuevo objeto de tipo colegio
     public VentanaAddEstudianteMat(Colegio colegio) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
@@ -115,19 +115,19 @@ public class VentanaAddEstudianteMat extends javax.swing.JFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         try {
             
-            String NombreMateria = txtNombreMateria.getText(); 
-            int Id = Integer.parseInt(txtEstudianteID.getText());
-            colegio.agregaEstudiantesAmateria(Id, NombreMateria);
-            JOptionPane.showMessageDialog(null, "Se ha agregado estudiante a la materia existosamente");
-            this.setVisible(false);
+            String NombreMateria = txtNombreMateria.getText(); // recibe los datos que se ingresen en Materia
+            int Id = Integer.parseInt(txtEstudianteID.getText());// convierte a string el id que el estudiante ingrese 
+            colegio.agregaEstudiantesAmateria(Id, NombreMateria);// se llama el metódo de clase colegio para agregar estudiantes (ya creados) a una materia en específico
+            JOptionPane.showMessageDialog(null, "Se ha agregado estudiante a la materia existosamente"); // cuando el estudiante se agrega a esta materia correctamente, se muestra este mensaje
+            this.setVisible(false);// este set visible es para que cierre la ventana luego de ser agregado
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que se caiga el programa si el administrador ingresa datos erroneos 
         }
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.setVisible(false);
+        this.setVisible(false);// activa el botón de cancelar para que la ventana cierre 
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

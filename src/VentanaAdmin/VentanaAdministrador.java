@@ -336,36 +336,37 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ListEstBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListEstBTNActionPerformed
-        VentanaListaEstudiantesAdmin listaEst = new VentanaListaEstudiantesAdmin(colegio);
-        listaEst.setVisible(true);
+        VentanaListaEstudiantesAdmin listaEst = new VentanaListaEstudiantesAdmin(colegio); // llamamos a la clase VentanaListaEstudiantesAdmin y creamos un nuevo objeto de tipo colegio para mostrar la lista de estudiantes en el sistema
+        listaEst.setVisible(true);// hacemos la ventana visible para mostrar la lista
     }//GEN-LAST:event_ListEstBTNActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        VentanaAdminAgregaEstudiante addEst = new VentanaAdminAgregaEstudiante(colegio);
-        addEst.setVisible(true);
+        VentanaAdminAgregaEstudiante addEst = new VentanaAdminAgregaEstudiante(colegio); // llamamos a la clase VentanaAdminAgregaEstudiante y creamos un nuevo objeto de tipo colegio para agregar nuevos estudiantes al sistema
+        addEst.setVisible(true);//// hacemos la ventana visible para agregar los datos del estudiante y guardarlo
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        VentanaAdminModProf modprof = new VentanaAdminModProf(colegio);
-        modprof.setVisible(true);
+        VentanaAdminModProf modprof = new VentanaAdminModProf(colegio);//llamamos a la clase VenataAdminModProf y creamos un objeto de tipo colegio para modificar los datos de un profesor a creado
+        modprof.setVisible(true);// hacemos la ventana visible para que se puedan modificar los datos
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        VentanaAdminListaProf listaProf = new VentanaAdminListaProf(colegio);
-        listaProf.setVisible(true);
+        VentanaAdminListaProf listaProf = new VentanaAdminListaProf(colegio); // llamamos a la clase VentanaAdminListaProf y creamos un nuevo objeto de tipo colegio para mostrar la lista de profesores en el sistema
+        listaProf.setVisible(true);// hacemos la ventana visible para que se pueda ver la lista de profesores en el sistema
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        VentanaAdminEliminaProf elimProf = new VentanaAdminEliminaProf(colegio);
-        elimProf.setVisible(true);
+        VentanaAdminEliminaProf elimProf = new VentanaAdminEliminaProf(colegio);// llamamos a la clase VentanaAdminEliminaProfe y creamos un nuevo objeto de tipo colegio para que busque en la lista de profesores el usuario del profesor que se desea eliminar y lo elimine
+        elimProf.setVisible(true);// hacemos la ventana visible para que se pueda eliminar el profesor
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void agregaProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregaProfesorActionPerformed
-        VentanaAdminAddProf addprof= new VentanaAdminAddProf(colegio);
-        addprof.setVisible(true);
+        VentanaAdminAddProf addprof= new VentanaAdminAddProf(colegio);// llamamos a la clase VentanaAdminAddprof y creamos un nuevo objeto de tipo colegio para agregar un nuevo profesor al sistema
+        addprof.setVisible(true);// hacemos la ventana visible para que se pueda agregar un nuevo profesor
     }//GEN-LAST:event_agregaProfesorActionPerformed
 
     private void MenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuSalirMouseClicked
+       //este metódo nos permite que al salir de cualquier ventana, no nos saqué inmediatamente del programa y se borren los datos que ya teníamos agregados si no que nos envíe a iniciar sesión de nuevo
         this.setVisible(false);
         Login abrirLogin = new Login();
         abrirLogin.setVisible(true);
@@ -374,18 +375,18 @@ public class VentanaAdministrador extends javax.swing.JFrame {
 
 
     private void verListaBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verListaBTNActionPerformed
-        VentListMat listaMaterias = new VentListMat(colegio);
-        listaMaterias.setVisible(true);
+        VentListMat listaMaterias = new VentListMat(colegio);// llamamos a la clase VentListMat y creamos un objeto de tipo colegio para poder ver la lista de materias creadas
+        listaMaterias.setVisible(true); // hacemos la ventana visible para poder imprimir la lista de materias
     }//GEN-LAST:event_verListaBTNActionPerformed
 
     private void EliminaMatBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaMatBTNActionPerformed
-        VentanaAdminEliMat eliminaMat = new VentanaAdminEliMat(colegio);
-        eliminaMat.setVisible(true);
+        VentanaAdminEliMat eliminaMat = new VentanaAdminEliMat(colegio); // llamamos a la clase VentanaAdminEliminaMat y creamos un objeto de tipo colegio para eliminar una materia del sistema
+        eliminaMat.setVisible(true);// hacemos la ventana visible para poder eliminar la materia 
     }//GEN-LAST:event_EliminaMatBTNActionPerformed
 
     private void modificaMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaMateriaActionPerformed
-        VentanaModificaMat modifyProf = new VentanaModificaMat(colegio);
-        modifyProf.setVisible(true);
+        VentanaModificaMat modifyProf = new VentanaModificaMat(colegio); //llamamos a la clase VentanaModifMateria y creamos un nuevo objeto de tipo colegio para poder modificar la informacion de una materia ya existente
+        modifyProf.setVisible(true);// hacemos la ventana visible para poder modificarla
     }//GEN-LAST:event_modificaMateriaActionPerformed
 
     private void addMatBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatBTNActionPerformed
@@ -414,22 +415,23 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_modificaMateria1ActionPerformed
 
     private void EllminaUsuarioBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EllminaUsuarioBTNActionPerformed
-        VentanaElimUsuario elimUsuario = new VentanaElimUsuario(colegio);
-        elimUsuario.setVisible(true);
+        VentanaElimUsuario elimUsuario = new VentanaElimUsuario(colegio); // llamamos a la clase VentanaElimUsuario y creamos un nuevo objeto de tipo colegio para que busque en la lista de usuarios al que desee eliminar que se desea eliminar y lo elimine
+        elimUsuario.setVisible(true);// hacemos visible la ventana para que se puedan eliminar los usuarios
     }//GEN-LAST:event_EllminaUsuarioBTNActionPerformed
 
     private void verListaBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verListaBTN1ActionPerformed
-        ListaUsuarios listaUsuarios = new ListaUsuarios(colegio);
-        listaUsuarios.setVisible(true);
+        ListaUsuarios listaUsuarios = new ListaUsuarios(colegio);// llamamos a la clase ListaUsuarios y creamos un objeto de tipo colegio para poder imprimir la lista de todos los usuarios
+        listaUsuarios.setVisible(true); // hacemos visible la ventana para poder imprimir la lista de todos los usuarios del Colegio
     }//GEN-LAST:event_verListaBTN1ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        VentanaAddProfMat addProfMat = new VentanaAddProfMat(colegio);
-        addProfMat.setVisible(true);
+        VentanaAddProfMat addProfMat = new VentanaAddProfMat(colegio);// llamamos a la clase VentanaAddProfMat de la clase colegio para agregar un profesor a una materia ya creada
+        addProfMat.setVisible(true);// hacemos visible la ventana para poder agregar profesores a materias
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.setVisible(false);
+       //este metódo nos permite que al salir de cualquier ventana, no nos saqué inmediatamente del programa y se borren los datos que ya teníamos agregados si no que nos envíe a iniciar sesión de nuevo
+       this.setVisible(false);
         Login abrirLogin = new Login();
         abrirLogin.setVisible(true);
     }//GEN-LAST:event_formWindowClosing

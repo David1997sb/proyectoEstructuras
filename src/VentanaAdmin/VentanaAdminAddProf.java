@@ -18,7 +18,7 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdminAddProf
      */
-    Colegio colegio;
+    Colegio colegio; // creamos un nuevo objeto de tipo colegio
     public VentanaAdminAddProf(Colegio colegio) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
@@ -189,19 +189,19 @@ public class VentanaAdminAddProf extends javax.swing.JFrame {
 
     private void aceptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptBTNActionPerformed
         try {
-        String nombre= txtName.getText();
-        String Apellido= txtApellido.getText();
-        String Correo= txtCorreo.getText();
-        int Telefono= Integer.parseInt(txtTelefono.getText());
-        int Edad= Integer.parseInt(txtEdad.getText());
-        String Curso = txtCurso.getText();
+        String nombre= txtName.getText();// recibo el nombre del profesor que se va agregar al sistema
+        String Apellido= txtApellido.getText();// recibo el apellido del profesor que se va a agregar al sistema
+        String Correo= txtCorreo.getText();// recibo el correo del profesor que se va a agregar al sistema
+        int Telefono= Integer.parseInt(txtTelefono.getText()); // convierto a string el telefono del profesor
+        int Edad= Integer.parseInt(txtEdad.getText());// convierto a string la edad del profesor
+        String Curso = txtCurso.getText();// agrego ese profesor a un curso determinado
         
-        colegio.AgregaProfesor(nombre, Apellido, Correo, Curso, Telefono, Edad, new Date ());
-        this.setVisible(false);
-        JOptionPane.showMessageDialog(null, "Agregado Correctamente");
+        colegio.AgregaProfesor(nombre, Apellido, Correo, Curso, Telefono, Edad, new Date ());// creamos un nuevo profesor en el metódo agrega profesor de la clase colegio
+        this.setVisible(false);//este set visible es para que cierre la ventana luego de ser agregado
+        JOptionPane.showMessageDialog(null, "Agregado Correctamente"); // cuando el profesor se agrega correctamente, muestra este mensaje
         
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si el administrador ingresa un dato incorrecto
         }
         
     }//GEN-LAST:event_aceptBTNActionPerformed

@@ -18,7 +18,7 @@ public class VentanaElimUsuario extends javax.swing.JFrame {
     /**
      * Creates new form VentanaElimUsuario
      */
-    Colegio colegio;
+    Colegio colegio; // se crea un nuevo objeto de tipo colegio
     
     public VentanaElimUsuario(Colegio colegio) {
         initComponents();
@@ -105,18 +105,18 @@ public class VentanaElimUsuario extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try {
-            int id = Integer.parseInt(txtID.getText());
-            colegio.eliminaUsuario(id);
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Eliminado Correctamente");
+            int id = Integer.parseInt(txtID.getText()); // recibe un ID que tiene los datos de un usuario
+            colegio.eliminaUsuario(id);// llama al metódo eliminaUsuario de la clase colegio para eliminar el estudiante
+            this.setVisible(false);//  este set visible es para que cierre la ventana luego de ser agregado
+            JOptionPane.showMessageDialog(null, "Eliminado Correctamente");// si se elimina correctamente, se muestra este mensaje
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si el administrador ingresa los datos de manera errónea
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.setVisible(false);
+        this.setVisible(false);// activa el botón de cancelar para que al apretarlo se salga de esta ventana
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

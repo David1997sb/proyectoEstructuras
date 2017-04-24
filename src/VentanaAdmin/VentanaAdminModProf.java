@@ -23,7 +23,7 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdminModProf
      */
-    Colegio colegio;
+    Colegio colegio; // creamos un nuevo objeto de tipo colegio
 
     public VentanaAdminModProf(Colegio colegio) {
         initComponents();
@@ -235,19 +235,19 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        try {
-            int Id = Integer.parseInt(txtID.getText());
-            String Nombre = txtNombre.getText();
-            String Apellido = txtApellido.getText();
-            String Correo = txtCorreo.getText();
-            String Curso = txtCurso.getText();
-            int Telefono = Integer.parseInt(txtTelefono.getText());
-            int Edad = Integer.parseInt(txtEdad.getText());
-            colegio.modificaProfeAdmin(Id, Nombre, Apellido, Correo, Curso, Telefono, Edad, new Date());
-            JOptionPane.showMessageDialog(null, "Modificado Correctamente");
-            this.setVisible(false);
+        try { // COMPLETA CAMPOS SEGÚN EL ID
+            int Id = Integer.parseInt(txtID.getText());// convierte a string el id
+            String Nombre = txtNombre.getText(); // recibe el nombre del profesor
+            String Apellido = txtApellido.getText(); //recibe el apellido del profesor
+            String Correo = txtCorreo.getText();// recibe el correo del profesor
+            String Curso = txtCurso.getText();// recibe el curso del profesor 
+            int Telefono = Integer.parseInt(txtTelefono.getText());// convierte a string el telefono del profesor
+            int Edad = Integer.parseInt(txtEdad.getText());// convierte a string la edad del profesor
+            colegio.modificaProfeAdmin(Id, Nombre, Apellido, Correo, Curso, Telefono, Edad, new Date()); //modifica los datos del profesor del metodo modificaProfeAdmin de la clase colegio y los guarda como su nueva información
+            JOptionPane.showMessageDialog(null, "Modificado Correctamente"); // cuando se guarden correctamente, muestra este mensaje
+            this.setVisible(false); //este set visible es para que cierre la ventana luego de ser agregado
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga
         }
 
 
@@ -278,14 +278,14 @@ public class VentanaAdminModProf extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDFocusLost
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String id = txtID.getText();
-        System.out.println(id);
-        txtNombre.setText(colegio.imprimeProfeNom(Integer.parseInt(id)));
-        txtApellido.setText(colegio.imprimeProfeApel(Integer.parseInt(id)));
-        txtEdad.setText(String.valueOf(colegio.imprimeProfeEdad(Integer.parseInt(id))));
-        txtTelefono.setText(String.valueOf(colegio.imprimeProfeTel(Integer.parseInt(id))));
-        txtCurso.setText(colegio.imprimeProfeCurso(Integer.parseInt(id)));
-        txtCorreo.setText(colegio.imprimeProfeCorreo(Integer.parseInt(id)));
+        String id = txtID.getText(); // converte a string el ID que se ingreso  y manda a llamar los datos que pertenecen a el para modificarlos
+        System.out.println(id); //imprime la información que pertenece a ese id
+        txtNombre.setText(colegio.imprimeProfeNom(Integer.parseInt(id))); //imprime el nombre según el id ingresado
+        txtApellido.setText(colegio.imprimeProfeApel(Integer.parseInt(id)));// imprime el apellido según el id ingresado
+        txtEdad.setText(String.valueOf(colegio.imprimeProfeEdad(Integer.parseInt(id))));// imprime la edad según el id ingresado
+        txtTelefono.setText(String.valueOf(colegio.imprimeProfeTel(Integer.parseInt(id))));// imprime el telefóno según el id ingresado
+        txtCurso.setText(colegio.imprimeProfeCurso(Integer.parseInt(id)));// imprime el curso según el id ingresado
+        txtCorreo.setText(colegio.imprimeProfeCorreo(Integer.parseInt(id)));// imprime el correo según el id ingresado
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
