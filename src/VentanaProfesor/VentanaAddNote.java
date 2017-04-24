@@ -5,6 +5,7 @@
  */
 package VentanaProfesor;
 
+import javax.swing.JOptionPane;
 import sistema_de_datos_educativo.Colegio;
 import sistema_de_datos_educativo.Profesor;
 
@@ -124,11 +125,16 @@ public class VentanaAddNote extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBTNActionPerformed
-       int idestudiante= Integer.parseInt(intID.getText());
+      try{
+        int idestudiante= Integer.parseInt(intID.getText());
        int calificacion= Integer.parseInt(intCalificacion.getText());
        String materia= profesor.getCurso();
        colegio.AgregaNota(idestudiante, calificacion, materia);
-       this.setVisible(false);
+       this.setVisible(false);  
+      }catch(Exception e){
+          JOptionPane.showMessageDialog(null, "Valor incorrecto");
+      }
+        
     }//GEN-LAST:event_AddBTNActionPerformed
 
     private void intCalificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intCalificacionActionPerformed

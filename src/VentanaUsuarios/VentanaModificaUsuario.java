@@ -5,6 +5,7 @@
  */
 package VentanaUsuarios;
 
+import javax.swing.JOptionPane;
 import sistema_de_datos_educativo.Colegio;
 
 /**
@@ -121,11 +122,15 @@ public class VentanaModificaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
         String name= txtNombre.getText();
         String Pass=new String (txtPassword.getPassword());
         int id= Integer.parseInt(intID.getText());
         colegio.modificaUsuario(name, Pass, id);
         this.setVisible(false);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Valor incorrecto");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

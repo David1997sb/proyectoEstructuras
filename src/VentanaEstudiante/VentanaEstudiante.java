@@ -5,6 +5,7 @@
  */
 package VentanaEstudiante;
 
+import javax.swing.JOptionPane;
 import sistema_de_datos_educativo.Colegio;
 import sistema_de_datos_educativo.Estudiante;
 import sistema_de_datos_educativo.Login;
@@ -149,11 +150,15 @@ public class VentanaEstudiante extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
         int id = Integer.parseInt(intID.getText());
         String Correo = txtCorreo.getText();
         String Tel = txtTel.getText();
         colegio.modifySingleEstudent(Correo, Tel, id);
-
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Valor incorrecto");
+        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

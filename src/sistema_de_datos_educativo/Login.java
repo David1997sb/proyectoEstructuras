@@ -148,7 +148,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-
+        try{
         String nombreUsuario = txtUsuario.getText();
         String pass = new String(txtPassword.getPassword());
         Usuario usuario = colegio.validaUsuario(nombreUsuario, pass);
@@ -170,7 +170,9 @@ public class Login extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña invalido");
         }
-
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Valor incorrecto");
+        }
     }
 
     private void btnInicioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnInicioKeyPressed
