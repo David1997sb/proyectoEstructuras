@@ -24,6 +24,8 @@ public class VentanaProfesor extends javax.swing.JFrame {
     Profesor profesor;
     public VentanaProfesor(Colegio colegio,Profesor profesor) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.profesor= profesor;
         this.colegio= colegio;
     }

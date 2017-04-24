@@ -21,6 +21,8 @@ public class VentanaAddProfMat extends javax.swing.JFrame {
 
     public VentanaAddProfMat(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
     }
 

@@ -19,6 +19,8 @@ public class ListaUsuarios extends javax.swing.JFrame {
     Colegio colegio;
     public ListaUsuarios(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio=colegio;
     }
 

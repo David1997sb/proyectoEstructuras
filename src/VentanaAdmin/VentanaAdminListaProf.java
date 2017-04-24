@@ -23,6 +23,8 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
 
     public VentanaAdminListaProf(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
     }
 

@@ -21,6 +21,8 @@ public class VentanaAddNote extends javax.swing.JFrame {
     Profesor profesor;
     public VentanaAddNote(Colegio colegio, Profesor profesor) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio=colegio;
         this.profesor= profesor;
     }

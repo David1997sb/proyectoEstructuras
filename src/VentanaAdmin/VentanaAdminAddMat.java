@@ -21,6 +21,8 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
 
     public VentanaAdminAddMat(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
     }
 

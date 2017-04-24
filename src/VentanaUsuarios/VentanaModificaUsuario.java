@@ -19,6 +19,8 @@ public class VentanaModificaUsuario extends javax.swing.JFrame {
     Colegio colegio;
     public VentanaModificaUsuario(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio=colegio;
     }
 

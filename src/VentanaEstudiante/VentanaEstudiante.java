@@ -23,6 +23,8 @@ public class VentanaEstudiante extends javax.swing.JFrame {
 
     public VentanaEstudiante(Colegio colegio, Estudiante estudiante) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
         this.estudiante = estudiante;
     }

@@ -21,6 +21,8 @@ public class VentanaAdminEliminaProf extends javax.swing.JFrame {
     
     public VentanaAdminEliminaProf(Colegio colegio) {
         initComponents();
+        setLocationRelativeTo(null);//para centrar ventanas
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
     }
 
