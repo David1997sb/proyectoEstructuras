@@ -17,7 +17,7 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdminAddMat
      */
-    Colegio colegio;
+    Colegio colegio; // creamos un nuevo objeto de tipo colegio
 
     public VentanaAdminAddMat(Colegio colegio) {
         initComponents();
@@ -169,15 +169,15 @@ public class VentanaAdminAddMat extends javax.swing.JFrame {
 
     private void AcepBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcepBTNActionPerformed
         try {
-            String NombreMateria = txtNombreMateria.getText();
-            int Aula = Integer.parseInt(txtAula.getText());
-            String Horario = txtHorario.getText();
-            int CantAlumnos = Integer.parseInt(txtCantAlumnos.getText());
-            colegio.agregaMateria(NombreMateria, Aula, Horario, CantAlumnos);
-            JOptionPane.showMessageDialog(null, "Se ha agregado la materia existosamente");
-            this.setVisible(false);
+            String NombreMateria = txtNombreMateria.getText();// recibo el nombre que se le va a asignar a la materia
+            int Aula = Integer.parseInt(txtAula.getText()); // convertimos en string el número de aula que va a pertenecer a esa materia
+            String Horario = txtHorario.getText(); //asignamos un horario para la materia
+            int CantAlumnos = Integer.parseInt(txtCantAlumnos.getText()); // convertimos en string la cantidad máxima de alumnos que va a tener esa materia
+            colegio.agregaMateria(NombreMateria, Aula, Horario, CantAlumnos); //agregamos una materia al metodo agrega materia de la clase colegio con los datos anteriormente solicitados
+            JOptionPane.showMessageDialog(null, "Se ha agregado la materia existosamente"); // cuando la materia se agrega correctamente se muestra este mensaje
+            this.setVisible(false);//  este set visible es para que cierre la ventana luego de ser agregad
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido"); //evita que el programa se caiga si algun dato fue mal ingresado
         }
     }//GEN-LAST:event_AcepBTNActionPerformed
 

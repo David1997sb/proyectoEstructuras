@@ -23,7 +23,7 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
     /**
      * Creates new form VentanaModificaEstudiante
      */
-    Colegio colegio;
+    Colegio colegio; // creamos un nuevo objeto de tipo colegio
 
     public VentanaModificaEstudianteAdmin(Colegio colegio) {
         initComponents();
@@ -233,20 +233,20 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
         try {
             //Completar Campos cuando agrego ID
 
-            String nombre = txtname.getText();
-            String Apellido = txtapelido.getText();
-            String Encargado = txtencargado.getText();
-            String Correo = txtcorreo.getText();
-            int ID = Integer.parseInt(intid.getText());
-            String Telefono = txtTelefono.getText();
-            int Edad = Integer.parseInt(intedad.getText());
-            String Nivel = txtnivel.getText();
-            colegio.validaEst(ID);
-            colegio.modificaEstudianteAdmin(nombre, Apellido, Encargado, Correo, ID, Telefono, Edad, Nivel);
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Se ha modificado existosamente al estudiante");
+            String nombre = txtname.getText();// recibe un nuevo nombre para el estudiante ya creado
+            String Apellido = txtapelido.getText(); //recibe un nuevo apellido para el estudiante ya creado
+            String Encargado = txtencargado.getText(); // recibe un nuevo encargado para el estudiante ya creado
+            String Correo = txtcorreo.getText(); // recibe un nuevo correo para el estudiante ya creado
+            int ID = Integer.parseInt(intid.getText());// convierte en string el ID ingresado
+            String Telefono = txtTelefono.getText();//recibe un nuevo telefono para el estudiante ya creado
+            int Edad = Integer.parseInt(intedad.getText());//convierte en un string la edad ingresada
+            String Nivel = txtnivel.getText();//recibe un nuevo nivel para el estudiante ya creado
+            colegio.validaEst(ID);// llamamos al metódo validaEst de la clase colegio para que busque en el codigo si existe un estudiante con ese ID
+            colegio.modificaEstudianteAdmin(nombre, Apellido, Encargado, Correo, ID, Telefono, Edad, Nivel); //y  si existe lo modifica según los datos que se ingresaron anteriormente
+            this.setVisible(false);//este set visible es para que cierre la ventana luego de ser agregado
+            JOptionPane.showMessageDialog(null, "Se ha modificado existosamente al estudiante"); // cuando se modifica correctamente, se muestra este mensaje
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si el usuario ingresa datos erróneos
         }
     }//GEN-LAST:event_AcptBTNActionPerformed
 
@@ -283,15 +283,15 @@ public class VentanaModificaEstudianteAdmin extends javax.swing.JFrame {
 
     private void BscrBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BscrBTNActionPerformed
         try {
-            String id = intid.getText();
+            String id = intid.getText();// se ingresa in id y este manda a llamar los datos que pertenecen ese ID(o persona) 
                 //System.out.println(id);
-                txtname.setText(colegio.imprimeNomEstu(Integer.parseInt(id)));
-                txtapelido.setText(colegio.imprimeApelliEstu(Integer.parseInt(id)));
-                intedad.setText(String.valueOf(colegio.imprimeEdadEstu(Integer.parseInt(id)))); 
-                txtTelefono.setText(colegio.imprimeTelEstu(Integer.parseInt(id)));
-                txtencargado.setText(colegio.imprimeEncargadoEstu(Integer.parseInt(id)));
-                txtcorreo.setText(colegio.imprimeCorreoEstu(Integer.parseInt(id)));
-                txtnivel.setText(colegio.imprimeNivelEstu(Integer.parseInt(id)));
+                txtname.setText(colegio.imprimeNomEstu(Integer.parseInt(id)));// recibe el nombre según el ID
+                txtapelido.setText(colegio.imprimeApelliEstu(Integer.parseInt(id)));// recibe el apellido según el ID
+                intedad.setText(String.valueOf(colegio.imprimeEdadEstu(Integer.parseInt(id)))); //recibe la edad según el ID
+                txtTelefono.setText(colegio.imprimeTelEstu(Integer.parseInt(id)));// recibe el telefóno segú el ID
+                txtencargado.setText(colegio.imprimeEncargadoEstu(Integer.parseInt(id))); // recibe el nombre del encargado según el ID
+                txtcorreo.setText(colegio.imprimeCorreoEstu(Integer.parseInt(id)));// recibe el correo según el ID
+                txtnivel.setText(colegio.imprimeNivelEstu(Integer.parseInt(id))); // recibe el nivel según el ID
         } catch (Exception e) {
         }
         

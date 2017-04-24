@@ -16,7 +16,7 @@ public class VentanaListaEstudiantesAdmin extends javax.swing.JFrame {
     /**
      * Creates new form VentanaListaEstudiantes
      */
-    Colegio colegio;
+    Colegio colegio; // se crea un nuevo objeto de tipo colegio
     public VentanaListaEstudiantesAdmin(Colegio colegio) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
@@ -101,11 +101,11 @@ public class VentanaListaEstudiantesAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void verlistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verlistaActionPerformed
-        this.jTextArea1.setText(colegio.imprimeEstudiantes() + "\n");
+        this.jTextArea1.setText(colegio.imprimeEstudiantes() + "\n"); // muestra en la lista creada en el JFrame la lista de estudiantes que se encuentra en colegio y la imprime con el metódo imprimeEstudiantes
     }//GEN-LAST:event_verlistaActionPerformed
 
     private void AtrasBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasBTNActionPerformed
-        this.setVisible(false);
+        this.setVisible(false); //activa el botón para salir 
     }//GEN-LAST:event_AtrasBTNActionPerformed
 
     /**

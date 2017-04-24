@@ -17,7 +17,7 @@ public class VentanaEliminaEstudianteAdmin extends javax.swing.JFrame {
     /**
      * Creates new form VentanaEliminaEstudiante
      */
-    Colegio colegio;
+    Colegio colegio;// se crea un nuevo objeto de tipo colegio
     public VentanaEliminaEstudianteAdmin(Colegio colegio) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
@@ -124,12 +124,12 @@ public class VentanaEliminaEstudianteAdmin extends javax.swing.JFrame {
 
     private void AceptBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptBTNActionPerformed
         try{
-        int id= Integer.parseInt(intID.getText());
-        colegio.eliminaEstudiante(id);
-        this.setVisible(false);
-        JOptionPane.showMessageDialog(null,"El estudiante con el id " + id + " ha sido eliminado");
+        int id= Integer.parseInt(intID.getText()); // convierte en string el id ingresado que tiene los datos de un estudiante
+        colegio.eliminaEstudiante(id);// llamamos al metódo eliminaEstudiante de la clase colegio para eliminar un estudiante del sistema
+        this.setVisible(false);  //este set visible es para que cierre la ventana luego de ser agregado
+        JOptionPane.showMessageDialog(null,"El estudiante con el id " + id + " ha sido eliminado");// cuándo el estudiante sea eliminado, se mostrará este mensaje
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, " Valor incorrecto ");
+            JOptionPane.showMessageDialog(null, " Valor incorrecto ");// evita que el programa se caiga si ingresa algún dato incorrectamentr
         }
     }//GEN-LAST:event_AceptBTNActionPerformed
 

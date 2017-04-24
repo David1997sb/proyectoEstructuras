@@ -17,7 +17,7 @@ public class VentanaAdminEliMat extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdminEliMat
      */
-    Colegio colegio;
+    Colegio colegio;// creo un nuevo objeto de tipo colegio
     public VentanaAdminEliMat(Colegio colegio) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
@@ -105,12 +105,12 @@ public class VentanaAdminEliMat extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-        String NombreMateria= txtNombreMateria.getText();
-        colegio.eliminaMateria(NombreMateria);
-        JOptionPane.showMessageDialog(null, "Se ha eliminado la materia exitosamente");
-        this.setVisible(false);
+        String NombreMateria= txtNombreMateria.getText(); //recibo el nombre de la materia a eliminar
+        colegio.eliminaMateria(NombreMateria);// llamo al metódo eliminaMateria de la clase colegio y borra la que tenga el nombre que indiqué
+        JOptionPane.showMessageDialog(null, "Se ha eliminado la materia exitosamente"); // al borraste la materia correctamente, muestra este mensaje
+        this.setVisible(false);//este set visible es para que cierre la ventana luego de ser agregado
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si el administrador pone datos erróneos 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

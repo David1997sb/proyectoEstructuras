@@ -17,7 +17,7 @@ public class VentanaAdminEliminaProf extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdminEliminaProf
      */
-    Colegio colegio;
+    Colegio colegio;// creamos un objeto de tipo colegio
     
     public VentanaAdminEliminaProf(Colegio colegio) {
         initComponents();
@@ -104,13 +104,13 @@ public class VentanaAdminEliminaProf extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try {
-            int id = Integer.parseInt(txtID.getText());
-            colegio.eliminaProfesor(id);
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Eliminado Correctamente");
+            int id = Integer.parseInt(txtID.getText()); // se ingresa el id del profesor a eliminar
+            colegio.eliminaProfesor(id);// elimina al profesor que tenga ese ID según el metódo eliminaProfesor de la clase colegio
+            this.setVisible(false); //este set visible es para que cierre la ventana luego de ser agregado
+            JOptionPane.showMessageDialog(null, "Eliminado Correctamente");// cuando se elimina correctamente, se muestra este mensaje
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Valor invalido");
+            JOptionPane.showMessageDialog(null, "Valor invalido");// evita que el programa se caiga si los datos fueron ingresados incorrectamente
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
