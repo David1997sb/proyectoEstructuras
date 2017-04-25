@@ -64,7 +64,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
 
         jLabel2.setText("Correo nuevo");
 
-        jLabel3.setText("Numero nuevo");
+        jLabel3.setText("Número nuevo");
 
         intID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +86,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
         });
 
         DatosEst.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        DatosEst.setText("Modifica  Datos Profesor");
+        DatosEst.setText("Modifica Datos Profesor");
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -143,11 +143,11 @@ public class VentanaProfesor extends javax.swing.JFrame {
                                 .addComponent(intID, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtTel))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(140, 140, 140)
                         .addComponent(jButton1)
                         .addGap(51, 51, 51)
                         .addComponent(btnSalir)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,11 +166,11 @@ public class VentanaProfesor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(btnSalir))
-                .addContainerGap())
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -241,7 +241,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            
+          
 //new VentanaProfesor().setVisible(true);
             }
         });

@@ -95,7 +95,7 @@ public class Arbol {
          */
         if (n != null) {
             inOrdenRec(n.getHijoIzq());
-            salida += n.getEstudiante().getNota()+" "+ n.getEstudiante().getNombre()+ " "+ n.getEstudiante().getApellido() + "\n";
+            salida +=  "Nota: " + n.getEstudiante().getNota()+" "+ "( Id: "+ n.getEstudiante().getId() +": "+n.getEstudiante().getNombre()+ " "+ n.getEstudiante().getApellido() + " )"+ "\n";
             inOrdenRec(n.getHijoDer());
         }
 

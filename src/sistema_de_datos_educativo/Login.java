@@ -42,12 +42,15 @@ public class Login extends javax.swing.JFrame {
        //Se agregan profesores a materias.
         colegio.agregaProfeAmateria(1, "Matematica");
         colegio.agregaProfeAmateria(2, "Estructura de datos");
+        colegio.agregaProfeAmateria(3, "Sociales");
         
         //Se agregan los estudiantes a la materia con forma a los atributos del metodo.
         colegio.agregaEstudiantesAmateria(1, "Matematica");
         colegio.agregaEstudiantesAmateria(2, "Matematica");
         colegio.agregaEstudiantesAmateria(3, "Matematica");
         colegio.agregaEstudiantesAmateria(4, "Matematica");
+        colegio.agregaEstudiantesAmateria(1, "Sociales");
+        
         // se agrega la nota de la materia a cada estudiante
         colegio.AgregaNota(1, 85, "Matematica");
         colegio.AgregaNota(2, 60, "Matematica");
