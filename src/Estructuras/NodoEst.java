@@ -12,9 +12,12 @@ import sistema_de_datos_educativo.Estudiante;
  * @author Frander B.A
  */
 public class NodoEst {
+/**
+ * Se generan los atributos de tipo NodoEst y Estudiante para asi generar sus respectivos get y sets, junto con su metodo toString
+ */
+    private NodoEst Atras;//Hace referencia al nodo de atras
 
-    private NodoEst Atras;
-    private Estudiante estudiante;
+    private Estudiante estudiante;//se encuentran los datos del estudiante
 
     public NodoEst getAtras() {
         return Atras;

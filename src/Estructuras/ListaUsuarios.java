@@ -6,6 +6,11 @@ public class ListaUsuarios {
 
     private NodoUsuario cabeza;
 
+    /**
+     *
+     * Este es el metodo que se utiliza para poder ingresar a los usuarios a la
+     * lista.
+     */
     public void insert(Usuario p) {
         if (cabeza == null) {
             //Se crea el nuevo Nodo
@@ -36,6 +41,7 @@ public class ListaUsuarios {
     }
 
     public Usuario BuscarUsuario(String usuario, String password) {
+        //Este metodo lo que realiza es buscar un usurio conforme a un usuario y una contrasena, se puede ver como una validacion de datos
         NodoUsuario aux = cabeza;
         while (aux != null) {
             if (aux.getDato().getNombre().equals(usuario) && aux.getDato().getPassword().equals(password)) {
@@ -47,6 +53,11 @@ public class ListaUsuarios {
     }
 
     public Usuario BuscarUsuarioID(int id) {
+        /**
+         * Se realiza una validacion con un id que tiene por parametro para asi
+         * encontrar un usuario especifico. Una vez este se a encontrado es
+         * retornado
+         */
         NodoUsuario aux = cabeza;
         while (aux != null) {
             if (aux.getDato().getId() == id) {
@@ -59,6 +70,12 @@ public class ListaUsuarios {
     }
 
     public void ModificaUsuario(String usuario, String password, int id) {
+        /**
+         * Este metodo lo que realiza son todos los cambios a lo que el
+         * administrador tiene acceso para realizar los cambios de los usuarios.
+         * Se hace una validacion conforme a un ID para asi encontrar a un
+         * usuario, una vez encontrado se le cambian sus datos.
+         */
         NodoUsuario aux = cabeza;
         while (aux != null) {
             if (aux.getDato().getId() == id) {
@@ -70,6 +87,12 @@ public class ListaUsuarios {
     }
 
     public void eliminar(String nombreUsuario) {
+        /**
+         * Este metodo lo que realiza es poder eliminar un usuario de la Lista
+         * de usuarios conforme a un nombre de usuario que se le manda por
+         * parametro Se busca dentro de la lista, una vez es encontrado el
+         * usuario es eliminado.
+         */
         if (cabeza != null) { //Si la lista no esta vacia
             NodoUsuario aux = cabeza;
             NodoUsuario anterior = null;
@@ -94,6 +117,8 @@ public class ListaUsuarios {
     }
 
     public String toString() {
+        //Este metodo nos permite convertir todo a String para asi poder imprimirlo.
+
         NodoUsuario aux = cabeza;
         String s = "Lista : \n";
         while (aux != null) {

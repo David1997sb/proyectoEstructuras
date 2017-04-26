@@ -12,9 +12,12 @@ import sistema_de_datos_educativo.Profesor;
  * @author Frander B.A
  */
 public class NodoProf {
+/**
+ * Se generan los atributos de tipo NodoProf y Profesor para asi generar sus respectivos get y sets, junto con su metodo toString
+ */
+    private NodoProf Atras;//Hace referencia al nodo de atras
 
-    private NodoProf Atras;
-    private Profesor nodoprof;
+    private Profesor nodoprof;//se encuentran los datos de la persona
 
     public NodoProf(Profesor nodoprof) {
         this.nodoprof = nodoprof;

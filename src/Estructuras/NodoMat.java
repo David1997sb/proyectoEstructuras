@@ -12,9 +12,12 @@ import sistema_de_datos_educativo.Materia;
  * @author Frander B.A
  */
 public class NodoMat {
-    
-    private NodoMat Atras;
-    private Materia materia;
+   /**
+ * Se generan los atributos de tipo NodoMat y mater para asi generar sus respectivos get y sets, junto con su metodo toString
+ */
+    private NodoMat Atras;//Hace referencia al nodo de atras
+
+    private Materia materia;//se encuentran los datos de la matera
 
     public NodoMat getAtras() {
         return Atras;
