@@ -108,7 +108,7 @@ public class ColaEst {
         return null;
     }
 
-    public Estudiante modificaEstuduante(String Correo, String Telefono, int id) {
+    public Estudiante modificaEstudiante(String Correo, String Telefono, int id) {
         /**
          * Este metodo es al que el estudiante tiene acceso, y se le muestran los datos que este puede cambiar.
          */

@@ -94,7 +94,23 @@ public class ColaProf {
         }
     }
 
-    public void modificaProfe(String Correo, int Telefono, int id, String Curso) {
+    public Profesor modificaProfe(String Correo, int Telefono, int id) {
+        /**
+         * Este metodo es al que el profesor tiene acceso, y se le muestran los datos que este puede cambiar.
+         */
+        NodoProf aux = Frente;
+        while (aux != null) {
+            if (aux.getNodoprof().getId() == id) {
+                aux.getNodoprof().setCorreo(Correo);
+                aux.getNodoprof().setTelefono(Telefono);
+//                aux.getNodoprof().setCurso(Curso);
+            }
+            aux = aux.getAtras();
+        }
+        return null;
+    }
+    
+        public void modificaProfeaMat(String Correo, int Telefono, int id, String Curso) {
         /**
          * Este metodo es al que el profesor tiene acceso, y se le muestran los datos que este puede cambiar.
          */
@@ -108,6 +124,7 @@ public class ColaProf {
             aux = aux.getAtras();
         }
     }
+    
 
     public String eliminadatosProfesor(int id) {
        /**

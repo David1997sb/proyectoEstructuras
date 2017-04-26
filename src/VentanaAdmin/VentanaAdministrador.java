@@ -91,7 +91,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
         EliminaEstBTN = new javax.swing.JMenuItem();
         ModifEstBTN = new javax.swing.JMenuItem();
         ListEstBTN = new javax.swing.JMenuItem();
-        MenuAcercaDe = new javax.swing.JMenu();
         MenuSalir = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -308,9 +307,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        MenuAcercaDe.setText("Acerca de");
-        jMenuBar1.add(MenuAcercaDe);
-
         MenuSalir.setText("Salir");
         MenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -481,7 +477,6 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenuItem EliminaMatBTN;
     private javax.swing.JMenuItem EllminaUsuarioBTN;
     private javax.swing.JMenuItem ListEstBTN;
-    private javax.swing.JMenu MenuAcercaDe;
     private javax.swing.JMenu MenuSalir;
     private javax.swing.JMenuItem ModifEstBTN;
     private javax.swing.JMenuItem addMatBTN;

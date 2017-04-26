@@ -26,6 +26,7 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
         setLocationRelativeTo(null);//para centrar ventanas
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
+        this.txtListprof.setText(colegio.imprimeProfe());// ingresa la lista de profesores que están guardados en colegio y lo imprime con el metódo imprimeProfe en la lista creada en el JFrame
     }
 
  
@@ -40,7 +41,6 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnMostrar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtListprof = new javax.swing.JTextArea();
@@ -49,13 +49,6 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setText("Lista de Profesores");
-
-        btnMostrar.setText("Mostrar");
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
-            }
-        });
 
         btnSalir.setText("Atras");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -80,9 +73,7 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(btnMostrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(30, 277, Short.MAX_VALUE)
                         .addComponent(btnSalir)
                         .addGap(48, 48, 48))
                     .addGroup(layout.createSequentialGroup()
@@ -97,20 +88,12 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMostrar)
-                    .addComponent(btnSalir))
+                .addComponent(btnSalir)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-        this.txtListprof.setText(colegio.imprimeProfe());// ingresa la lista de profesores que están guardados en colegio y lo imprime con el metódo imprimeProfe en la lista creada en el JFrame
-//        System.out.println(colegio.imprimeProfe());
-        
-    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.setVisible(false);// activa el botón de salir
@@ -152,7 +135,6 @@ public class VentanaAdminListaProf extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

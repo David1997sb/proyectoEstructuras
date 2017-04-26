@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaUsuarios/ListaUsuarios.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaProfesor/VentanaVerNotas.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Colegio.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaAdmin/VentanaModificaEstudianteAdmin.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Materia.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaUsuarios/VentanaModificaUsuario.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaMateria/VentanaModificaMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaProfesor/VentanaProfesor.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/ColaMat.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/VentanaProfesor/VentanaAddNote.java</file>
+            <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/Estructuras/Arbol.java</file>
             <file>file:/Users/aldomora89/Documents/GitHub/proyectoEstructuras/src/sistema_de_datos_educativo/Login.java</file>
         </group>
     </open-files>

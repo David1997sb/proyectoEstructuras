@@ -11,7 +11,6 @@ import sistema_de_datos_educativo.Colegio;
 import sistema_de_datos_educativo.Profesor;
 import sistema_de_datos_educativo.Login;
 
-
 /**
  *
  * @author frander
@@ -23,12 +22,16 @@ public class VentanaProfesor extends javax.swing.JFrame {
      */
     Colegio colegio;
     Profesor profesor;
-    public VentanaProfesor(Colegio colegio,Profesor profesor) {
+
+    public VentanaProfesor(Colegio colegio, Profesor profesor) {
         initComponents();
         setLocationRelativeTo(null);//para centrar ventanas
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.profesor= profesor;
-        this.colegio= colegio;
+        this.profesor = profesor;
+        this.colegio = colegio;
+
+        intID1.setText(String.valueOf(colegio.imprimeProfeID(profesor.getId())));
+
     }
 
     /**
@@ -44,12 +47,12 @@ public class VentanaProfesor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        intID = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
-        txtTel = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        intTel = new javax.swing.JTextField();
+        btnCambiar = new javax.swing.JButton();
         DatosEst = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        intID1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -59,6 +62,11 @@ public class VentanaProfesor extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel1.setText("Su ID de profesor");
 
@@ -66,22 +74,16 @@ public class VentanaProfesor extends javax.swing.JFrame {
 
         jLabel3.setText("Número nuevo");
 
-        intID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intIDActionPerformed(evt);
-            }
-        });
-
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Cambiar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCambiar.setText("Cambiar");
+        btnCambiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCambiarActionPerformed(evt);
             }
         });
 
@@ -137,14 +139,19 @@ public class VentanaProfesor extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel3))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                .addComponent(intID, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtTel))))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(0, 0, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                        .addComponent(intTel)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(intID1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(140, 140, 140)
-                        .addComponent(jButton1)
+                        .addComponent(btnCambiar)
                         .addGap(51, 51, 51)
                         .addComponent(btnSalir)))
                 .addContainerGap(90, Short.MAX_VALUE))
@@ -157,7 +164,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(intID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(intID1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -165,10 +172,10 @@ public class VentanaProfesor extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(intTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnCambiar)
                     .addComponent(btnSalir))
                 .addGap(33, 33, 33))
         );
@@ -176,40 +183,43 @@ public class VentanaProfesor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void intIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_intIDActionPerformed
-
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try{
-        int id = Integer.parseInt(intID.getText());
-        String Correo= txtCorreo.getText();
-        String Tel= txtTel.getText();
-        colegio.modifySingleEstudent(Correo, Tel, id);
-        }catch (Exception e){
+    private void btnCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarActionPerformed
+        try {
+
+            int id = Integer.parseInt(intID1.getText());
+            String Correo = txtCorreo.getText();
+            int Tel = Integer.parseInt(intTel.getText());
+            colegio.modificaProfe(id, Correo, Tel);
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor incorrecto");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCambiarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-      this.setVisible(false);
-      Login abrirLogin = new Login();
-      abrirLogin.setVisible(true);
+        this.setVisible(false);
+        Login abrirLogin = new Login();
+        abrirLogin.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-     VentanaVerNotas notas =  new VentanaVerNotas(colegio, profesor);
-     notas.setVisible(true);
+        VentanaVerNotas notas = new VentanaVerNotas(colegio, profesor);
+        notas.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-     VentanaAddNote nota = new VentanaAddNote(colegio, profesor);
-     nota.setVisible(true);
+        VentanaAddNote nota = new VentanaAddNote(colegio, profesor);
+        nota.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.setVisible(false);
+        Login abrirLogin = new Login();
+        abrirLogin.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -241,7 +251,7 @@ public class VentanaProfesor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-          
+
 //new VentanaProfesor().setVisible(true);
             }
         });
@@ -249,9 +259,10 @@ public class VentanaProfesor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DatosEst;
+    private javax.swing.JButton btnCambiar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JTextField intID;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel intID1;
+    private javax.swing.JTextField intTel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -262,6 +273,6 @@ public class VentanaProfesor extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
+
 }

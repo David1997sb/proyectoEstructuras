@@ -94,7 +94,7 @@ public class Colegio {
 
     /**
      *
-     * En los siguientes 6 metodos ( imprimeApelliEstu, imprimeCorreoEstu,
+     * En los siguientes 7 metodos ( imprimeApelliEstu, imprimeCorreoEstu,
      * imprimeEncargadoEstu,imprimeEdadEstu, imprimeTelEstu, imprimeNivelEstu)
      * se realiza el mismo proceso, Lo que se realiza es recibir un id por
      * parametro para asi buscar un estudiante con ese mismo ID para asi poder
@@ -161,6 +161,16 @@ public class Colegio {
             return estudiante.getNivelEducativo();
         }
         return "No Existe";
+    }
+
+    public int imprimeIDEstu(int id) {
+        Estudiante estudiante = estudiantes.BuscarEstudiante(id);
+        if (estudiante != null) {
+
+            return estudiante.getId();
+        }
+        return 0;
+
     }
 
     public String imprimeNombreUser(int id) {
@@ -280,7 +290,7 @@ public class Colegio {
      */
     public void agregaProfeAmateria(int idProfesor, String NombreMateria) {
         Profesor profe = profes.BuscarProfesor(idProfesor);
-        profes.modificaProfe(profe.getCorreo(), profe.getTelefono(), profe.getId(), NombreMateria);
+        profes.modificaProfeaMat(profe.getCorreo(), profe.getTelefono(), profe.getId(), NombreMateria);
         materias.agregarProfeAmateria(profe, NombreMateria);
     }
 
@@ -451,7 +461,7 @@ public class Colegio {
     }
 
     /**
-     * El metodo modificaProfeAdmin recibe por parametroun id de profesor,un
+     * El metodo modificaProfeAdmin recibe por parametro un id de profesor,un
      * nombre profesor, un correo, un curso, un telefono, una edad y una fecha
      * de ingreso. Luego conforme estos atributos se realiza la modificacion de
      * los mismos en la interfaz.
@@ -459,6 +469,13 @@ public class Colegio {
      */
     public void modificaProfeAdmin(int id, String Nombre, String Apellido, String Correo, String Curso, int Telefono, int Edad, Date fechaDeIngreso) {
         profes.modificaProfeAdmin(Nombre, Apellido, Correo, Curso, id, Telefono, Edad, fechaDeIngreso);
+
+    }
+
+    public void modificaProfe(int id, String Correo, int Telefono) {
+        Profesor profesor = profes.modificaProfe(Correo, Telefono, id);
+        
+        JOptionPane.showMessageDialog(null, profes.BuscarProfesor(id));
 
     }
 
@@ -482,7 +499,7 @@ public class Colegio {
      * ingresados los datos se puede modificar al estudiante
      */
     public void modifySingleEstudent(String Correo, String Telefono, int id) {
-        Estudiante estudiante = estudiantes.modificaEstuduante(Correo, Telefono, id);
+        Estudiante estudiante = estudiantes.modificaEstudiante(Correo, Telefono, id);
         JOptionPane.showMessageDialog(null, estudiantes.BuscarEstudiante(id));
     }
 
@@ -575,14 +592,25 @@ public class Colegio {
 
     }
 
+    public int imprimeProfeID(int id) {
+        Profesor profe = profes.BuscarProfesor(id);
 
-/**
- * El metodo agrega nota recibe un id de estudiante, nota y nombre materia. Se
- * realiza una busqueda del estudiante y tambien de la materia conforme al ID.
- * Por ultimo agrega la nota a la materia con los anteriores atributos.
- *
- */
-public void AgregaNota(int id, int nota, String materia) {
+        if (profe != null) {
+            return profe.getId();
+        }
+
+        return 0;
+
+    }
+
+    /**
+     * El metodo agrega nota recibe un id de estudiante, nota y nombre materia.
+     * Se realiza una busqueda del estudiante y tambien de la materia conforme
+     * al ID. Por ultimo agrega la nota a la materia con los anteriores
+     * atributos.
+     *
+     */
+    public void AgregaNota(int id, int nota, String materia) {
         Estudiante estudiante = estudiantes.BuscarEstudiante(id);
         Materia materia1 = materias.BuscarMateria(materia);
         materias.agregaNota(estudiante, materia1, nota);

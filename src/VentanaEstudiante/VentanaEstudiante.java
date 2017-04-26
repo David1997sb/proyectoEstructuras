@@ -28,6 +28,8 @@ public class VentanaEstudiante extends javax.swing.JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.colegio = colegio;
         this.estudiante = estudiante;
+        intID1.setText(String.valueOf(colegio.imprimeIDEstu((estudiante.getId()))));
+
     }
 
     /**
@@ -43,13 +45,18 @@ public class VentanaEstudiante extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        intID = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         txtTel = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnCambiar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        intID1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         DatosEst.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         DatosEst.setText("Modifica Datos Estudiante");
@@ -60,22 +67,16 @@ public class VentanaEstudiante extends javax.swing.JFrame {
 
         jLabel3.setText("Numero nuevo");
 
-        intID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intIDActionPerformed(evt);
-            }
-        });
-
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Cambiar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCambiar.setText("Cambiar");
+        btnCambiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCambiarActionPerformed(evt);
             }
         });
 
@@ -104,12 +105,12 @@ public class VentanaEstudiante extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(intID, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                            .addComponent(txtTel))
+                            .addComponent(txtTel)
+                            .addComponent(intID1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(95, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnCambiar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalir)
                         .addGap(34, 34, 34))))
@@ -122,7 +123,7 @@ public class VentanaEstudiante extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(intID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(intID1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -133,7 +134,7 @@ public class VentanaEstudiante extends javax.swing.JFrame {
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnCambiar)
                     .addComponent(btnSalir))
                 .addGap(36, 36, 36))
         );
@@ -141,31 +142,35 @@ public class VentanaEstudiante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void intIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_intIDActionPerformed
-
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try{
-        int id = Integer.parseInt(intID.getText());
-        String Correo = txtCorreo.getText();
-        String Tel = txtTel.getText();
-        colegio.modifySingleEstudent(Correo, Tel, id);
-        }catch(Exception e){
+    private void btnCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarActionPerformed
+        try {
+
+            int id = Integer.parseInt(intID1.getText());
+            String Correo = txtCorreo.getText();
+            String Tel = txtTel.getText();
+            colegio.modifySingleEstudent(Correo, Tel, id);
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Valor incorrecto");
-        
+
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCambiarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.setVisible(false);
         Login abrirLogin = new Login();
         abrirLogin.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.setVisible(false);
+        Login abrirLogin = new Login();
+        abrirLogin.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -205,9 +210,9 @@ public class VentanaEstudiante extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DatosEst;
+    private javax.swing.JButton btnCambiar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JTextField intID;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel intID1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
